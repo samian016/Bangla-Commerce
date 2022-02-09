@@ -58,3 +58,30 @@
   color: #3bb77e;
   transition: 0.5s;
 }
+
+/* Featured Category Banner */
+/* .featuredCategoryBanner {
+  background-image: url("https://i.ibb.co/42cnGSs/banner-3.png") !important;
+  background-position: "bottom right" !important;
+  background-size: "100% 295px" !important;
+  background-repeat: "no-repeat" !important;
+  background-attachment: "scroll" !important;
+  min-height: "295px" !important;
+} */
+.category-banner-text h5 {
+  margin-bottom: 80px;
+  margin-top: 30px;
+}
+
+.category-banner-text button {
+  background-color: #3bb77e;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.category-banner-text button:hover {
+  background-color: #fdc040;
+}
