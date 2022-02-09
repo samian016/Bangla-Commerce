@@ -12,10 +12,11 @@ import "swiper/css/navigation";
 
 // import required modules
 import { FreeMode, Pagination, Navigation } from "swiper";
+import Category from './Components/Category/Category';
 function App() {
   return (
     <div>
-     
+      <Category />
     </div>
   );
 }
