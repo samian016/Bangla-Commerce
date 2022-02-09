@@ -1,6 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Footer from './Components/Shared/Footer/Footer';
+
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,8 +17,12 @@ import { FreeMode, Pagination, Navigation } from "swiper";
 import Category from './Components/Category/Category';
 function App() {
   return (
-    <div>
+    <div className="App">
+     
+      <Footer></Footer>
+    
       <Category />
+
     </div>
   );
 }
