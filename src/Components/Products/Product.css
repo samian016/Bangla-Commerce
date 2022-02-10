@@ -1,0 +1,12 @@
+.filled{
+  color: #ffd900;
+}
+.hover{
+    border:1px solid #adadad;
+    
+    border-radius:15px;
+}
+.hover:hover{
+    border: solid 1px #3BB77E;
+    box-shadow: 2px 2px 5px 1px #3BB77E;
+}
