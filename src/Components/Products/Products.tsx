@@ -14,7 +14,7 @@ const Products = () => {
 
                 
 
-                <div className="row border-1 row-cols-5">
+                <div className="row border-1 row-cols-lg-5 row-cols-sm-2 row-cols-md-4">
                     <div className=" mx-auto mt-4 col">
                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                             <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
