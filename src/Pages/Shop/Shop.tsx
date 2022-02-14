@@ -1,8 +1,6 @@
 import React from 'react';
 import Rating from 'react-rating';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Category from '../../Components/Category/Category';
-import SupplyerBanner from '../../Components/SupplyerBanner/SupplyerBanner';
 import './Shop.css'
 
 const Shop = () => {
