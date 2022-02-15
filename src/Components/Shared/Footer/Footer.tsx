@@ -87,7 +87,7 @@ const Footer = () => {
                                 <h6 className='font-h6'>Sour Cream and Dips</h6>
                                 <h6 className='font-h6'>Tea & Kombucha</h6>
                                 <h6 className='font-h6'>Cheese</h6>
-                                <h6 className='font-h6'>Cheese</h6>
+                              
                             </div>
                         </div>
                         <div className="col-lg-2">
