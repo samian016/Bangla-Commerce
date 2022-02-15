@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* font-family: "Quicksand", sans-serif; */
+
+.login-text h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 58px;
+  color: #253d4e;
+}
+
+.login-text div p,
+.login-text div span {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px;
+  color: #7e7e7e;
+}
+.login-text div span a {
+  color: #3bb77e;
+}
+.login-form {
+  margin-top: 16px;
+}
+.login-form .form-control {
+  font-size: 18px;
+  padding: 14px 0 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+}
+.login-form .form-control:focus {
+  border-color: #bce3c9;
+  box-shadow: none;
+}
+.login-form button {
+  background-color: #253d4e;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 15px 40px;
+  margin-top: 16px;
+}
+.login-form button:hover {
+  background-color: #29a56c;
+}
+
+@media (max-width: 768px) {
+  .login-text h2 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-text h2 {
+    font-size: 32px;
+  }
+}
