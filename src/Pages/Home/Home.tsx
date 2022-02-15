@@ -14,7 +14,6 @@ export const Home = () => {
       <Products />
       <DailyBest />
       <SupplyerBanner />
-      <Footer />
     </>
   )
 }
