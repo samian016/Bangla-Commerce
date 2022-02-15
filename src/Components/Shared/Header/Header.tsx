@@ -4,6 +4,7 @@ import "./Header.css"
 import { BsSunrise, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
+import SliderCat from './SliderCat';
 
 const Header = () => {
     return (
@@ -54,20 +55,20 @@ const Header = () => {
                         </Link>
 
                         <Link to='/cart'>
-                        <div className='mx-3'>
-                            <div className="iconSize align-items-center justify-content-center d-flex">
-                                <BsFillCartCheckFill />
+                            <div className='mx-3'>
+                                <div className="iconSize align-items-center justify-content-center d-flex">
+                                    <BsFillCartCheckFill />
+                                </div>
+                                <span> Cart</span>
                             </div>
-                            <span> Cart</span>
-                        </div>
                         </Link>
                         <Link to='login'>
-                        <div className='mx-3'>
-                            <div className="iconSize align-items-center justify-content-center d-flex">
-                                <BsPerson />
+                            <div className='mx-3'>
+                                <div className="iconSize align-items-center justify-content-center d-flex">
+                                    <BsPerson />
+                                </div>
+                                <span> Account</span>
                             </div>
-                            <span> Account</span>
-                        </div>
                         </Link>
                     </div>
                 </div>
@@ -107,6 +108,9 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
+            <div className='pb-4'>
+                <SliderCat />
+            </div>
         </ >
     );
 };
