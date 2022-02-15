@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -12,7 +13,7 @@ const SignUp = () => {
                             <h2>Create an Account</h2>
                             <div className='d-flex'>
                                 <p>Already have an account?</p>
-                                <span><Nav.Link href="https://fb.com" className='ps-2 pt-0 pe-0 pb-0'>Login</Nav.Link></span>
+                                <span><Nav.Link as={Link} to="/login" className='ps-2 pt-0 pe-0 pb-0'>Login</Nav.Link></span>
                             </div>
                             <Form className="login-form">
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
