@@ -42,10 +42,29 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-2">
-                            <div className="p-3 border bg-light">3rd Custom column</div>
+                            <div className="p-3 border bg-light">
+                                <h1>Account</h1>
+                                <h6>Sign In</h6>
+                                <h6>View Cart</h6>
+                                <h6>My Wishlist</h6>
+                                <h6>Track My Order</h6>
+                                <h6>Help Ticket</h6>
+                                <h6>Shipping Details</h6>
+                                <h6>Compare products</h6>
+                                
+                            </div>
                         </div>
                         <div className="col-lg-2">
-                            <div className="p-3 border bg-light">4th Custom column</div>
+                            <div className="p-3 border bg-light">
+                                <h1>Corporate</h1>
+                                <h6>Become a Vendor</h6>
+                                <h6>Affiliate Program</h6>
+                                <h6>Farm Business</h6>
+                                <h6>Farm Careers</h6>
+                                <h6>Our Suppliers</h6>
+                                <h6>Accessibility</h6>
+                                <h6>Promotions</h6>
+                            </div>
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 border bg-light">5th Custom column</div>
