@@ -1,5 +1,3 @@
 
 Bangla-Commerce
-=======
-# under constructions
 
