@@ -4,17 +4,19 @@ import DailyBest from '../../Components/DailyBest/DailyBest'
 import Products from '../../Components/Products/Products'
 import Footer from '../../Components/Shared/Footer/Footer'
 import Header from '../../Components/Shared/Header/Header'
+import SliderCat from '../../Components/Shared/Header/SliderCat'
 import SupplyerBanner from '../../Components/SupplyerBanner/SupplyerBanner'
 
 export const Home = () => {
   return (
     <>
-        <Header/>
+      <Header />
+      <SliderCat/>
       <Category />
-      <Products/>
-        <DailyBest/>
-        <SupplyerBanner/>
-        <Footer/>
+      <Products />
+      <DailyBest />
+      <SupplyerBanner />
+      <Footer />
     </>
   )
 }
