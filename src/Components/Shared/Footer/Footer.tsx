@@ -67,7 +67,16 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-2">
-                            <div className="p-3 border bg-light">5th Custom column</div>
+                            <div className="p-3 border bg-light">
+                                <h1>Popular</h1>
+                                <h6>Milk & Flavoured Milk</h6>
+                                <h6>Butter and Margarine</h6>
+                                <h6>Eggs Substitutes</h6>
+                                <h6>Marmalades</h6>
+                                <h6>Sour Cream and Dips</h6>
+                                <h6>Tea & Kombucha</h6>
+                                <h6>Cheese</h6>
+                            </div>
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 border bg-light">6th Custom column</div>
