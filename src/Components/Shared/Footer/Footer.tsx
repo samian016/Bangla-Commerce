@@ -39,7 +39,6 @@ const Footer = () => {
                                 <h6>Contact Us</h6>
                                 <h6> Support Center</h6>
                                 <h6>Careers</h6>
-                                <h6>Careers</h6>
                             </div>
                         </div>
                         <div className="col-lg-2">
