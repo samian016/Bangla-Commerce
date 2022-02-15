@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* font-family: "Quicksand", sans-serif; */
+
+.sign-text h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 58px;
+  color: #253d4e;
+}
+
+.sign-text div p,
+.sign-text div span {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px;
+  color: #7e7e7e;
+}
+.sign-text div span a {
+  color: #3bb77e;
+}
+.login-form {
+  margin-top: 16px;
+}
+.login-form .form-control {
+  font-size: 18px;
+  padding: 14px 0 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+}
+.login-form .form-control:focus {
+  border-color: #bce3c9;
+  box-shadow: none;
+}
+.login-form button {
+  background-color: #253d4e;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  padding: 15px 40px;
+  margin-top: 16px;
+  transition: 0.3s;
+}
+.login-form label {
+  font-family: "Quicksand", sans-serif;
+}
+.login-form button:hover {
+  background-color: #29a56c;
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+}
+.third-party-login button {
+  background-color: transparent;
+  border: 1px solid #253d4e;
+  color: #253d4e;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 15px 40px;
+  margin-top: 16px;
+  transition: 0.3s;
+}
+.third-party-login button:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+  color: #253d4e;
+  border: 1px solid #253d4e;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+}
+
+.form-check-input:checked[type="radio"] {
+  background-image: none;
+  color: #fff;
+  border-color: #29a56c;
+  background-color: #29a56c;
+}
+.form-check-input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(41 165 108 / 25%);
+}
+
+@media (max-width: 768px) {
+  .sign-text h2 {
+    font-size: 38px;
+    line-height: 1.2em;
+  }
+}
+
+@media (max-width: 576px) {
+  .sign-text h2 {
+    font-size: 32px;
+    line-height: 1.2em;
+  }
+}
