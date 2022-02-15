@@ -11,21 +11,30 @@ import LogIn from './Pages/LogIn/LogIn';
 import Shop from './Pages/Shop/Shop';
 import SignUp from './Pages/SignUp/SignUp';
 import Terms from './Pages/Terms/Terms';
+import Blog from './Pages/Blogs/Blogs';
+import Seller from './Pages/Seller/Seller';
+import Header from './Components/Shared/Header/Header';
+import Footer from './Components/Shared/Footer/Footer';
 function App() {
   return (
     <>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home/> }/>
+        <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="category" element={<Category />} />
+        <Route path="shop" element={<Shop />} />
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
+        <Route path="seller" element={<Seller />} />
         <Route path="login" element={<LogIn />} />
         <Route path="singUp" element={<SignUp />} />
         <Route path="terms" element={<Terms />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="shop" element={<Shop/>} />
+        <Route path="shop" element={<Shop />} />
       </Routes>
+      <Footer />
     </>
   )
 }
