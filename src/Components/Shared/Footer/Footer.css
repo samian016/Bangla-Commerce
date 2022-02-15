@@ -1,17 +1,20 @@
 /* Quicksand font import link */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* Lato font import link */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 
 /* CSS rules to specify families */
-*{
+
+
+.font-h1{
     font-family: 'Quicksand', sans-serif;
-};
-
-h1{
-
     color: #253D4E !important;
     font-weight: 700;
     line-height: 1.2;
+};
+.font-h6{
+    font-family: 'Lato', sans-serif; 
 };
 
 p {
