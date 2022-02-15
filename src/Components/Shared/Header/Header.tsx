@@ -4,7 +4,6 @@ import "./Header.css"
 import { BsSunrise, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
-import SliderCat from './SliderCat';
 
 const Header = () => {
     return (
