@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaGoogle } from "react-icons/fa";
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -45,7 +46,7 @@ const SignUp = () => {
                                 <div className='third-party-login'>
                                     <p className='text-center my-2 fw-bold'>Or</p>
                                     <Button className='w-100' variant="primary" type="submit">
-                                        <i className="fa-brands fa-google"></i> Continue With Google
+                                        <FaGoogle /> Continue With Google
                                     </Button>
                                 </div>
                             </Form>
