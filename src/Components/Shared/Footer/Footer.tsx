@@ -1,5 +1,8 @@
 import React from 'react';
 import logo1 from './images/logo.png';
+import logo2 from './images/app-store.jpg';
+import logo3 from './images/google-play.jpg';
+import logo4 from './images/payment-method.png';
 
 const Footer = () => {
     return (
@@ -79,7 +82,24 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-2">
-                            <div className="p-3 border bg-light">6th Custom column</div>
+                            <div className="p-3 border bg-light">
+                                <h1>Install Apps</h1>
+                                <h5>From Apps Store or Google Play</h5>
+                                <div>
+                                    <a href="">
+                                    <img src={logo2} alt="" className="img-fluid"/>
+                                    </a>
+                                    <a href="">
+                                    <img src={logo3} alt="" className="img-fluid"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <h5>Secured Payment Gateways</h5>
+                                    <a href="">
+                                    <img src={logo4} alt="" className="img-fluid"/>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
