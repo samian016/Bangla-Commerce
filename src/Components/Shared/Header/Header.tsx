@@ -10,10 +10,10 @@ const Header = () => {
         <>
             <nav className="top-header d-flex justify-content-between secondaryFontColor border-bottom align-items-center py-2 secondaryFont">
                 <div className='d-flex justify-content-center'>
-                    <div className='px-2 border-end'>About Us</div>
-                    <div className='px-2 border-end'>My Account</div>
-                    <div className='px-2 border-end'>Wishlist</div>
-                    <div className='px-2'>Order Tracking</div>
+                    <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
+                    <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
+                    <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
+                    <Link to='/orderTracking'><div className='px-2'>Order Tracking</div></Link>
                 </div>
                 <div>
                     <span>Supper Value Deals - Save more with coupons</span>
@@ -27,7 +27,7 @@ const Header = () => {
 
             <nav className="secondaryFontColor mid-header d-flex justify-content-between align-items-center py-4 secondaryFont">
                 <div className='main-logo w-25 ms-4'>
-                    <img src={Logo} alt="LOGO" />
+                    <Link to='/'><img src={Logo} alt="LOGO" /></Link>
                 </div>
                 <div className='d-flex justify-content-between w-75 borderRadius rounded align-items-center'>
                     <div className='border borderPrimary py-3 px-3'>
@@ -36,30 +36,39 @@ const Header = () => {
                         <span> <BsSearch /></span>
                     </div>
                     <div className='d-flex'>
-                        <div className='mx-3 '>
-                            <div className="iconSize align-items-center justify-content-center d-flex">
-                                <BsPieChart />
+                        <Link to='/compare'>
+                            <div className='mx-3 '>
+                                <div className="iconSize align-items-center justify-content-center d-flex">
+                                    <BsPieChart />
+                                </div>
+                                <span>Compare</span>
                             </div>
-                            <span>Compare</span>
-                        </div>
-                        <div className='mx-3'>
-                            <div className="iconSize align-items-center justify-content-center d-flex">
-                                <BsSuitHeart />
+                        </Link>
+                        <Link to='/whishList'>
+                            <div className='mx-3'>
+                                <div className="iconSize align-items-center justify-content-center d-flex">
+                                    <BsSuitHeart />
+                                </div>
+                                <span>Wishlist</span>
                             </div>
-                            <span>Wishlist</span>
-                        </div>
+                        </Link>
+
+                        <Link to='/cart'>
                         <div className='mx-3'>
                             <div className="iconSize align-items-center justify-content-center d-flex">
                                 <BsFillCartCheckFill />
                             </div>
                             <span> Cart</span>
                         </div>
+                        </Link>
+                        <Link to='login'>
                         <div className='mx-3'>
                             <div className="iconSize align-items-center justify-content-center d-flex">
                                 <BsPerson />
                             </div>
                             <span> Account</span>
                         </div>
+                        </Link>
                     </div>
                 </div>
             </nav >
