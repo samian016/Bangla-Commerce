@@ -1,0 +1,24 @@
+/* Quicksand font import link */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/* CSS rules to specify families */
+*{
+    font-family: 'Quicksand', sans-serif;
+};
+
+h1{
+
+    color: #253D4E !important;
+    font-weight: 700;
+    line-height: 1.2;
+};
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 5px;
+    color: #253D4E !important;
+};
+

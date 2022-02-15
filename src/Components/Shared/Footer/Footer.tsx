@@ -3,6 +3,7 @@ import logo1 from './images/logo.png';
 import logo2 from './images/app-store.jpg';
 import logo3 from './images/google-play.jpg';
 import logo4 from './images/payment-method.png';
+import "./Footer.css";
 
 const Footer = () => {
     return (
@@ -17,7 +18,7 @@ const Footer = () => {
                                 <img className='img-fluid' src={logo1} alt=""/>
                             </div>
                             <div>
-                                <h5>Awesome grocery store website template</h5>
+                                <p>Awesome grocery store website template</p>
                             </div>
                             <div>
                                 <h6>Address: 5171 W Campbell Ave undefined Kent, Utah 53127 United States</h6>
