@@ -20,16 +20,14 @@ height: 520px;
 border-radius: 15px;
 }
 
-.banner-text{
-  padding-bottom: 100px;
- padding-top: 50px;
-font-size: 40px;
+.banner-text2{
   font-weight: 700;
-  line-height: 1.2;
   font-family: "Quicksand", sans-serif;
+  /* font-size:1.2vw; */
     color: #253D4E;
     border: 0;
-  }
+    top: 30%;
+    left: 50%;}
 .best-padding{
   padding-top: 20px;
 }
@@ -42,10 +40,6 @@ font-size: 40px;
     font-weight: 700;
     background-color: #3BB77E;
 }
-
-.filled{
-  color: #ffd900;
-}
  .coll{
     width: 100%;
   }
@@ -53,11 +47,19 @@ font-size: 40px;
   display: flex!important;
 }
 
-@media only screen and (max-width: 600px) {
-  .best-banner{
-    display: none;
-  }
-  .vertical-center{
-    flex-direction: column!important;
-  }
+.d-fflex{
+  display: flex;
+}
+
+@media only screen and (max-width: 1668px) {
+ .d-fflex{
+   flex-direction: column;
+ }
+ .d-fflex {
+   width: 80%;
+ }
+ .banner-text2{
+   position:static!important;
+ }
+ 
 }
