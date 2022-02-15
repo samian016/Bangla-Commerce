@@ -3,10 +3,10 @@ import logo1 from './images/logo.png';
 
 const Footer = () => {
     return (
-        <div className='container mt-2'>
-            <div className='bg-dark rounded p-1'>
+        <div className='container-fluid mt-2'>
+            <div className=''>
                 <h1 className='text-white text-center'>This is footer</h1>
-                <div className="container my-2">
+                <div className="my-2">
                     <div className="row g-2">
                         <div className="col-lg-2">
                             <div className="p- border bg-light"> 
@@ -31,7 +31,15 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-2">
-                            <div className="p-3 border bg-light">2nd Custom column</div>
+                            <div className="p-3 border bg-light">
+                                <h6>Company</h6>
+                                <h6>About Us</h6>
+                                <h6>Delivery Information</h6>
+                                <h6>Privacy Policy</h6>
+                                <h6>Contact Us</h6>
+                                <h6> Support Center</h6>
+                                <h6>Careers</h6>
+                            </div>
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 border bg-light">3rd Custom column</div>
