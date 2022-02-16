@@ -140,7 +140,7 @@ const Footer = () => {
                             <div className="col-lg-3">
                                 <div className="p-3 ">
                                     <h6>Follow Us</h6>
-                                    <p  className='text-secondary '>Up to 15% discount on your first subscribe</p>
+                                    <p  className='text-secondary'>Up to 15% discount on your first subscribe</p>
                                 </div>
                             </div>
                         </div>
