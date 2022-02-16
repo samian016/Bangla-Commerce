@@ -11,8 +11,8 @@ type firebase = {
     isLoading: boolean;
     admin: boolean;
     signUsingGoogle: () => void;
-    createUsingEmail: (email: string, password: string, name: string, history: any, url: string) => void;
-    signUsingEmail: (email: string, password: string, history: any, url: string) => void;
+    createUsingEmail: (email: string, password: string, name: string, AccountType:string) => void;
+    signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
 }
@@ -91,7 +91,7 @@ const useFirebase = (): firebase => {
                 setIsLoading(false)
             });
     }
-    const createUsingEmail = (email: string, password: string, name: string, history: any, url: string) => {
+    const createUsingEmail = (email: string, password: string, name: string, AccountType: string) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setNewUserName(name);
@@ -99,7 +99,7 @@ const useFirebase = (): firebase => {
                 setUser(result.user);
                 saveUser(email, name, "POST");
                 setIsLogged(true);
-                history.push(url);
+                nevigate("/");
             })
             .catch((error) => {
                 setMessage(error.message);
@@ -107,12 +107,12 @@ const useFirebase = (): firebase => {
                 setIsLoading(false)
             });
     }
-    const signUsingEmail = (email: string, password: string, history: any, url: string) => {
+    const signUsingEmail = (email: string, password: string) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 verification();
                 setUser(result.user);
-                history.push(url);
+                nevigate("/");
                 setIsLogged(true);
             })
             .catch((error) => {

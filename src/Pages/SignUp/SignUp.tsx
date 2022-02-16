@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../firebase/useFirebase/useFirebase';
@@ -7,7 +6,7 @@ import "./SignUp.css";
 const SignUp = () => {
     const {
         signUsingGoogle,
-       
+
     } = useFirebase();
     return (
         <div className='sign-up-form container my-5'>
@@ -49,7 +48,7 @@ const SignUp = () => {
                                 </Button>
                                 <div className='third-party-login'>
                                     <p className='text-center my-2 fw-bold'>Or</p>
-                                    <Button className='w-100' variant="primary" type="submit">
+                                    <Button onClick={signUsingGoogle} className='w-100' variant="primary" type="submit">
                                         <i className="fa-brands fa-google"></i> Continue With Google
                                     </Button>
                                 </div>
