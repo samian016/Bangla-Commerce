@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../firebase/useFirebase/useFirebase';
+import useAuth from '../../../Hooks/useAuth';
 
 const Welcome = () => {
-    const { user } = useFirebase();
+    const { user } = useAuth();
     return (
         <div>
             <h1 className='primaryFont fw-bolder primaryFontColor'>Hello {user?.displayName}</h1>

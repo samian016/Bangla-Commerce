@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, UserCredential, User } from "firebase/auth";
 import initializationAuth from '../firebase.initialize';
-import { type } from 'os';
 import { useNavigate } from 'react-router-dom';
 
 type firebase = {

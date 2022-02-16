@@ -26,38 +26,42 @@ import ProductList from './Components/Dashboard/ProductList/ProductList';
 import SellerList from './Components/Dashboard/SellerList/SellerList';
 import Welcome from './Components/Dashboard/Welcome/Welcome';
 import TrackOrder from './Components/Dashboard/TrackOrder/TrackOrder';
+import AuthProvider from './context/AuthProvider';
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="category" element={<Category />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="faq" element={<FAQ />} />
-        <Route path="seller" element={<Seller />} />
-        <Route path="login" element={<LogIn />} />
-        <Route path="singUp" element={<SignUp />} />
-        <Route path="terms" element={<Terms />} />
-        <Route path="dashboard" element={<Dashboard />} >
-          <Route path='account-details' element={<AccountDetails />} />
-          <Route path='add-product' element={<AddProduct />} />
-          <Route path='address' element={<Address />} />
-          <Route path='category-list' element={<CategoryList />} />
-          <Route path='add-category' element={<AddCategroy />} />
-          <Route path='order' element={<Order />} />
-          <Route path='product-approval' element={<ProductApproval />} />
-          <Route path='product-list' element={<ProductList />} />
-          <Route path='track-order' element={<TrackOrder />} />
-          <Route path='seller-list' element={<SellerList />} />
-          <Route index element={<Welcome />} />
-        </Route>
-        <Route path="shop" element={<Shop />} />
-      </Routes>
-      <Footer />
+      <AuthProvider>
+
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="category" element={<Category />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<FAQ />} />
+          <Route path="seller" element={<Seller />} />
+          <Route path="login" element={<LogIn />} />
+          <Route path="singUp" element={<SignUp />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="dashboard" element={<Dashboard />} >
+            <Route path='account-details' element={<AccountDetails />} />
+            <Route path='add-product' element={<AddProduct />} />
+            <Route path='address' element={<Address />} />
+            <Route path='category-list' element={<CategoryList />} />
+            <Route path='add-category' element={<AddCategroy />} />
+            <Route path='order' element={<Order />} />
+            <Route path='product-approval' element={<ProductApproval />} />
+            <Route path='product-list' element={<ProductList />} />
+            <Route path='track-order' element={<TrackOrder />} />
+            <Route path='seller-list' element={<SellerList />} />
+            <Route index element={<Welcome />} />
+          </Route>
+          <Route path="shop" element={<Shop />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </>
   )
 }
