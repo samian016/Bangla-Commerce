@@ -1,11 +1,16 @@
 import React from 'react';
 import Logo from "./../../../Image/logo.svg"
 import "./Header.css"
-import { BsSunrise, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown } from "react-icons/bs";
+import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../firebase/useFirebase/useFirebase';
 
 const Header = () => {
+    const {
+        logOut,
+        isLogged
+    } = useFirebase();
     return (
         <>
             <nav className="top-header d-flex justify-content-between secondaryFontColor border-bottom align-items-center py-2 secondaryFont">
@@ -35,7 +40,7 @@ const Header = () => {
                         <input className='px-3 searchProduct' type="search" name="search" placeholder='Search for items..' />
                         <span> <BsSearch /></span>
                     </div>
-                    <div className='d-flex'>
+                    <div className='d-flex text-center'>
                         <Link to='/compare'>
                             <div className='mx-3 '>
                                 <div className="iconSize align-items-center justify-content-center d-flex">
@@ -61,14 +66,53 @@ const Header = () => {
                                 <span> Cart</span>
                             </div>
                         </Link>
-                        <Link to='login'>
-                            <div className='mx-3'>
-                                <div className="iconSize align-items-center justify-content-center d-flex">
-                                    <BsPerson />
+                        <div className='mx-3 dropDownMenu'>
+                            {
+                                isLogged ? <Link to='#'>
+                                    <div className="iconSize align-items-center justify-content-center d-flex">
+                                        <BsPerson />
+                                    </div>
+                                    <span> Account</span>
+                                </Link> : <Link to='login'>
+                                    <div className="iconSize align-items-center justify-content-center d-flex">
+                                        <BsPerson />
+                                    </div>
+                                    <span> Account</span>
+                                </Link>
+                            }
+                            <div className="dropDown px-3 py-3 rounded">
+                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                        <BsFillPersonLinesFill />
+                                    </div>
+                                    <span> <Link to='/dashboard' className='dropDownText'>My Account</Link> </span>
                                 </div>
-                                <span> Account</span>
+                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                        <BsSuitHeart />
+                                    </div>
+                                    <span> <Link to='/dashboard' className='dropDownText'>My Wishlist</Link> </span>
+                                </div>
+                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                        <BsPinMap />
+                                    </div>
+                                    <span> <Link to='/dashboard' className='dropDownText'>Order Tracking</Link> </span>
+                                </div>
+                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                        <BsTextParagraph />
+                                    </div>
+                                    <span> <Link to='/dashboard' className='dropDownText'>Setting</Link> </span>
+                                </div>
+                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                        <BsFillPersonXFill />
+                                    </div>
+                                    <span> <Link to='#' onClick={logOut} className='dropDownText'>Sign out</Link> </span>
+                                </div>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </nav >
@@ -80,7 +124,7 @@ const Header = () => {
                     </div>
                     <div className='fw-bold d-flex'>
                         <span className='primaryColor fw-bolder px-1'>
-                            <BsSunrise />
+                            <BsLightning />
                         </span>
                         <div><Link to="/shop">Hot Deals</Link></div>
                     </div>
@@ -93,7 +137,7 @@ const Header = () => {
                         <div className='px-4'><Link to="/seller">Brands</Link></div>
                         <div className='px-4'><Link to="/blog">Blog</Link></div>
                         <div className='px-4'><Link to="/contact">Contact</Link></div>
-                        <div className='px-4'><Link to="/terms">Policy</Link></div>
+                        <div className='px-4'><Link to="/faq">FAQ</Link></div>
                     </div>
                     <div className='d-flex align-items-center'>
                         <div className='pe-2'>

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
+import useFirebase from '../../firebase/useFirebase/useFirebase';
 import "./SignUp.css";
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -36,6 +37,10 @@ const SignUp = () => {
         e.preventDefault();
     }
 
+    const {
+        signUsingGoogle,
+
+    } = useFirebase();
     return (
         <div className='sign-up-form container my-5'>
             <div className="row">
@@ -76,8 +81,8 @@ const SignUp = () => {
                                 </Button>
                                 <div className='third-party-login'>
                                     <p className='text-center my-2 fw-bold'>Or</p>
-                                    <Button className='w-100' variant="primary" type="submit">
-                                        <FaGoogle /> Continue With Google
+                                    <Button onClick={signUsingGoogle} className='w-100' variant="primary" type="submit">
+                                        <i className="fa-brands fa-google"></i> Continue With Google
                                     </Button>
                                 </div>
                             </Form>
