@@ -1,9 +1,11 @@
 import React from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../firebase/useFirebase/useFirebase';
 import './LogIn.css';
 
 const LogIn = () => {
+    
     return (
         <div className='container my-5'>
             <div className="row">
@@ -29,6 +31,7 @@ const LogIn = () => {
                                     Log in
                                 </Button>
                             </Form>
+                            
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,14 @@
 import React from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../firebase/useFirebase/useFirebase';
 import "./SignUp.css";
 
 const SignUp = () => {
+    const {
+        signUsingGoogle,
+       
+    } = useFirebase();
     return (
         <div className='sign-up-form container my-5'>
             <div className="row">
