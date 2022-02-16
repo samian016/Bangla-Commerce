@@ -7,9 +7,9 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <div className='container-fluid mt-2'>
-            <div className=''>
-                <div className="my-2">
+        <div className='container-fluid overflow-hidden my-3'>
+            <div className='mx-5'>
+                <div className="my-3">
                     <div className="row g-2">
                         <div className="col-lg-2">
                             <div className="p- ">
@@ -43,7 +43,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 ">
-                                <h6 className='font-h6'>Company</h6>
+                                <h6 className='font-h6 text-muted'>Company</h6>
                                 <h6 className='font-h6'>About Us</h6>
                                 <h6 className='font-h6'>Delivery Information</h6>
                                 <h6 className='font-h6'>Privacy Policy</h6>
