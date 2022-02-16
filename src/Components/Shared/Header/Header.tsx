@@ -4,8 +4,13 @@ import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../firebase/useFirebase/useFirebase';
 
 const Header = () => {
+    const {
+        logOut,
+        isLogged
+    } = useFirebase();
     return (
         <>
             <nav className="top-header d-flex justify-content-between secondaryFontColor border-bottom align-items-center py-2 secondaryFont">
@@ -62,12 +67,19 @@ const Header = () => {
                             </div>
                         </Link>
                         <div className='mx-3 dropDownMenu'>
-                            <Link to='login'>
-                                <div className="iconSize align-items-center justify-content-center d-flex">
-                                    <BsPerson />
-                                </div>
-                                <span> Account</span>
-                            </Link>
+                            {
+                                isLogged ? <Link to='#'>
+                                    <div className="iconSize align-items-center justify-content-center d-flex">
+                                        <BsPerson />
+                                    </div>
+                                    <span> Account</span>
+                                </Link> : <Link to='login'>
+                                    <div className="iconSize align-items-center justify-content-center d-flex">
+                                        <BsPerson />
+                                    </div>
+                                    <span> Account</span>
+                                </Link>
+                            }
                             <div className="dropDown px-3 py-3 rounded">
                                 <div className="dropDownList rounded px-3 py-2 d-flex">
                                     <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
@@ -97,7 +109,7 @@ const Header = () => {
                                     <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                         <BsFillPersonXFill />
                                     </div>
-                                    <span> <Link to='/dashboard' className='dropDownText'>Sign out</Link> </span>
+                                    <span> <Link to='#' onClick={logOut} className='dropDownText'>Sign out</Link> </span>
                                 </div>
                             </div>
                         </div>
