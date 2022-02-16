@@ -12,9 +12,7 @@ export const Home = () => {
       <SliderCat />
       <Category />
       <Products />
-      <DailyBest />
       <SupplyerBanner />
-      <Footer />
     </>
   )
 }
