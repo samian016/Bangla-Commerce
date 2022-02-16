@@ -160,8 +160,6 @@ const useFirebase = (): firebase => {
                 setIsLogged(false);
             }
             setIsLoading(false);
-            console.log(user);
-            console.log(isLogged);
 
         });
         return () => unsubscribed;
