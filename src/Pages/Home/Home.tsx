@@ -13,7 +13,6 @@ export const Home = () => {
       <Category />
       <Products />
       <SupplyerBanner />
-      <DailyBest />
     </>
   )
 }
