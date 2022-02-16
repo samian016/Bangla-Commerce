@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../firebase/useFirebase/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 import './LogIn.css';
 
 const LogIn = () => {
-    const { signUsingEmail } = useFirebase();
+    const { signUsingEmail } = useAuth()
     const mail = useRef<HTMLInputElement>(null!);
     const pass = useRef<HTMLInputElement>(null!);
     const handelSubmit = (e:any): void => {

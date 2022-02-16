@@ -1,14 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, {  useState } from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaGoogle } from "react-icons/fa";
-import useFirebase from '../../firebase/useFirebase/useFirebase';
 import "./SignUp.css";
+import useAuth from '../../Hooks/useAuth';
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [accountType, setAccountType] = useState('');
     const [password, setPassword] = useState('');
-    const [signUpInfo, setSignUpInfo] = useState({});
+    // const [signUpInfo, setSignUpInfo] = useState({});
 
     const handleOnBlurEmail = (e: React.FocusEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value);
@@ -40,7 +39,7 @@ const SignUp = () => {
     const {
         signUsingGoogle,
 
-    } = useFirebase();
+    } = useAuth();
     return (
         <div className='sign-up-form container my-5'>
             <div className="row">
