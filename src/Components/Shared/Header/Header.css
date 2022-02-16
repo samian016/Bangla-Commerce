@@ -57,3 +57,33 @@
   border-color: #3bb77e !important;
   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
+.dropDown{
+  display: none;
+  position: absolute;
+  right: 20px;
+  background-color: #253D4E;
+  color: white;
+  transition: 0.4s;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.dropDownMenu:hover .dropDown{
+  display: block !important;
+}
+.dropDownList:hover{
+  background-color: white;
+  color: #253D4E;
+  transition: 0.4s;
+}
+.dropDownIcon{
+  color: white;
+}
+.dropDownList:hover .dropDownIcon{
+  color: #253D4E;
+}
+.dropDownText{
+  color: white;
+}
+.dropDownList:hover .dropDownText{
+  color: black;
+}
