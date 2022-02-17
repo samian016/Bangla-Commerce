@@ -1,0 +1,31 @@
+.primaryFontColor {
+  color: #254654;
+}
+.secondaryFontColor {
+  color: #7e7e7e;
+}
+.primaryColor {
+  color: #3bb77e;
+}
+.primaryBgColor {
+  background-color: #3bb77e;
+}
+.primaryFont {
+  font-family: "Quicksand", sans-serif;
+}
+.secondaryFont {
+  font-family: "Lato", sans-serif;
+}
+a {
+  color: #254654;
+  text-decoration: none;
+}
+a:hover {
+  color: #3bb77e;
+}
+.active {
+    color: #3bb77e !important;
+}
+.cursorPointer{
+  cursor: pointer;
+}
