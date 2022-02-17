@@ -5,7 +5,8 @@ import useFirebase from '../firebase/useFirebase/useFirebase';
 
 type firebase = {
     user: User | null;
-    message: string;
+    message: React.SetStateAction<string>;
+    setMessage: React.Dispatch<React.SetStateAction<string>>;
     logOut: () => void;
     isLoading: boolean;
     admin: boolean;

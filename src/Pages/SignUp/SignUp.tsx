@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { Nav, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./SignUp.css";
@@ -7,37 +7,57 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [accountType, setAccountType] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordT, setPasswordT] = useState('');
+    const [name, setName] = useState('');
     // const [signUpInfo, setSignUpInfo] = useState({});
 
     const handleOnBlurEmail = (e: React.FocusEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value);
     }
+    const handleOnBlurName = (e: React.FocusEvent<HTMLInputElement>) => {
+        setName(e.currentTarget.value);
+    }
 
     const handleOnBlurPassword = (e: React.FocusEvent<HTMLInputElement>) => {
         setPassword(e.currentTarget.value);
+    }
+    const handleOnBlurPasswordT = (e: React.FocusEvent<HTMLInputElement>) => {
+        setPasswordT(e.currentTarget.value);
     }
 
     const handleOnChangeAccountType = (e: React.FocusEvent<HTMLInputElement>) => {
         setAccountType(e.currentTarget.value);
     }
 
-    interface IregistrationInfo {
-        email: string,
-        password: string,
-        accountType: string
-    }
-    const newSignUp: IregistrationInfo = {
-        email: email,
-        password: password,
-        accountType: accountType
-    }
+    // interface IregistrationInfo {
+    //     name: string,
+    //     email: string,
+    //     password: string,
+    //     passwordT: string,
+    //     accountType: string
+    // }
+    // const newSignUp: IregistrationInfo = {
+    //     name: name,
+    //     email: email,
+    //     password: password,
+    //     passwordT: passwordT,
+    //     accountType: accountType
+    // }
     const handleOnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(newSignUp);
+        if (password === passwordT) {
+            setMessage("");
+            // console.log(email, password, name, accountType);
+            createUsingEmail(email,password,name,accountType);
+        }
+        else {
+            setMessage("Password not matched");
+        }
+        // console.log(newSignUp);
         e.preventDefault();
     }
 
     const {
-        signUsingGoogle,
+        signUsingGoogle, createUsingEmail,message,setMessage
 
     } = useAuth();
     return (
@@ -52,6 +72,9 @@ const SignUp = () => {
                                 <span><Nav.Link as={Link} to="/login" className='ps-2 pt-0 pe-0 pb-0'>Login</Nav.Link></span>
                             </div>
                             <Form className="login-form">
+                                <Form.Group className="mb-3" controlId="formBasicName">
+                                    <Form.Control required className='login-input' type="text" onBlur={handleOnBlurName} placeholder="Shop/Your Name" />
+                                </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Control required className='login-input' type="email" onBlur={handleOnBlurEmail} placeholder="Email" />
                                 </Form.Group>
@@ -59,7 +82,8 @@ const SignUp = () => {
                                     <Form.Control required className='login-input' type="password" onBlur={handleOnBlurPassword} placeholder="Password" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control required className='login-input' type="password" placeholder="Confirm Password" />
+                                    <Form.Control required className='login-input' type="password" onBlur={handleOnBlurPasswordT} placeholder="Confirm Password" />
+                                    <p>{message}</p>
                                 </Form.Group>
                                 <div className='mt-4 mb-3'>
                                     <div className="form-check mb-2">

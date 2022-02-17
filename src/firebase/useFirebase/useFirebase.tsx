@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 type firebase = {
     user: User | null;
-    message: string;
+    message: React.SetStateAction<string>;
+    setMessage: React.Dispatch<React.SetStateAction<string>>;
     logOut: () => void;
     isLoading: boolean;
     admin: boolean;
@@ -21,7 +22,7 @@ const useFirebase = (): firebase => {
 
 
     const [user, setUser] = useState<User | null>(null);
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState<React.SetStateAction<string>>('');
     const [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
     const [isLogged, setIsLogged] = useState(false);
@@ -32,16 +33,16 @@ const useFirebase = (): firebase => {
 
 
 
-    const saveUser = (email: string | null, displayName: string | null, method: string): void => {
-        const user = { email, displayName };
+    const saveUser = (email: string | null, displayName: string | null, method: string, AccountType:string): void => {
+        const user = { email, displayName, AccountType };
 
-        // fetch("https://fierce-shelf-26334.herokuapp.com/users", {
-        //     method: method,
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(user),
-        // }).then();
+        fetch("http://localhost:5000/users", {
+            method: method,
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+        }).then();
 
     };
 
@@ -80,7 +81,7 @@ const useFirebase = (): firebase => {
                 setIsLogged(true);
                 setUser(result.user);
                 // console.log(history);   
-                saveUser(result.user.email, result.user.displayName, "PUT");
+                saveUser(result.user.email, result.user.displayName, "PUT","customer");
                 nevigate("/");
                 
             }).catch((error) => {
@@ -96,9 +97,10 @@ const useFirebase = (): firebase => {
                 setNewUserName(name);
                 verification();
                 setUser(result.user);
-                saveUser(email, name, "POST");
+                saveUser(email, name, "POST", AccountType);
                 setIsLogged(true);
                 nevigate("/");
+                console.log(result,"jjj");
             })
             .catch((error) => {
                 setMessage(error.message);
@@ -183,6 +185,7 @@ const useFirebase = (): firebase => {
     return {
         user,
         message,
+        setMessage,
         logOut,
         isLoading,
         admin,
