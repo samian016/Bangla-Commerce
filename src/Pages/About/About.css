@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+.main-about{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.about-img img{
+    border-radius: 15px;
+    max-width: 100%;
+}
