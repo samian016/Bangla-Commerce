@@ -1,0 +1,123 @@
+.newsletter {
+  position: relative;
+  margin-bottom: 15px;
+  overflow-x: hidden;
+}
+
+.newsletter .newsletter-inner {
+  background: url(../../asset/Icon/banner-10.png) no-repeat center;
+  background-size: cover;
+  padding: 84px 78px;
+  clear: both;
+  display: table;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 230px;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.newsletter .newsletter-inner .newsletter-content h2 {
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.newsletter .newsletter-inner .newsletter-content p {
+  font-size: 18px;
+}
+
+.text {
+  color: #3bb77e;
+}
+
+.newsletter .newsletter-inner .newsletter-content form {
+  background-color: #fff;
+  max-width: 450px;
+  border-radius: 50px;
+  position: relative;
+  z-index: 4;
+}
+
+.newsletter .newsletter-inner .newsletter-content form input {
+  border: 0;
+  border-radius: 50px 0 0 50px;
+  padding-left: 58px;
+  background: url(../../asset/Icon/icon-email-2.svg) no-repeat 25px center;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: none;
+  height: 64px;
+  outline: none;
+}
+
+.newsletter .newsletter-inner .newsletter-content form button {
+  border: 0;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3bb77e;
+  color: #ffffff;
+  padding: 15px 40px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  text-transform: none;
+  font-family: "Quicksand", sans-serif;
+}
+
+.newsletter .newsletter-inner img {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  max-width: 40%;
+}
+
+@media only screen and (max-width: 480px) {
+  .newsletter .newsletter-inner {
+    padding: 20px;
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newsletter .newsletter-inner .newsletter-content h2 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newsletter .newsletter-inner .newsletter-content p {
+    font-size: 14px;
+    margin-bottom: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newsletter form {
+    margin: 15px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newsletter .newsletter-inner button.submit,
+  .newsletter .newsletter-inner button[type="submit"] {
+    padding: 12px 20px;
+  }
+}
