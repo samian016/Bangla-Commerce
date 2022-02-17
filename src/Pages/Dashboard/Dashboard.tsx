@@ -15,12 +15,9 @@ const Dashboard = () => {
           </Link>
           <Link to='/dashboard/order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-              My Order</div>
+              Order Status</div>
           </Link>
-          <Link to='/dashboard/track-order'>
-            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-              Track Your Order</div>
-          </Link>
+
           <Link to='/dashboard/add-product'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Products</div>
@@ -35,7 +32,7 @@ const Dashboard = () => {
           </Link>
           <Link to='/dashboard/category-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-               Category List</div>
+              Category List</div>
           </Link>
           <Link to='/dashboard/product-approval'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
@@ -44,6 +41,10 @@ const Dashboard = () => {
           <Link to='/dashboard/seller-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Seller List</div>
+          </Link>
+          <Link to='/dashboard/track-order'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Track Your Order</div>
           </Link>
           <Link to='/dashboard/address'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
@@ -59,7 +60,7 @@ const Dashboard = () => {
           </Link>
 
         </div>
-        <div className="w-75">
+        <div className="w-75 my-2 mx-4">
           <Outlet />
         </div>
       </div>
