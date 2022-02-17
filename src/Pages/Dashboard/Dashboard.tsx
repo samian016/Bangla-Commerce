@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { BsTextParagraph } from "react-icons/bs";
-
+import useAuth from "../../Hooks/useAuth"
 const Dashboard = () => {
+  const {
+    logOut
+  } = useAuth();
   return (
     <div className='container my-5 py-5'>
 
@@ -54,7 +57,7 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Account Details</div>
           </Link>
-          <Link to='/'>
+          <Link onClick={logOut} to='/'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Sing Out</div>
           </Link>
