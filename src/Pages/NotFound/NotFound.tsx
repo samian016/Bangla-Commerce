@@ -1,6 +1,7 @@
 import React from "react";
 import "./NotFound.css";
 import notfound from "../../asset/Icon/page-404.png";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
@@ -35,12 +36,12 @@ const NotFound = () => {
                   </button>
                 </form>
               </div>
-              <a
+              <Link
                 className="search-btn btn-default submit-auto-width font-xs mt-30"
-                href="#www.facebook.com"
+                to="/"
               >
                 <i className="mr-5 fa fa-home">Back To Home Page</i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

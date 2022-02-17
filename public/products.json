@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "Nestle Original Coffee-Mate Coffee Creamer",
+        "price": 32.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-1.jpg",
+        "rating": 5,
+        "sellCount": 37,
+        "addDate": "11/2/2022"
+    },
+    {
+        "id": 2,
+        "title": "Organic Cage-Free Grade A Large Brown Eggs",
+        "price": 30.55,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-4.jpg",
+        "rating": 4,
+        "sellCount": 21,
+        "addDate": "6/1/2022"
+    },
+    {
+        "id": 3,
+        "title": "Pepperidge Farm Farmhouse Hearty White Bread",
+        "price": 35.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-7.jpg",
+        "rating": 4.5,
+        "sellCount": 20,
+        "addDate": "10/1/2022"
+    },
+    {
+        "id": 4,
+        "title": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+        "price": 40.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-10.jpg",
+        "rating": 3.5,
+        "sellCount": 12,
+        "addDate": "13/1/2022"
+    },
+    {
+        "id": 5,
+        "title": "Nestle Original Coffee-Mate Coffee Creamer",
+        "price": 52.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-2.jpg",
+        "rating": 4.4,
+        "sellCount": 9,
+        "addDate": "5/2/2022"
+    },
+    {
+        "id": 6,
+        "title": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+        "price": 72.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-5.jpg",
+        "rating": 4.8,
+        "sellCount": 36,
+        "addDate": "15/1/2022"
+    },
+    {
+        "id": 7,
+        "title": "Organic Frozen Triple Berry Blend",
+        "price": 60.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-8.jpg",
+        "rating": 5,
+        "sellCount": 33,
+        "addDate": "11/2/2022"
+    },
+    {
+        "id": 8,
+        "title": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+        "price": 65.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-11.jpg",
+        "rating": 4.5,
+        "sellCount": 23,
+        "addDate": "10/2/2022"
+    },
+    {
+        "id": 9,
+        "title": "Nestle Original Coffee-Mate Coffee Creamer",
+        "price": 32.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-3.jpg",
+        "rating": 4,
+        "sellCount": 16,
+        "addDate": "8/2/2022"
+    },
+    {
+        "id": 10,
+        "title": "Naturally Flavored Cinnamon Vanilla Light Roast Coffee",
+        "price": 32.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-6.jpg",
+        "rating": 4.8,
+        "sellCount": 27,
+        "addDate": "6/1/2022"
+    },
+    {
+        "id": 11,
+        "title": "Oroweat Country Buttermilk Bread",
+        "price": 32.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-9.jpg",
+        "rating": 4.5,
+        "sellCount": 30,
+        "addDate": "11/2/2022"
+    },
+    {
+        "id": 12,
+        "title": "All Natural Italian-Style Chicken Meatballs",
+        "price": 32.85,
+        "image": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-12.jpg",
+        "rating": 5,
+        "sellCount": 25,
+        "addDate": "1/2/2022"
+    }
+]

@@ -42,6 +42,10 @@ font-size: 40px;
     font-weight: 700;
     background-color: #3BB77E;
 }
+
+.filled{
+  color: #ffd900;
+}
  .coll{
     width: 100%;
   }
