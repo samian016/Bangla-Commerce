@@ -1,9 +1,11 @@
-import React from 'react'
-import Category from '../../Components/Category/Category'
-import Products from '../../Components/Products/Products'
-import SliderCat from '../../Components/Shared/Header/SliderCat'
-import SupplyerBanner from '../../Components/SupplyerBanner/SupplyerBanner'
-import ProductList from '../../Components/ProductList/ProductList'
+import React from "react";
+import Category from "../../Components/Category/Category";
+import Products from "../../Components/Products/Products";
+import SliderCat from "../../Components/Shared/Header/SliderCat";
+import SupplyerBanner from "../../Components/SupplyerBanner/SupplyerBanner";
+import ProductList from "../../Components/ProductList/ProductList";
+import Newsletter from "../Newsletter/Newsletter";
+import CategoryBanner from "./../Category/Category";
 
 export const Home = () => {
   return (
@@ -13,6 +15,8 @@ export const Home = () => {
       <Products />
       <SupplyerBanner />
       <ProductList />
+      <Newsletter />
+      <CategoryBanner />
     </>
-  )
-}
+  );
+};
