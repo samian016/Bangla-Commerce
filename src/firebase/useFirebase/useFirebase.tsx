@@ -25,7 +25,6 @@ const useFirebase = (): firebase => {
     const [message, setMessage] = useState<React.SetStateAction<string>>('');
     const [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
-    const [account, setAccount] = useState("");
     const [isLogged, setIsLogged] = useState(false);
     const nevigate = useNavigate();
 
