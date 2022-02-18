@@ -10,14 +10,16 @@ const Order = () => {
                         <th scope="col">#No</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Product Price</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>Clothes</td>
+                        <td>$32</td>
+                        <td>Pending</td>
                         <td>
                             <div className="btn-group">
                                 <button type="button" className="btn btn-danger">Delete</button>
