@@ -36,7 +36,7 @@ const useFirebase = (): firebase => {
     const saveUser = (email: string | null, displayName: string | null, method: string, AccountType:string): void => {
         const user = { email, displayName, AccountType };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://sleepy-beyond-70687.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json",

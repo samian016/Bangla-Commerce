@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
+import {  } from 'react-router-dom'
 import { BsTextParagraph } from "react-icons/bs";
 import useAuth from "../../Hooks/useAuth"
+import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
   const {
     logOut
