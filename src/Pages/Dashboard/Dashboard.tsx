@@ -45,10 +45,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Seller List</div>
           </Link>
-          <Link to='/dashboard/track-order'>
+          {/* <Link to='/dashboard/track-order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Track Your Order</div>
-          </Link>
+          </Link> */}
           <Link to='/dashboard/address'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               My Address</div>
