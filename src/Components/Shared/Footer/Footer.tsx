@@ -43,7 +43,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 ">
-                                <h6 className='font-h6'>Company</h6>
+                                <h1 className='font-h6'>Company</h1>
                                 <h6 className='font-h6'>About Us</h6>
                                 <h6 className='font-h6'>Delivery Information</h6>
                                 <h6 className='font-h6'>Privacy Policy</h6>
@@ -87,12 +87,12 @@ const Footer = () => {
                                 <h6 className='font-h6'>Sour Cream and Dips</h6>
                                 <h6 className='font-h6'>Tea & Kombucha</h6>
                                 <h6 className='font-h6'>Cheese</h6>
-                              
+
                             </div>
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Install Apps</h1>
+                                <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
                                 <div>
                                     <a href="">
@@ -103,7 +103,6 @@ const Footer = () => {
                                     </a>
                                 </div>
                                 <div>
-                                    <h5 className='font-h6'>Secured Payment Gateways</h5>
                                     <a href="">
                                         <img src={logo4} alt="" className="img-fluid" />
                                     </a>

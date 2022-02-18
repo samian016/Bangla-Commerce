@@ -28,6 +28,9 @@ import Welcome from "./Components/Dashboard/Welcome/Welcome";
 import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
 import AuthProvider from "./context/AuthProvider";
 import NotFound from "./Pages/NotFound/NotFound";
+import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
+import EditCategory from "./Components/Dashboard/AddCategory/EditCategory";
+import EditAddress from "./Components/Dashboard/Address/EditAddress";
 function App() {
   return (
     <>
@@ -48,9 +51,12 @@ function App() {
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="account-details" element={<AccountDetails />} />
             <Route path="add-product" element={<AddProduct />} />
+            <Route path="edit-product" element={<EditProduct />} />
             <Route path="address" element={<Address />} />
+            <Route path="edit-address" element={<EditAddress />} />
             <Route path="category-list" element={<CategoryList />} />
             <Route path="add-category" element={<AddCategroy />} />
+            <Route path="edit-category" element={<EditCategory />} />
             <Route path="order" element={<Order />} />
             <Route path="product-approval" element={<ProductApproval />} />
             <Route path="product-list" element={<ProductList />} />

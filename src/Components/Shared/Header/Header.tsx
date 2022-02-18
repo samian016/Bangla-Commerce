@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "./../../../Image/logo.svg"
+import Logo from "./../../../Image/logo.png"
 import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
