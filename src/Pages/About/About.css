@@ -7,3 +7,9 @@
     border-radius: 15px;
     max-width: 100%;
 }
+.title.style-3{
+    background-image: url('http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/wave.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 25px;
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-1.svg",
+        "title": "Best Prices & Offers",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    },
+    {
+        "id": 2,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-2.svg",
+        "title": "Wide Assortment",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    },
+    {
+        "id": 3,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-3.svg",
+        "title": "Free Delivery",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    },
+    {
+        "id": 4,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-4.svg",
+        "title": "Easy Returns",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    },
+    {
+        "id": 5,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-5.svg",
+        "title": "100% Satisfaction",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    },
+    {
+        "id": 6,
+        "icon": "http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-6.svg",
+        "title": "Great Daily Deal",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    }
+]
