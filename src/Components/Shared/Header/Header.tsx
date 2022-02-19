@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "./../../../Image/logo.svg"
+import Logo from "./../../../Image/logo.png"
 import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
@@ -18,7 +18,7 @@ const Header = () => {
                     <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
                     <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
                     <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
-                    <Link to='/orderTracking'><div className='px-2'>Order Tracking</div></Link>
+                    {/* <Link to='/orderTracking'><div className='px-2'>Order Tracking</div></Link> */}
                 </div>
                 <div>
                     <span>Supper Value Deals - Save more with coupons</span>
@@ -93,12 +93,12 @@ const Header = () => {
                                     </div>
                                     <span> <Link to='/dashboard' className='dropDownText'>My Wishlist</Link> </span>
                                 </div>
-                                <div className="dropDownList rounded px-3 py-2 d-flex">
+                                {/* <div className="dropDownList rounded px-3 py-2 d-flex">
                                     <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                         <BsPinMap />
                                     </div>
                                     <span> <Link to='/dashboard' className='dropDownText'>Order Tracking</Link> </span>
-                                </div>
+                                </div> */}
                                 <div className="dropDownList rounded px-3 py-2 d-flex">
                                     <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                         <BsTextParagraph />
