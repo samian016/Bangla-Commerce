@@ -1,10 +1,12 @@
-import React from 'react'
-import Category from '../../Components/Category/Category'
-import DailyBest from '../../Components/DailyBest/DailyBest'
-import Products from '../../Components/Products/Products'
-import Footer from '../../Components/Shared/Footer/Footer'
-import SliderCat from '../../Components/Shared/Header/SliderCat'
-import SupplyerBanner from '../../Components/SupplyerBanner/SupplyerBanner'
+import React from "react";
+import Category from "../../Components/Category/Category";
+import Products from "../../Components/Products/Products";
+import SliderCat from "../../Components/Shared/Header/SliderCat";
+import SupplyerBanner from "../../Components/SupplyerBanner/SupplyerBanner";
+import ProductList from "../../Components/ProductList/ProductList";
+import Newsletter from "../Newsletter/Newsletter";
+import CategoryBanner from "./../Category/Category";
+import DailyBest from "../../Components/DailyBest/DailyBest";
 
 export const Home = () => {
   return (
@@ -12,8 +14,11 @@ export const Home = () => {
       <SliderCat />
       <Category />
       <Products />
-      <DailyBest />
       <SupplyerBanner />
+      <DailyBest/>
+      <ProductList />
+      <Newsletter />
+      <CategoryBanner />
     </>
-  )
-}
+  );
+};

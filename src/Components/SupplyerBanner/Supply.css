@@ -63,3 +63,14 @@ border-radius: 15px;
  }
  
 }
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .SupplerBanner{
+    display: flex;
+    flex-direction: column;
+  }
+
+}

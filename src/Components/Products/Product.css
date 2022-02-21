@@ -1,12 +1,12 @@
 .filled{
   color: #ffd900;
 }
-.hover{
+.product{
     border:1px solid #adadad;
-    
     border-radius:15px;
 }
-.hover:hover{
-    border: solid 1px #3BB77E;
-    box-shadow: 2px 2px 5px 1px #3BB77E;
+.product:hover{
+  border-color: #3bb77e;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
