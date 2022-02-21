@@ -11,7 +11,7 @@ const Footer = () => {
             <div className='mx-5'>
                 <div className="my-3">
                     <div className="row g-2">
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p- ">
                                 <div className="logo">
                                     <img className='img-fluid' src={logo1} alt="" />
@@ -41,56 +41,59 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h6 className='font-h6 text-muted'>Company</h6>
-                                <h6 className='font-h6'>About Us</h6>
-                                <h6 className='font-h6 mt-4'>Delivery Information</h6>
-                                <h6 className='font-h6 mt-3'>Privacy Policy</h6>
-                                <h6 className='font-h6 mt-3'>Contact Us</h6>
-                                <h6 className='font-h6 mt-3'> Support Center</h6>
-                                <h6 className='font-h6 mt-3'>Careers</h6>
+                                <a href="http://"><h6 className='font-h6 text-muted'>Company</h6></a>
+                                <a href="http://"><h6 className='font-h6'>About Us</h6></a>
+                                <a href="http://"><h6 className='font-h6 mt-4'>Delivery Information</h6></a>
+                                <a href="http://"><h6 className='font-h6 mt-3'>Privacy Policy</h6></a>
+                                <a href="http://"><h6 className='font-h6 mt-3'>Contact Us</h6></a>
+                                <a href="http://"><h6 className='font-h6 mt-3'> Support Center</h6></a>
+                                <a href="http://"><h6 className='font-h6 mt-3'>Careers</h6></a>
+
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
-                                <h6 className='font-h6 mt-4'>Sign In</h6>
-                                <h6 className='font-h6'>View Cart</h6>
-                                <h6 className='font-h6'>My Wishlist</h6>
-                                <h6 className='font-h6'>Track My Order</h6>
-                                <h6 className='font-h6'>Help Ticket</h6>
-                                <h6 className='font-h6'>Shipping Details</h6>
-                                <h6 className='font-h6'>Compare products</h6>
+                                <a href="http://"><h6 className='font-h6 mt-4'>Sign In</h6></a>
+                                <a href="http://"><h6 className='font-h6'>View Cart</h6></a>
+                                <a href="http://"><h6 className='font-h6'>My Wishlist</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Track My Order</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Help Ticket</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Shipping Details</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Compare products</h6></a>
 
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Corporate</h1>
-                                <h6 className='font-h6 mt-4'>Become a Vendor</h6>
-                                <h6 className='font-h6'>Affiliate Program</h6>
-                                <h6 className='font-h6'>Farm Business</h6>
-                                <h6 className='font-h6'>Farm Careers</h6>
-                                <h6 className='font-h6'>Our Suppliers</h6>
-                                <h6 className='font-h6'>Accessibility</h6>
-                                <h6 className='font-h6'>Promotions</h6>
-                            </div>
-                        </div>
-                        <div className="col-lg-2">
-                            <div className="p-3 ">
-                                <h1 className='font-h1'>Popular</h1>
-                                <h6 className='font-h6 mt-4'>Milk & Flavoured Milk</h6>
-                                <h6 className='font-h6'>Butter and Margarine</h6>
-                                <h6 className='font-h6'>Eggs Substitutes</h6>
-                                <h6 className='font-h6'>Marmalades</h6>
-                                <h6 className='font-h6'>Sour Cream and Dips</h6>
-                                <h6 className='font-h6'>Tea & Kombucha</h6>
-                                <h6 className='font-h6'>Cheese</h6>
+                                <a href="http://"><h6 className='font-h6 mt-4'>Become a Vendor</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Affiliate Program</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Farm Business</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Farm Careers</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Our Suppliers</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Accessibility</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Promotions</h6></a>
+
 
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
+                            <div className="p-3 ">
+                                <h1 className='font-h1'>Popular</h1>
+                                <a href="http://"><h6 className='font-h6 mt-4'>Milk & Flavoured Milk</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Butter and Margarine</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Eggs Substitutes</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Marmalades</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Sour Cream and Dips</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Tea & Kombucha</h6></a>
+                                <a href="http://"><h6 className='font-h6'>Cheese</h6></a>
+
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Install Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
@@ -119,28 +122,28 @@ const Footer = () => {
 
                     <div className="mt-2">
                         <div className="row g-2">
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 col-md-3">
                                 <div className="p-3">
                                     <p className='text-secondary'>© 2021,<span className='text-success fw-bold'>Bangla</span>-Ecommerce</p>
-                                    <p  className='text-secondary'>All rights reserved</p>
+                                    <p className='text-secondary'>All rights reserved</p>
                                 </div>
                             </div>
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
                                     <h3 className='fw-bold text-success'>1900 - 6666</h3>
-                                    <p  className='text-secondary'>Working 8:00 - 22:00</p>
+                                    <p className='text-secondary'>Working 8:00 - 22:00</p>
                                 </div>
                             </div>
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
                                     <h3 className='fw-bold text-success'>1900 - 8888</h3>
-                                    <p  className='text-secondary'>24/7 Support Center</p>
+                                    <p className='text-secondary'>24/7 Support Center</p>
                                 </div>
                             </div>
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
                                     <h6>Follow Us</h6>
-                                    <p  className='text-secondary'>Up to 15% discount on your first subscribe</p>
+                                    <p className='text-secondary'>Up to 15% discount on your first subscribe</p>
                                 </div>
                             </div>
                         </div>
