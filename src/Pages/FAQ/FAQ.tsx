@@ -7,22 +7,33 @@ const FAQ = () => {
         <div className='container overflow-hidden'>
 
             <>
-            <div className='text-center'>
-                <a href="#">
-                <img className='w-25' src={faq} alt=""/>
-                </a>
-            
-            </div>
-            {/* <h1 className='primaryFontColor fw-bold text-center my-3'>FAQ</h1> */}
+            {/* header title image */}
+
+                <div className='text-center'>
+                    <a href="#">
+                        <img className='w-25' src={faq} alt="" />
+                    </a>
+
+                </div>
+                {/* <h1 className='primaryFontColor fw-bold text-center my-3'>FAQ</h1> */}
+
+
+                {/* header first section Bangla E-commerce */}
                 <div className=''>
                     <a href="#">
                         <h5 className='fw-bold primaryFont primaryFontColor'>What is Bangla E-Commerce.com?</h5>
-                       
+
                     </a>
                     <p className='secondaryFont text-secondary'>Bangla E-Commerce is a leading online retailer of products that inform, educate, and inspire. The Amazon group also has stores in the Canada, Germany, France, Japan and United Kingdom. Because we exist "virtually" on the Web, we have unlimited shelf space and can offer a selection of over 17 million titles including over 13 million Book titles and over 1 million music titles. Compare that to a typical physical-world book superstore, which carries around 170,000 books, or a typical physical-world music superstore, which carries around 34,000 CDs.</p>
                 </div>
+
+                {/* by using gutter (reactbootstrap) */}
+
                 <div className="container my-5">
                     <div className="row g-2">
+
+                        {/* Right side FAQ banner imager */}
+
                         <div className="col-lg-6 col-md-6">
                             <div className="p-3">
                                 <a href="#">
@@ -30,6 +41,8 @@ const FAQ = () => {
                                 </a>
                             </div>
                         </div>
+
+                        {/* accordion section start from here (10 collapseOne) */}
                         <div className="col-lg-6 col-md-6">
                             <div className="p-3 rounded shadow">
 
@@ -159,6 +172,14 @@ const FAQ = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+
+                {/* footer last part discounted section */}
+
+                <div>
+                    <h5 className='fw-bold'>Why are some titles discounted while others are not?</h5>
+                    <p className='text-secondary'>Our decision to discount products is made internally and based on a number of strategic considerations which can vary over time. As it stands now, we offer discounts on hundreds of thousands of selected titles. However we cannot confirm when, if ever, a title will be discounted or how long a title once discounted will remain so.</p>
                 </div>
 
             </>
