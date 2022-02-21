@@ -1,5 +1,5 @@
 import React from 'react';
-import logo1 from './images/logo.png';
+import logo1 from './../../../Image/logo.png';
 import logo2 from './images/app-store.jpg';
 import logo3 from './images/google-play.jpg';
 import logo4 from './images/payment-method.png';
@@ -12,13 +12,13 @@ const Footer = () => {
                 <div className="my-2">
                     <div className="row g-2">
                         <div className="col-lg-2">
-                            <div className="p- ">
-                                <div className="logo">
-                                    <img className='img-fluid' src={logo1} alt="" />
+                            <div className="p-3">
+                                <div className="logo my-3">
+                                    <img className='img-fluid' src={logo1} alt="Footer Logo" />
                                 </div>
-                                <div>
+                                {/* <div>
                                     <p className='fw-bold'>Awesome grocery store website template</p>
-                                </div>
+                                </div> */}
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Address: </span>
@@ -33,11 +33,6 @@ const Footer = () => {
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Email: </span>
                                         sale@Nest.com</h6>
-                                </div>
-                                <div>
-                                    <h6 className='fw-thin'>
-                                        <span className='fw-bold'>Hours: </span>
-                                        10:00 - 18:00, Mon - Sat</h6>
                                 </div>
                             </div>
                         </div>
