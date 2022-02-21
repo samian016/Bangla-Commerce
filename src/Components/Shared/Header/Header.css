@@ -6,7 +6,7 @@
 }
 .searchProduct {
   border: none !important;
-  width: 500px;
+  min-width: 350px;
 }
 .searchProduct:focus {
   outline: none !important;
@@ -42,48 +42,88 @@
   width: 14px !important;
   height: 14px !important;
 }
-.categoryCount{
+.categoryCount {
   display: inline-block;
-  background-color: #BCE3C9;
+  background-color: #bce3c9;
   width: 24px;
   height: 24px;
   text-align: center;
   border-radius: 20px;
   margin-left: 5px;
   font-size: 12px;
-  color: #253D4E;
+  color: #253d4e;
 }
-.homeCategoryNav:hover{
+.homeCategoryNav:hover {
   border-color: #3bb77e !important;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
-.dropDown{
+.dropDown {
   display: none;
   position: absolute;
   right: 20px;
-  background-color: #253D4E;
+  background-color: #253d4e;
   color: white;
   transition: 0.4s;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.dropDownMenu:hover .dropDown{
+.dropDownMenu:hover .dropDown {
   display: block !important;
 }
-.dropDownList:hover{
+.dropDownList:hover {
   background-color: white;
-  color: #253D4E;
+  color: #253d4e;
   transition: 0.4s;
 }
-.dropDownIcon{
+.dropDownIcon {
   color: white;
 }
-.dropDownList:hover .dropDownIcon{
-  color: #253D4E;
+.dropDownList:hover .dropDownIcon {
+  color: #253d4e;
 }
-.dropDownText{
+.dropDownText {
   color: white;
 }
-.dropDownList:hover .dropDownText{
+.dropDownList:hover .dropDownText {
   color: black;
+}
+.mobile-menu{
+  display: none !important;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1000px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  .mobile-menu{
+    display: block !important;
+  }
+  .mobile-menu nav{
+    box-shadow: 0 2px 5px rgb(0 0 0 / 7%);
+  }
+  .slides h1{
+    font-size: 42px ;
+  }
+  .slides p{
+    font-size: 18px;
+  }
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  .SliderCategory {
+    display: none;
+  }
+  .SliderCat .w-75 {
+    width: 100% !important;
+  }
+  .headerPhone{
+    display: none !important
+  }
+  .searchProduct{
+    min-width: 200px;
+  }
 }

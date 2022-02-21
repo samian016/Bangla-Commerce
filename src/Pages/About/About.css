@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+.main-about{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.about-img img{
+    border-radius: 15px;
+    max-width: 100%;
+}
+.title.style-3{
+    background-image: url('http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/wave.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 25px;
+}
