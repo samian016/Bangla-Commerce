@@ -7,7 +7,14 @@ const FAQ = () => {
         <div className='container overflow-hidden'>
 
             <>
-                <div className='mt-3'>
+            <div className='text-center'>
+                <a href="#">
+                <img className='w-25' src={faq} alt=""/>
+                </a>
+            
+            </div>
+            {/* <h1 className='primaryFontColor fw-bold text-center my-3'>FAQ</h1> */}
+                <div className=''>
                     <a href="#">
                         <h5 className='fw-bold primaryFont primaryFontColor'>What is Bangla E-Commerce.com?</h5>
                        
