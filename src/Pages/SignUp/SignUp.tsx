@@ -47,7 +47,7 @@ const SignUp = () => {
         if (password === passwordT) {
             setMessage("");
             // console.log(email, password, name, accountType);
-            createUsingEmail(email,password,name,accountType);
+            createUsingEmail(email, password, name, accountType);
         }
         else {
             setMessage("Password not matched");
@@ -57,7 +57,7 @@ const SignUp = () => {
     }
 
     const {
-        signUsingGoogle, createUsingEmail,message,setMessage
+        signUsingGoogle, createUsingEmail, message, setMessage
 
     } = useAuth();
     return (

@@ -12,7 +12,7 @@ const Category = () => {
     <div className="featured section-padding">
       <div className="main-body">
         <div className="row">
-          <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+          <div className="col-md-3">
             <div className="banner-left-icon d-flex align-items-center">
               <div className="banner-icon">
                 <img src={icon1} alt="" />
@@ -23,7 +23,7 @@ const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 ">
+          <div className="col-md-3">
             <div className="banner-left-icon d-flex align-items-center">
               <div className="banner-icon">
                 <img src={icon2} alt="" />
@@ -34,7 +34,7 @@ const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 ">
+          <div className="col-md-3">
             <div className="banner-left-icon d-flex align-items-center">
               <div className="banner-icon">
                 <img src={icon3} alt="" />
@@ -45,7 +45,7 @@ const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 ">
+          <div className="col-md-3">
             <div className="banner-left-icon d-flex align-items-center">
               <div className="banner-icon">
                 <img src={icon4} alt="" />
@@ -56,7 +56,7 @@ const Category = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 ">
+          {/* <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 ">
             <div className="banner-left-icon d-flex align-items-center">
               <div className="banner-icon">
                 <img src={icon5} alt="" />
@@ -66,7 +66,7 @@ const Category = () => {
                 <p>Within 30 days</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
