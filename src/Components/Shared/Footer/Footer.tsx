@@ -5,6 +5,7 @@ import logo3 from './images/google-play.jpg';
 import logo4 from './images/payment-method.png';
 import './Footer.css';
 
+
 const Footer = () => {
     return (
         <div className='container-fluid overflow-hidden my-3'>

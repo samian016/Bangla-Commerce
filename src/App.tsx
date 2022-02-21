@@ -17,7 +17,7 @@ import Header from './Components/Shared/Header/Header';
 import Footer from './Components/Shared/Footer/Footer';
 function App() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,7 +35,7 @@ function App() {
         <Route path="shop" element={<Shop />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 
