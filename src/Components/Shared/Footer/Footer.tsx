@@ -44,39 +44,39 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <a href="http://"><h6 className='font-h6 text-muted'>Company</h6></a>
-                                <a href="http://"><h6 className='font-h6'>About Us</h6></a>
-                                <a href="http://"><h6 className='font-h6 mt-4'>Delivery Information</h6></a>
-                                <a href="http://"><h6 className='font-h6 mt-3'>Privacy Policy</h6></a>
-                                <a href="http://"><h6 className='font-h6 mt-3'>Contact Us</h6></a>
-                                <a href="http://"><h6 className='font-h6 mt-3'> Support Center</h6></a>
-                                <a href="http://"><h6 className='font-h6 mt-3'>Careers</h6></a>
+                                <a href="#"><h6 className='font-h6 text-muted'>Company</h6></a>
+                                <a href="#"><h6 className='font-h6'>About Us</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-4'>Delivery Information</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-3'>Privacy Policy</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-3'>Contact Us</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-3'> Support Center</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-3'>Careers</h6></a>
 
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
-                                <a href="http://"><h6 className='font-h6 mt-4'>Sign In</h6></a>
-                                <a href="http://"><h6 className='font-h6'>View Cart</h6></a>
-                                <a href="http://"><h6 className='font-h6'>My Wishlist</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Track My Order</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Help Ticket</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Shipping Details</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Compare products</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-4'>Sign In</h6></a>
+                                <a href="#"><h6 className='font-h6'>View Cart</h6></a>
+                                <a href="#"><h6 className='font-h6'>My Wishlist</h6></a>
+                                <a href="#"><h6 className='font-h6'>Track My Order</h6></a>
+                                <a href="#"><h6 className='font-h6'>Help Ticket</h6></a>
+                                <a href="#"><h6 className='font-h6'>Shipping Details</h6></a>
+                                <a href="#"><h6 className='font-h6'>Compare products</h6></a>
 
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Corporate</h1>
-                                <a href="http://"><h6 className='font-h6 mt-4'>Become a Vendor</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Affiliate Program</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Farm Business</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Farm Careers</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Our Suppliers</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Accessibility</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Promotions</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-4'>Become a Vendor</h6></a>
+                                <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
+                                <a href="#"><h6 className='font-h6'>Farm Business</h6></a>
+                                <a href="#"><h6 className='font-h6'>Farm Careers</h6></a>
+                                <a href="#"><h6 className='font-h6'>Our Suppliers</h6></a>
+                                <a href="#"><h6 className='font-h6'>Accessibility</h6></a>
+                                <a href="#"><h6 className='font-h6'>Promotions</h6></a>
 
 
                             </div>
@@ -84,13 +84,13 @@ const Footer = () => {
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Popular</h1>
-                                <a href="http://"><h6 className='font-h6 mt-4'>Milk & Flavoured Milk</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Butter and Margarine</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Eggs Substitutes</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Marmalades</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Sour Cream and Dips</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Tea & Kombucha</h6></a>
-                                <a href="http://"><h6 className='font-h6'>Cheese</h6></a>
+                                <a href="#"><h6 className='font-h6 mt-4'>Milk & Flavoured Milk</h6></a>
+                                <a href="#"><h6 className='font-h6'>Butter and Margarine</h6></a>
+                                <a href="#"><h6 className='font-h6'>Eggs Substitutes</h6></a>
+                                <a href="#"><h6 className='font-h6'>Marmalades</h6></a>
+                                <a href="#"><h6 className='font-h6'>Sour Cream and Dips</h6></a>
+                                <a href="#"><h6 className='font-h6'>Tea & Kombucha</h6></a>
+                                <a href="#"><h6 className='font-h6'>Cheese</h6></a>
 
                             </div>
                         </div>
