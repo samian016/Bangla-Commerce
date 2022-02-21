@@ -12,17 +12,10 @@ const Footer = () => {
             <div className='mx-5'>
                 <div className="my-3">
                     <div className="row g-2">
-<<<<<<< HEAD
-                        <div className="col-lg-2 col-md-3">
-                            <div className="p- ">
-                                <div className="logo">
-                                    <img className='img-fluid' src={logo1} alt="" />
-=======
                         <div className="col-lg-2">
                             <div className="p-3">
                                 <div className="logo my-3">
                                     <img className='img-fluid' src={logo1} alt="Footer Logo" />
->>>>>>> baa06bd670286cc6990af8f66a747ab77bb69d42
                                 </div>
                                 {/* <div>
                                     <p className='fw-bold'>Awesome grocery store website template</p>
@@ -46,15 +39,6 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-<<<<<<< HEAD
-                                <a href="#"><h6 className='font-h6 text-muted'>Company</h6></a>
-                                <a href="#"><h6 className='font-h6'>About Us</h6></a>
-                                <a href="#"><h6 className='font-h6 mt-4'>Delivery Information</h6></a>
-                                <a href="#"><h6 className='font-h6 mt-3'>Privacy Policy</h6></a>
-                                <a href="#"><h6 className='font-h6 mt-3'>Contact Us</h6></a>
-                                <a href="#"><h6 className='font-h6 mt-3'> Support Center</h6></a>
-                                <a href="#"><h6 className='font-h6 mt-3'>Careers</h6></a>
-=======
                                 <h1 className='font-h6'>Company</h1>
                                 <h6 className='font-h6'>About Us</h6>
                                 <h6 className='font-h6'>Delivery Information</h6>
@@ -74,7 +58,6 @@ const Footer = () => {
                                 <h6 className='font-h6'>Help Ticket</h6>
                                 <h6 className='font-h6'>Shipping Details</h6>
                                 <h6 className='font-h6'>Compare products</h6>
->>>>>>> baa06bd670286cc6990af8f66a747ab77bb69d42
 
                             </div>
                         </div>
@@ -108,15 +91,6 @@ const Footer = () => {
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Popular</h1>
-<<<<<<< HEAD
-                                <a href="#"><h6 className='font-h6 mt-4'>Milk & Flavoured Milk</h6></a>
-                                <a href="#"><h6 className='font-h6'>Butter and Margarine</h6></a>
-                                <a href="#"><h6 className='font-h6'>Eggs Substitutes</h6></a>
-                                <a href="#"><h6 className='font-h6'>Marmalades</h6></a>
-                                <a href="#"><h6 className='font-h6'>Sour Cream and Dips</h6></a>
-                                <a href="#"><h6 className='font-h6'>Tea & Kombucha</h6></a>
-                                <a href="#"><h6 className='font-h6'>Cheese</h6></a>
-=======
                                 <h6 className='font-h6'>Milk & Flavoured Milk</h6>
                                 <h6 className='font-h6'>Butter and Margarine</h6>
                                 <h6 className='font-h6'>Eggs Substitutes</h6>
@@ -124,7 +98,6 @@ const Footer = () => {
                                 <h6 className='font-h6'>Sour Cream and Dips</h6>
                                 <h6 className='font-h6'>Tea & Kombucha</h6>
                                 <h6 className='font-h6'>Cheese</h6>
->>>>>>> baa06bd670286cc6990af8f66a747ab77bb69d42
 
                             </div>
                         </div>
@@ -141,10 +114,6 @@ const Footer = () => {
                                     </a>
                                 </div>
                                 <div>
-<<<<<<< HEAD
-                                    <h5 className=''>Secured Payment Gateways</h5>
-=======
->>>>>>> baa06bd670286cc6990af8f66a747ab77bb69d42
                                     <a href="">
                                         <img src={logo4} alt="" className="img-fluid my-3" />
                                     </a>
