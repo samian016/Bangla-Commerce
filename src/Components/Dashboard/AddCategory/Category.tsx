@@ -19,20 +19,20 @@ const Category = () => {
 
     useEffect(() => {
         console.log(categories);
-        fetch("http://localhost:5000/categories")
-            .then((result: Response):Promise<category[]>=> result.json())
-            .then((data:category[]):void => {
+        fetch("https://sleepy-beyond-70687.herokuapp.com/categories")
+            .then((result: Response): Promise<category[]> => result.json())
+            .then((data: category[]): void => {
                 setCategories(data);
-        })
+            })
     }, [])
-  
+
     // console.log(categories);
 
 
     const submit = () => {
         const category: React.SetStateAction<string> = categoryInput;
-        
-        fetch(`http://localhost:5000/category/${category}`, {
+
+        fetch(`https://sleepy-beyond-70687.herokuapp.com/category/${category}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -65,7 +65,7 @@ const Category = () => {
                     </h2>
                     <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         {
-                            categories.map((Category: category): React.ReactFragment => <div key={Category._id} className="accordion-body">{ Category.categoryName }</div>)
+                            categories.map((Category: category): React.ReactFragment => <div key={Category._id} className="accordion-body">{Category.categoryName}</div>)
                         }
                     </div>
                 </div>
