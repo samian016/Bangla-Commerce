@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+type category = {
+    _id: string,
+    categoryName: string,
+}
 const Category = () => {
+
+
+
+    const [categories, setCategories] = useState<category[]>([]);
     const [categoryInput, setCategoryInput] = useState<React.SetStateAction<string>>('');
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
@@ -10,6 +17,16 @@ const Category = () => {
     }
 
 
+    useEffect(() => {
+        console.log(categories);
+        fetch("http://localhost:5000/categories")
+            .then((result: Response):Promise<category[]>=> result.json())
+            .then((data:category[]):void => {
+                setCategories(data);
+        })
+    }, [])
+  
+    // console.log(categories);
 
 
     const submit = () => {
@@ -47,7 +64,9 @@ const Category = () => {
                         </button>
                     </h2>
                     <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div className="accordion-body">Category Name ONE</div>
+                        {
+                            categories.map((Category: category): React.ReactFragment => <div key={Category._id} className="accordion-body">{ Category.categoryName }</div>)
+                        }
                     </div>
                 </div>
             </div>
