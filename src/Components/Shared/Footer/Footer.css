@@ -25,3 +25,14 @@ p {
     color: #253D4E !important;
 };
 
+hr {
+     background-color: #3BB77E;
+     color: #3BB77E;
+}
+
+div.hr {
+    color: #3BB77E ;
+  };
+
+
+ 

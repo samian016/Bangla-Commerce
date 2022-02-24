@@ -3,13 +3,14 @@ import logo1 from './../../../Image/logo.png';
 import logo2 from './images/app-store.jpg';
 import logo3 from './images/google-play.jpg';
 import logo4 from './images/payment-method.png';
-import "./Footer.css";
+import './Footer.css';
+
 
 const Footer = () => {
     return (
-        <div className='container-fluid mt-2'>
-            <div className=''>
-                <div className="my-2">
+        <div className='container-fluid overflow-hidden my-3'>
+            <div className='mx-5'>
+                <div className="my-3">
                     <div className="row g-2">
                         <div className="col-lg-2">
                             <div className="p-3">
@@ -36,7 +37,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h6'>Company</h1>
                                 <h6 className='font-h6'>About Us</h6>
@@ -60,19 +61,34 @@ const Footer = () => {
 
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Corporate</h1>
-                                <h6 className='font-h6'>Become a Vendor</h6>
-                                <h6 className='font-h6'>Affiliate Program</h6>
-                                <h6 className='font-h6'>Farm Business</h6>
-                                <h6 className='font-h6'>Farm Careers</h6>
-                                <h6 className='font-h6'>Our Suppliers</h6>
-                                <h6 className='font-h6'>Accessibility</h6>
-                                <h6 className='font-h6'>Promotions</h6>
+                                <h1 className='font-h1'>Account</h1>
+                                <a href="#"><h6 className='font-h6 mt-4'>Sign In</h6></a>
+                                <a href="#"><h6 className='font-h6'>View Cart</h6></a>
+                                <a href="#"><h6 className='font-h6'>My Wishlist</h6></a>
+                                <a href="#"><h6 className='font-h6'>Track My Order</h6></a>
+                                <a href="#"><h6 className='font-h6'>Help Ticket</h6></a>
+                                <a href="#"><h6 className='font-h6'>Shipping Details</h6></a>
+                                <a href="#"><h6 className='font-h6'>Compare products</h6></a>
+
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
+                            <div className="p-3 ">
+                                <h1 className='font-h1'>Corporate</h1>
+                                <a href="#"><h6 className='font-h6 mt-4'>Become a Vendor</h6></a>
+                                <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
+                                <a href="#"><h6 className='font-h6'>Farm Business</h6></a>
+                                <a href="#"><h6 className='font-h6'>Farm Careers</h6></a>
+                                <a href="#"><h6 className='font-h6'>Our Suppliers</h6></a>
+                                <a href="#"><h6 className='font-h6'>Accessibility</h6></a>
+                                <a href="#"><h6 className='font-h6'>Promotions</h6></a>
+
+
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Popular</h1>
                                 <h6 className='font-h6'>Milk & Flavoured Milk</h6>
@@ -85,26 +101,63 @@ const Footer = () => {
 
                             </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
-                                <div>
+                                <div className='my-4'>
                                     <a href="">
-                                        <img src={logo2} alt="" className="img-fluid" />
+                                        <img src={logo2} alt="" className="w-50 p-1" />
                                     </a>
                                     <a href="">
-                                        <img src={logo3} alt="" className="img-fluid" />
+                                        <img src={logo3} alt="" className="w-50 p-1" />
                                     </a>
                                 </div>
                                 <div>
                                     <a href="">
-                                        <img src={logo4} alt="" className="img-fluid" />
+                                        <img src={logo4} alt="" className="img-fluid my-3" />
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    {/* 2nd footer */}
+
+
+                    <div className="hr"><hr /></div>
+
+                    <div className="mt-2">
+                        <div className="row g-2">
+                            <div className="col-lg-3 col-md-3">
+                                <div className="p-3">
+                                    <p className='text-secondary'>© 2021,<span className='text-success fw-bold'>Bangla</span>-Ecommerce</p>
+                                    <p className='text-secondary'>All rights reserved</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-3">
+                                <div className="p-3 ">
+                                    <h3 className='fw-bold text-success'>1900 - 6666</h3>
+                                    <p className='text-secondary'>Working 8:00 - 22:00</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-3">
+                                <div className="p-3 ">
+                                    <h3 className='fw-bold text-success'>1900 - 8888</h3>
+                                    <p className='text-secondary'>24/7 Support Center</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-3">
+                                <div className="p-3 ">
+                                    <h6>Follow Us</h6>
+                                    <p className='text-secondary'>Up to 15% discount on your first subscribe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
 
