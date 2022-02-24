@@ -16,7 +16,7 @@ const Address = () => {
         console.log(JSON.stringify(userMail), '1');
 
         if (user) {
-            fetch("http://localhost:5000/user", {
+            fetch("https://sleepy-beyond-70687.herokuapp.com/user", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
