@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, UserCredential, User } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, UserCredential, User, updatePassword  } from "firebase/auth";
 import initializationAuth from '../firebase.initialize';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,8 @@ type firebase = {
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
+    updateUserName: (name: string) => void;
+    updatingPass: (pass: string) => void;
 }
 
 initializationAuth();
@@ -58,6 +60,13 @@ const useFirebase = (): firebase => {
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
         }).then(() => {
+        }).catch((error) => {
+            setMessage(error.message)
+        });
+    }
+    const updateUserName = (name: string) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,}).then(() => {
         }).catch((error) => {
             setMessage(error.message)
         });
@@ -147,7 +156,16 @@ const useFirebase = (): firebase => {
 
         });
     }
+    const updatingPass = (pass: string): void => {
+        const user:User = auth.currentUser;
+        const newPassword: string = pass;
+        updatePassword(user, newPassword).then(() => {
+            // Update successful.
+        }).catch((error) => {
+            setMessage(error.message)
 
+        });
+    }
 
     useEffect(():any => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -193,7 +211,9 @@ const useFirebase = (): firebase => {
         createUsingEmail,
         signUsingEmail,
         resetPassword,
-        isLogged
+        isLogged,
+        updateUserName,
+        updatingPass
     }
 };
 
