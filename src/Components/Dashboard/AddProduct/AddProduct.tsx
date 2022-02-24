@@ -36,6 +36,7 @@ const AddProduct = () => {
                     </div>
                 </div>
             </div>
+            
             <Link to='/dashboard/product-list'>
                 <div className='text-center px-4 d-inline-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
                     Add Product</div>

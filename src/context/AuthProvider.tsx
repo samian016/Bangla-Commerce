@@ -15,6 +15,8 @@ type firebase = {
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
+    updateUserName: (name: string) => void;
+    updatingPass: (pass: string) => void;
 }
 
 export const AuthContext = createContext({} as firebase);
