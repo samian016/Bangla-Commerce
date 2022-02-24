@@ -17,7 +17,7 @@ const AccountDetails = () => {
         console.log(JSON.stringify(userMail), '1');
 
         if (user) {
-            fetch("http://localhost:5000/user", {
+            fetch("https://sleepy-beyond-70687.herokuapp.com/user", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -56,7 +56,7 @@ const AccountDetails = () => {
             address: locationU,
             contact: contactU,
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/user', {
             method: "PATCH",
             headers: {
                 "content-type":"application/json",
