@@ -11,6 +11,7 @@ const ProductApproval = () => {
                             <th scope="col">#No</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Product Price</th>
+                            <th scope="col">Product Check</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -19,6 +20,7 @@ const ProductApproval = () => {
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
+                            <td> <input type="checkbox" className="form-check-input" id="exampleCheck1" /></td>
                             <td>
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-danger">Delete</button>

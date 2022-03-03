@@ -26,8 +26,8 @@ const Header = () => {
                     </div>
                     <div className='d-flex justify-content-center'>
                         <div className='px-2'>Need help? <span className='primaryColor'>Call Us:+ 1800 900</span></div>
-                        <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
-                        <div className='px-2'>USD <BsChevronDown /></div>
+                        {/* <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
+                        <div className='px-2'>USD <BsChevronDown /></div> */}
                     </div>
                 </nav>
 
@@ -106,12 +106,14 @@ const Header = () => {
                                         </div>
                                         <span> <Link to='/dashboard' className='dropDownText'>Setting</Link> </span>
                                     </div>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
-                                        <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsFillPersonXFill />
+                                    <Link to='/' onClick={logOut} className='dropDownText'>
+                                        <div className="dropDownList rounded px-3 py-2 d-flex">
+                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                                <BsFillPersonXFill />
+                                            </div>
+                                            <span> Sign out </span>
                                         </div>
-                                        <span> <Link to='#' onClick={logOut} className='dropDownText'>Sign out</Link> </span>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -135,8 +137,8 @@ const Header = () => {
                             <div className='px-4'><Link to="/" className='active'>Home</Link></div>
                             <div className='px-4'><Link to="/about">About</Link></div>
                             <div className='px-4'><Link to="/shop">Shop</Link></div>
-                            <div className='px-4'><Link to="/seller">Brands</Link></div>
-                            <div className='px-4'><Link to="/blog">Blog</Link></div>
+                            <div className='px-4'><Link to="/seller">Seller</Link></div>
+                            {/* <div className='px-4'><Link to="/blog">Blog</Link></div> */}
                             <div className='px-4'><Link to="/contact">Contact</Link></div>
                             <div className='px-4'><Link to="/faq">FAQ</Link></div>
                         </div>
