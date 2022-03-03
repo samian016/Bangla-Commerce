@@ -10,6 +10,9 @@
 .primaryBgColor {
   background-color: #3bb77e;
 }
+.primaryBgColorBtn {
+  background-color: #3bb77e;
+}
 .primaryFont {
   font-family: "Quicksand", sans-serif;
 }
@@ -28,4 +31,9 @@ a:hover {
 }
 .cursorPointer{
   cursor: pointer;
+}
+.primaryBgColorBtn:hover{
+  background-color: #3bb77d00;
+  border: solid 1px #3bb77d00;
+  color: #3bb77e!important;
 }

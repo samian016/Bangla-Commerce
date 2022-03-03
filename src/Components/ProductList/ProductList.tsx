@@ -18,7 +18,7 @@ const ProductList = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-    console.log(fullDate);
+    // console.log(fullDate);
     return (
         <div className="container-fluid product-list-container">
             <div className="row">
