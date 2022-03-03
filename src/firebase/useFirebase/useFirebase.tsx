@@ -172,7 +172,16 @@ const useFirebase = (): firebase => {
             if (user) {
                 setUser(user);
                 setIsLogged(true);
-                
+                setIsLoading(true);
+                const email: string | undefined | null = user?.email;
+                fetch(`http://localhost:5000/users/${email}`)
+                    .then((res: any) => res.json())
+                    .then((data) => {
+                        setAdmin(data.admin);
+                        console.log(data.admin,"ok na?");
+                    }).finally(() => {
+                        setIsLoading(false);
+                    })
 
             } else {
                 setUser(null);
@@ -185,7 +194,7 @@ const useFirebase = (): firebase => {
     }, [isLogged,auth])
 
     useEffect(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
         // const email: string | undefined | null = user?.email;
         // fetch(`https://fierce-shelf-26334.herokuapp.com/users/${email}`)
         //     .then((res: any) => res.json())

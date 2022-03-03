@@ -29,7 +29,7 @@ import TrackOrder from "./Components/Dashboard/TrackOrder/TrackOrder";
 import AuthProvider from "./context/AuthProvider";
 import NotFound from "./Pages/NotFound/NotFound";
 import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
-import EditCategory from "./Components/Dashboard/AddCategory/EditCategory";
+import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 function App() {
   return (
     <>
@@ -54,8 +54,8 @@ function App() {
             <Route path="address" element={<Address />} />
             <Route path="category-list" element={<CategoryList />} />
             <Route path="add-category" element={<AddCategroy />} />
-            <Route path="edit-category" element={<EditCategory />} />
             <Route path="order" element={<Order />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="product-approval" element={<ProductApproval />} />
             <Route path="product-list" element={<ProductList />} />
             <Route path="track-order" element={<TrackOrder />} />
