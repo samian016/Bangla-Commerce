@@ -61,7 +61,7 @@ const Footer = () => {
 
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-3">
+                        {/* <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
                                 <a href="#"><h6 className='font-h6 mt-4'>Sign In</h6></a>
@@ -73,7 +73,7 @@ const Footer = () => {
                                 <a href="#"><h6 className='font-h6'>Compare products</h6></a>
 
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Corporate</h1>

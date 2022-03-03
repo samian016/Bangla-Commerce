@@ -19,7 +19,6 @@ const Header = () => {
                         <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
                         <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
                         <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
-                        {/* <Link to='/orderTracking'><div className='px-2'>Order Tracking</div></Link> */}
                     </div>
                     <div>
                         <span>Supper Value Deals - Save more with coupons</span>
