@@ -1,0 +1,92 @@
+.vendor-search {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+}
+.vendor-search input {
+  width: 100%;
+  border: none;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.vendor-search button {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  font-size: 17px;
+  background: transparent;
+  color: #242424;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.vendor-search button:hover {
+  background-color: #3bb77e;
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+.vendor-info:hover {
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+  border: 1px solid #bce3c9;
+  transition: 0.5s;
+}
+
+.vendor-info:hover .vendor-name {
+  color: #3bb77e;
+}
+
+.vendor-button {
+  border: none;
+  padding: 5px 15px;
+  background-color: #3bb77e;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.vendor-address-location p {
+  color: #b6b6b6;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+}
+.vendor-image img {
+  width: 144px;
+  height: 144px;
+}
+.vendor-button:hover {
+  background-color: #fdc040;
+  transition: 0.5s;
+}
+.vendor-total-products p {
+  background-color: #def9ec;
+  color: #3bb77e;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: 700;
+  border-radius: 6px;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.vendor-details p,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.vendor-details h4 {
+  padding: 5px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.vendor-details .since {
+  font-size: 14px;
+  font-weight: 400;
+}
