@@ -9,101 +9,17 @@ import { Link } from 'react-router-dom';
 
 const SliderCat = () => {
     return (
-        <div className='d-flex mx-2 my-4'>
-            <div className="w-25 rounded shadow mx-4 p-4">
+        <div className='SliderCat d-flex mx-2 my-4'>
+            <div className="SliderCategory w-25 rounded shadow mx-4 p-4">
                 <h4 className='fw-bolder pb-2 border-bottom'>Category</h4>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
-                <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                    <div>
-                        <img width="35px" src={Categroy1} alt="Cat" />
-                    </div>
-                    <div>
-                        <span>
-                            Clothing
-                        </span>
-                    </div>
-                    <div>
-                        <span className='rounded-pill p-1 categoryCount'>
-                            0
-                        </span>
-                    </div>
-                </div>
+                <Category />
+                <Category />
+                <Category />
+                <Category />
+                <Category />
+                <Category />
             </div>
-            <div className='w-75 rounded'>
+            <div className='Slider w-75 rounded'>
                 <Swiper
                     spaceBetween={30}
                     pagination={{
@@ -141,3 +57,24 @@ const SliderCat = () => {
 };
 
 export default SliderCat;
+
+
+const Category = () => {
+    return (
+        <div className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
+            <div>
+                <img width="35px" src={Categroy1} alt="Cat" />
+            </div>
+            <div>
+                <span>
+                    Clothing
+                </span>
+            </div>
+            <div>
+                <span className='rounded-pill p-1 categoryCount'>
+                    0
+                </span>
+            </div>
+        </div>
+    )
+}

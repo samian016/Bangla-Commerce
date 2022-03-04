@@ -18,7 +18,7 @@ const ProductList = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-    console.log(fullDate);
+    // console.log(fullDate);
     return (
         <div className="container-fluid product-list-container">
             <div className="row">
@@ -33,8 +33,8 @@ const ProductList = () => {
                             </div>
                             <div className="product-list-text col-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
-                                <p>{product.rating}</p>
+                                <p className='primaryColor'>{product.price}</p>
+                                {/* <p>{product.rating}</p> */}
                             </div>
                         </div>)
                     }
@@ -50,8 +50,8 @@ const ProductList = () => {
                             </div>
                             <div className="product-list-text col-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
-                                <p>{product.rating}</p>
+                                <p className='primaryColor'>{product.price}</p>
+                                {/* <p>{product.rating}</p> */}
                             </div>
                         </div>)
                     }
@@ -67,8 +67,8 @@ const ProductList = () => {
                             </div>
                             <div className="product-list-text col-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
-                                <p>{product.rating}</p>
+                                <p className='primaryColor'>{product.price}</p>
+                                {/* <p>{product.rating}</p> */}
                             </div>
                         </div>)
                     }
@@ -84,8 +84,8 @@ const ProductList = () => {
                             </div>
                             <div className="product-list-text col-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
-                                <p>{product.rating}</p>
+                                <p className='primaryColor'>{product.price}</p>
+                                {/* <p>{product.rating}</p> */}
                             </div>
                         </div>)
                     }

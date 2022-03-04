@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
-import { BsTextParagraph } from "react-icons/bs";
+import {  } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
+import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
   const {
     logOut
@@ -45,10 +45,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Seller List</div>
           </Link>
-          <Link to='/dashboard/track-order'>
+          {/* <Link to='/dashboard/track-order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Track Your Order</div>
-          </Link>
+          </Link> */}
           <Link to='/dashboard/address'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               My Address</div>
@@ -56,6 +56,10 @@ const Dashboard = () => {
           <Link to='/dashboard/account-details'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Account Details</div>
+          </Link>
+          <Link to='/dashboard/makeAdmin'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Make Admin</div>
           </Link>
           <Link onClick={logOut} to='/'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
@@ -71,4 +75,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;
