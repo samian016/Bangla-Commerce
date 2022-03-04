@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 import './Product.css'
 const Products: React.FC = () => {
     interface IProducts {
@@ -37,8 +38,9 @@ const Products: React.FC = () => {
                         products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
                             <div className='product' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                 <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                    <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
+                                    <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
                                         <img style={{ width: "100%" }} src={singleProduct.image} alt="" />
+                                        <Link to={`/singleProduct/${singleProduct._id}`} className='view-details-button'>View Details</Link>
                                     </div>
                                 </div>
                                 <div style={{ padding: "0px 20px 20px 20px" }}>
