@@ -47,7 +47,6 @@ const ProductList = () => {
                                     <p className='primaryColor fw-bold me-3'>$ {product.discountPrice}</p>
                                     <p className='primaryColor fw-bold'>$ <span className='text-decoration-line-through'>{product.regularPrice}</span></p>
                                 </div>
-                                {/* <p>{product.rating}</p> */}
                             </div>
                         </div>)
                     }
