@@ -6,9 +6,10 @@ describe('Make Admin testing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<Makeadmin />, div);
     })
+
+
+
     test("checking first", () => {
-
-
         render(<Makeadmin />);
         const page = screen.getByText("Make New Admin");
         expect(page).toBeInTheDocument();
