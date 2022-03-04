@@ -1,11 +1,11 @@
 import React from 'react';
 import Rating from 'react-rating';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
 const Shop = () => {
     return (
-        <div>
+        <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
                 <div
                     style={{}}
@@ -496,7 +496,7 @@ const Shop = () => {
 
 {/* Extra Swiper here  */}
 
-                            <Swiper
+                            {/* <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
                                 pagination={{
@@ -588,7 +588,7 @@ const Shop = () => {
                                     <h6>Organic Kiwi</h6>
                                     <p>44 items</p>
                                 </SwiperSlide>
-                            </Swiper>
+                            </Swiper> */}
 
 
 
