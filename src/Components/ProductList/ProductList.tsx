@@ -38,7 +38,7 @@ const ProductList = () => {
                                 <h6 style={{ fontSize: "8px" }}>
                                     <Rating
                                         readonly
-                                        initialRating={3}
+                                        initialRating={product.rating}
                                         fullSymbol="fa fa-star fa-2x filled"
                                         emptySymbol="fa fa-star-o fa-2x notFilled">
                                     </Rating>
@@ -66,7 +66,7 @@ const ProductList = () => {
                                 <h6 style={{ fontSize: "8px" }}>
                                     <Rating
                                         readonly
-                                        initialRating={3}
+                                        initialRating={product.rating}
                                         fullSymbol="fa fa-star fa-2x filled"
                                         emptySymbol="fa fa-star-o fa-2x notFilled">
                                     </Rating>
@@ -93,7 +93,7 @@ const ProductList = () => {
                                 <h6 style={{ fontSize: "8px" }}>
                                     <Rating
                                         readonly
-                                        initialRating={3}
+                                        initialRating={product.rating}
                                         fullSymbol="fa fa-star fa-2x filled"
                                         emptySymbol="fa fa-star-o fa-2x notFilled">
                                     </Rating>
@@ -120,7 +120,7 @@ const ProductList = () => {
                                 <h6 style={{ fontSize: "8px" }}>
                                     <Rating
                                         readonly
-                                        initialRating={3}
+                                        initialRating={product.rating}
                                         fullSymbol="fa fa-star fa-2x filled"
                                         emptySymbol="fa fa-star-o fa-2x notFilled">
                                     </Rating>
