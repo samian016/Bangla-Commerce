@@ -23,7 +23,7 @@ const ProductList: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
