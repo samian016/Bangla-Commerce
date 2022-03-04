@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
-<<<<<<< HEAD
-// import { Swiper, SwiperSlide } from 'swiper/react';
-=======
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
->>>>>>> 64782455d6cd16a40397babc34855941bc4c15d1
 import './Shop.css'
 
 const Shop: React.FC = () => {
