@@ -48,7 +48,20 @@ const Footer = () => {
                                 <h6 className='font-h6'>Careers</h6>
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-3">
+                        <div className="col-lg-2">
+                            <div className="p-3 ">
+                                <h1 className='font-h1'>Account</h1>
+                                <h6 className='font-h6'>Sign In</h6>
+                                <h6 className='font-h6'>View Cart</h6>
+                                <h6 className='font-h6'>My Wishlist</h6>
+                                <h6 className='font-h6'>Track My Order</h6>
+                                <h6 className='font-h6'>Help Ticket</h6>
+                                <h6 className='font-h6'>Shipping Details</h6>
+                                <h6 className='font-h6'>Compare products</h6>
+
+                            </div>
+                        </div>
+                        {/* <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
                                 <a href="#"><h6 className='font-h6 mt-4'>Sign In</h6></a>
@@ -60,7 +73,7 @@ const Footer = () => {
                                 <a href="#"><h6 className='font-h6'>Compare products</h6></a>
 
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Corporate</h1>

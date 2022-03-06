@@ -30,6 +30,7 @@ import AuthProvider from "./context/AuthProvider";
 import NotFound from "./Pages/NotFound/NotFound";
 import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
+import SingleProduct from "./Components/SingleProduct/SingleProduct";
 function App() {
   return (
     <>
@@ -44,13 +45,14 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
+          <Route path="singleProduct/:productID" element={<SingleProduct />} />
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="account-details" element={<AccountDetails />} />
             <Route path="add-product" element={<AddProduct />} />
-            <Route path="edit-product" element={<EditProduct />} />
+            <Route path="edit-product/:productID" element={<EditProduct />} />
             <Route path="address" element={<Address />} />
             <Route path="category-list" element={<CategoryList />} />
             <Route path="add-category" element={<AddCategroy />} />
