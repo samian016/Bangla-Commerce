@@ -1,46 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+// import './seller.css';
+
+export interface sellerD {
+    _id: string;
+    name: string;
+    sellerShop: string;
+    number: number;
+    img: string;
+    address: string;
+}
+
 
 const SellerList = () => {
+
+    let [allseller, setAllseller] = useState<sellerD[]>([])
+    let [sellers, setSellers] = useState<sellerD[]>([])
+
+    useEffect(() => {
+        fetch('http://localhost:8888/seller')
+            .then(res => res.json())
+            .then(data => {
+                setSellers(data);
+                setAllseller(data)
+            })
+    }, [])
+
+    let handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
+        let search_value = e.currentTarget.value;
+        let result = sellers.filter(seller => seller.name.includes(search_value) || (seller.sellerShop).includes(search_value));
+        if (search_value) {
+            setSellers(result)
+        }
+        else {
+            setSellers(allseller)
+        }
+    }
+
     return (
-        <div>
-            <h1 className='primaryFont fw-bolder primaryFontColor mb-3'>All Seller</h1>
-            <div className="row">
-                <div className="col-md-4 my-2">
-                    <Seller />
+        
+        <>
+        <div className="card mb-3" style={{ maxWidth: '540px' }}>
+            <div className="row g-0">
+                <div className="col-md-4">
+                    <img src={sellers[0].img} className="img-fluid rounded-start" alt="..." />
                 </div>
-                <div className="col-md-4 my-2">
-                    <Seller />
-                </div>
-                <div className="col-md-4 my-2">
-                    <Seller />
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title"> Name: {sellers[0].name}</h5>
+                        <h5 className="card-title"> Shop Name: {sellers[0].sellerShop}</h5>
+                        <p className="card-text">Address: {sellers[0].address} </p>
+                        <p className="card-text"><small className="text-muted">Contact Number : {sellers[0].number}</small></p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        </>
     );
 };
 
 export default SellerList;
-
-
-const Seller = () => {
-    return (
-        <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-            <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                    <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-7-2.jpg" alt="" />
-                </div>
-            </div>
-            <div style={{ padding: "0px 20px 20px 20px" }}>
-                <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Seller Name</h6>
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                    <div>
-                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Delete</button>
-                    </div>
-                    <div>
-                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
