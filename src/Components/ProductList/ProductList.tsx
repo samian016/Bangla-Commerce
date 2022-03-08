@@ -28,12 +28,12 @@ const ProductList = () => {
                     </div>
                     {
                         topSelling.slice(0, 3).map(product => <div className="product-list row d-flex mb-4">
-                            <div className="product-list-image col-4">
+                            <div className="product-list-image col-4 col-sm-4">
                                 <img className="img-fluid" src={product.image} alt="" />
                             </div>
-                            <div className="product-list-text col-8">
+                            <div className="product-list-text col-8 col-sm-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
+                                <p className="price">${product.price}</p>
                                 <p>{product.rating}</p>
                             </div>
                         </div>)
@@ -45,12 +45,12 @@ const ProductList = () => {
                     </div>
                     {
                         tranding.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
-                            <div className="product-list-image col-4">
+                            <div className="product-list-image col-4 col-sm-4">
                                 <img className="img-fluid" src={product.image} alt="" />
                             </div>
-                            <div className="product-list-text col-8">
+                            <div className="product-list-text col-8 col-sm-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
+                                <p className="price">${product.price}</p>
                                 <p>{product.rating}</p>
                             </div>
                         </div>)
@@ -62,12 +62,12 @@ const ProductList = () => {
                     </div>
                     {
                         recent.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
-                            <div className="product-list-image col-4">
+                            <div className="product-list-image col-4 col-sm-4">
                                 <img className="img-fluid" src={product.image} alt="" />
                             </div>
-                            <div className="product-list-text col-8">
+                            <div className="product-list-text col-8 col-sm-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
+                                <p className="price">${product.price}</p>
                                 <p>{product.rating}</p>
                             </div>
                         </div>)
@@ -79,12 +79,12 @@ const ProductList = () => {
                     </div>
                     {
                         topRated.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
-                            <div className="product-list-image col-4">
+                            <div className="product-list-image col-4 col-sm-4">
                                 <img className="img-fluid" src={product.image} alt="" />
                             </div>
-                            <div className="product-list-text col-8">
+                            <div className="product-list-text col-8 col-sm-8">
                                 <h3 className="fs-5">{product.title}</h3>
-                                <p>{product.price}</p>
+                                <p className="price">${product.price}</p>
                                 <p>{product.rating}</p>
                             </div>
                         </div>)

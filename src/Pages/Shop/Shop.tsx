@@ -488,13 +488,13 @@ const Shop = () => {
 
 
 
-                            
 
 
 
 
 
-{/* Extra Swiper here  */}
+
+                            {/* Extra Swiper here  */}
 
                             <Swiper
                                 slidesPerView={1}
@@ -594,13 +594,13 @@ const Shop = () => {
 
 
 
-{/* Side bar is here  */}
+                            {/* Side bar is here  */}
 
 
 
 
                         </div>
-                        <div style={{ }} className="col-lg-2 col-sm-12" >
+                        <div style={{}} className="col-lg-2 col-sm-12" >
 
 
                             <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
@@ -687,13 +687,13 @@ const Shop = () => {
                             </div>
 
 
-                            <div style={{ visibility:"visible",position:"relative",clear:"both", borderRadius:"10px", overflow:"hidden" }}>
+                            <div style={{ visibility: "visible", position: "relative", clear: "both", borderRadius: "10px", overflow: "hidden" }}>
                                 <img style={{ maxWidth: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-11.png" alt="" />
                                 <div className='banner-txt'>
-                                    <span style={{ color:"#253D4E"}}> organic </span>
+                                    <span style={{ color: "#253D4E" }}> organic </span>
                                     <h4>
                                         Save 17% <br />
-                                        on <span style={{color:"#3BB77E"}}>Organic</span> <br />
+                                        on <span style={{ color: "#3BB77E" }}>Organic</span> <br />
                                         Juice
                                     </h4>
                                 </div>
