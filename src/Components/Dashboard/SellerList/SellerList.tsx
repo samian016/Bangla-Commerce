@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Seller.css';
 
-export interface sellerD {
+export interface userD {
     _id: string;
     email: string;
     displyName: string;
@@ -15,32 +15,32 @@ export interface sellerD {
 
 const SellerList = () => {
 
-    let [allseller, setAllseller] = useState<sellerD[]>([]);
-    let [sellers, setSellers] = useState<sellerD[]>([]);
+    let [allUser, setAllUser] = useState<userD[]>([]);
+    let [user, setUser] = useState<userD[]>([]);
 
     useEffect(() => {
         fetch("http://localhost:5000/users")
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
-                    let sellerFil = data.filter((user: sellerD) =>
+                    let userFil = data.filter((user: userD) =>
                         user.AccountType.includes("vendor")
                     );
-                    setSellers(sellerFil);
-                    setAllseller(sellerFil);
+                    setUser(userFil);
+                    setAllUser(userFil);
                 }
             });
     }, []);
 
     let handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
         let search_value = e.currentTarget.value;
-        let result = sellers.filter((seller) =>
-            seller.displyName.includes(search_value)
+        let result = user.filter((user) =>
+            user.displyName.includes(search_value)
         );
         if (search_value) {
-            setSellers(result);
+            setUser(result);
         } else {
-            setSellers(allseller);
+            setUser(allUser);
         }
     };
 
@@ -65,7 +65,7 @@ const SellerList = () => {
                         <div className="container-fluid">
                             <h3 className="navbar-brand border border-success p-2 shadow text-color ">
                                 {" "}
-                                Total Seller : {sellers.length}
+                                Total Vendor's: {user.length}
                             </h3>
                             <form className="d-flex">
                                 <input
@@ -91,19 +91,19 @@ const SellerList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {sellers.map((seller) => (
-                                <tr key={seller._id}>
+                            {user.map((user) => (
+                                <tr key={user._id}>
                                     <th scope="row" className="fw-normal table-success ">
                                         {" "}
                                         <span className="id-color"> #</span>
-                                        {seller._id}
+                                        {user._id}
                                     </th>
-                                    <td>{seller.email}</td>
-                                    <td className="table-warning">{seller.contact}</td>
-                                    <td className="table-warning">{seller.displyName}</td>
+                                    <td>{user.email}</td>
+                                    <td className="table-warning">{user.contact}</td>
+                                    <td className="table-warning">{user.displyName}</td>
                                     {/* <NavLink
                   as={Link}
-                  to={`/seller/${seller._id}`}
+                  to={`/user/${user._id}`}
                   className="text-none mx-auto border-bottom "
                 >
                   <td className="btn-hover fw-bold text-center d-block my-auto ">
@@ -118,7 +118,7 @@ const SellerList = () => {
                 </div>
                 <div className="container my-5 ">
                     <div className="row">
-                        {sellers.map(user => <div key={user._id} className="col-12 col-lg-3 col-md-6 " >
+                        {user.map(user => <div key={user._id} className="col-12 col-lg-3 col-md-6 " >
                             <div className="card border-success mb-3" style={{ maxWidth: '18rem' }}>
                                 <div>
                                     <img src={user.img ? user.img : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled.png"} alt="" className="img-fluid" />
