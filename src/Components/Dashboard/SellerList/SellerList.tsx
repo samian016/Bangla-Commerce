@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import './seller.css';
+import './Seller.css';
 
 export interface sellerD {
     _id: string;
@@ -48,12 +48,12 @@ const SellerList = () => {
 
         <>
 
-            <h1>this is vendor</h1>
+            
 
 
             <div className="text-center">
                 <div className="mx-auto">
-                    <h1> ALL SELLER </h1>
+                <h1 className='text-secondary'>Vendor's</h1>
                 </div>
                 <div
                     className=" mx-auto"
