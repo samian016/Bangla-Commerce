@@ -1,0 +1,20 @@
+.text-color{
+    color: #254654 !important;
+}
+.id-color{
+    color: #3bb77e;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* .border-success{
+    border: #afafaf !important;
+    border-right: #afafaf 1px solid !important;
+} */
+.text-none{
+    color: #254654 !important;
+}
+.container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
