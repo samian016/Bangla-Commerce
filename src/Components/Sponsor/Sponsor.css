@@ -1,0 +1,19 @@
+.bg-color-sp{
+    background-color: #3bb77e;
+}
+.img-fluid-hight{
+    height: 230px !important;
+}
+.bg-gold-color{
+    background-color: #dbd006;
+}
+.bg-silver-color{
+    background-color: #9d9d9d;
+}
+.bg-bronze-color{
+    background-color: #72321c;
+}
+.img-fluid-other{
+    height: 75%;
+    max-width: 50%;
+}

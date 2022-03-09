@@ -2,7 +2,7 @@ import React from 'react'
 
 const Blogs = () => {
   return (
-    <div>Blogs</div>
+    <div>Blog here nobel</div>
   )
 }
 
