@@ -16,7 +16,7 @@ const Address = () => {
         console.log(JSON.stringify(userMail), '1');
 
         if (user) {
-            fetch("https://sleepy-beyond-70687.herokuapp.com/user", {
+            fetch("https://blooming-chamber-05072.herokuapp.com/user", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -37,7 +37,7 @@ const Address = () => {
         <div>
             <div>
                 <h1 className='primaryFont fw-bolder primaryFontColor mb-3'>Your Address</h1>
-                <p className='h4'>{presentUser.address? presentUser.address : "Give your Address"}</p>
+                <p className='h4'>{presentUser.address ? presentUser.address : "Give your Address"}</p>
                 <p className='h4'>{presentUser.contact ? presentUser.contact : "Give your Contact info"}</p>
                 <p><Link to='/dashboard/account-details'>Edit Your Address</Link></p>
             </div>

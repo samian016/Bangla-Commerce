@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
 const Shop: React.FC = () => {
@@ -25,7 +25,7 @@ const Shop: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

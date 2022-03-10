@@ -16,7 +16,7 @@ const ProductList = () => {
     const topRated = products.filter(product => product.rating >= 4);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

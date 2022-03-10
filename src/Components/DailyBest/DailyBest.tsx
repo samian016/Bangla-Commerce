@@ -33,7 +33,7 @@ const DailyBest = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
