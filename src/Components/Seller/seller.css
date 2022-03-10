@@ -1,0 +1,23 @@
+.btn-hover:hover{
+    color: #3bb77e !important ;
+    cursor: pointer;
+}
+.btn-hover{
+    margin-bottom: 3.8px !important;
+  }
+.text-color{
+    color: #254654 !important;
+}
+.id-color{
+    color: #3bb77e;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* .border-success{
+    border: #afafaf !important;
+    border-right: #afafaf 1px solid !important;
+} */
+.text-none{
+    color: #254654 !important;
+}
