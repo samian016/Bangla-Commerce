@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./Category.css";
+import { Link } from 'react-router-dom';
 
 // import required modules
 //import { Pagination } from "swiper";
@@ -113,7 +114,7 @@ const Category = () => {
                                                 <div className="h-100 p-5 bg-light border rounded-3" style={{ backgroundImage: 'url("https://i.ibb.co/XFFndSq/banner-1.png")', backgroundPosition: 'bottom right', backgroundSize: '100% 295px', backgroundRepeat: 'no-repeat', backgroundAttachment: 'scroll', minHeight: '295px' }}>
                                                         <div className='category-banner-text'>
                                                                 <h5>Everyday Fresh &amp; Clean with <br /> Our Products</h5>
-                                                                <button className="btn btn-outline-secondary" type="button">Shop Now &rarr;</button>
+                                                                <Link to="/shop" className="btn btn-outline-secondary" type="button">Shop Now &rarr;</Link>
                                                         </div>
                                                 </div>
                                         </div>
@@ -121,7 +122,7 @@ const Category = () => {
                                                 <div className="h-100 p-5 bg-light border rounded-3" style={{ backgroundImage: 'url("https://i.ibb.co/RCKSwZ7/banner-2.png")', backgroundPosition: 'bottom right', backgroundSize: '100% 295px', backgroundRepeat: 'no-repeat', backgroundAttachment: 'scroll', minHeight: '295px' }}>
                                                         <div className='category-banner-text'>
                                                                 <h5>Make your Breakfast <br /> Healthy and Easy</h5>
-                                                                <button className="btn btn-outline-secondary" type="button">Shop Now &rarr;</button>
+                                                                <Link to="/shop" className="btn btn-outline-secondary" type="button">Shop Now &rarr;</Link>
                                                         </div>
                                                 </div>
                                         </div>
@@ -129,7 +130,7 @@ const Category = () => {
                                                 <div className="featuredCategoryBanner h-100 p-5 bg-light border rounded-3" style={{ backgroundImage: 'url("https://i.ibb.co/42cnGSs/banner-3.png")', backgroundPosition: 'bottom right', backgroundSize: '100% 295px', backgroundRepeat: 'no-repeat', backgroundAttachment: 'scroll', minHeight: '295px' }}>
                                                         <div className='category-banner-text'>
                                                                 <h5>The best Organic <br /> Products Online</h5>
-                                                                <button className="btn btn-outline-secondary" type="button">Shop Now &rarr;</button>
+                                                                <Link to="/shop" className="btn btn-outline-secondary" type="button">Shop Now &rarr;</Link>
                                                         </div>
                                                 </div>
                                         </div>
