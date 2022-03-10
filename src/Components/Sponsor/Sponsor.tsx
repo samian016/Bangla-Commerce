@@ -4,7 +4,7 @@ const Sponsor = () => {
     return (
         <div>
             <div className="container-fluid">
-                <h1 className="text-center "> Sponsor section </h1>
+                <h1 className="text-center text-secondary p-1"> Sponsor's</h1>
                 <h3 className="text-center bg-color-sp text-light ">
                     {" "}
                     Platinum Sponsor{" "}
