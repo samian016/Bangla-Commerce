@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -11,10 +11,23 @@ import { Link } from 'react-router-dom';
 // import required modules
 //import { Pagination } from "swiper";
 
-const Category = () => {
+const Category: React.FC = () => {
+        interface ICategory {
+                _id: string,
+                categoryName: string,
+                img: string
+        }
+        const [category, setCategory] = useState<ICategory[]>([]);
+
+        useEffect(() => {
+                fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
+                        .then(res => res.json())
+                        .then(data => setCategory(data))
+        }, [])
+
         return (
                 <div className='container-fluid category-section'>
-                        <h2>Featured Categories</h2>
+                        <h2 className='ms-5'>Featured Categories</h2>
                         <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
@@ -37,12 +50,13 @@ const Category = () => {
                                 }}
                                 className="mySwiper myCustomSwiperContaienr"
                         >
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
-                                        <h6>Headphone</h6>
-                                        <p>68 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
+                                {category.map(singleCategory => <SwiperSlide className='myCustomSwiper' key={singleCategory._id}>
+                                        <img src={singleCategory.img} alt="" />
+                                        <h6>{singleCategory.categoryName}</h6>
+                                        {/* <p>68 items</p> */}
+                                </SwiperSlide>)}
+
+                                {/* <SwiperSlide className='myCustomSwiper'>
                                         <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
                                         <h6>Cake &amp; Milk</h6>
                                         <p>54 items</p>
@@ -106,7 +120,7 @@ const Category = () => {
                                         <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
                                         <h6>Organic Kiwi</h6>
                                         <p>44 items</p>
-                                </SwiperSlide>
+                                </SwiperSlide> */}
                         </Swiper>
                         <div className="featuredCategories mt-4">
                                 <div className="row align-items-md-stretch">

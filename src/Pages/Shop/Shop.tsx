@@ -30,7 +30,7 @@ const Shop: React.FC = () => {
             .then(data => setProducts(data))
     }, []);
     return (
-        <div>
+        <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
                 <div
                     style={{}}
@@ -154,7 +154,7 @@ const Shop: React.FC = () => {
 
                             {/* Extra Swiper here  */}
 
-                            <Swiper
+                            {/* <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
                                 pagination={{
@@ -246,7 +246,7 @@ const Shop: React.FC = () => {
                                     <h6>Organic Kiwi</h6>
                                     <p>44 items</p>
                                 </SwiperSlide>
-                            </Swiper>
+                            </Swiper> */}
 
 
 
