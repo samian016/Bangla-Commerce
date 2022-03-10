@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, UserCredential, User, updatePassword  } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, UserCredential, User, updatePassword } from "firebase/auth";
 import initializationAuth from '../firebase.initialize';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ type firebase = {
     isLoading: boolean;
     admin: boolean;
     signUsingGoogle: () => void;
-    createUsingEmail: (email: string, password: string, name: string, AccountType:string) => void;
+    createUsingEmail: (email: string, password: string, name: string, AccountType: string) => void;
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
@@ -35,7 +35,7 @@ const useFirebase = (): firebase => {
 
 
 
-    const saveUser = (email: string | null, displayName: string | null, method: string, AccountType:string): void => {
+    const saveUser = (email: string | null, displayName: string | null, method: string, AccountType: string): void => {
         const user = { email, displayName, AccountType };
 
         fetch("https://sleepy-beyond-70687.herokuapp.com/users", {
@@ -66,7 +66,8 @@ const useFirebase = (): firebase => {
     }
     const updateUserName = (name: string) => {
         updateProfile(auth.currentUser, {
-            displayName: name,}).then(() => {
+            displayName: name,
+        }).then(() => {
         }).catch((error) => {
             setMessage(error.message)
         });
@@ -90,9 +91,9 @@ const useFirebase = (): firebase => {
                 setIsLogged(true);
                 setUser(result.user);
                 // console.log(history);   
-                saveUser(result.user.email, result.user.displayName, "PUT","customer");
+                saveUser(result.user.email, result.user.displayName, "PUT", "customer");
                 nevigate("/");
-                
+
             }).catch((error) => {
                 setMessage(error.message)
 
@@ -109,7 +110,7 @@ const useFirebase = (): firebase => {
                 saveUser(email, name, "POST", AccountType);
                 setIsLogged(true);
                 nevigate("/");
-                console.log(result,"jjj");
+                console.log(result, "jjj");
             })
             .catch((error) => {
                 setMessage(error.message);
@@ -157,7 +158,7 @@ const useFirebase = (): firebase => {
         });
     }
     const updatingPass = (pass: string): void => {
-        const user:User = auth.currentUser;
+        const user: User = auth.currentUser;
         const newPassword: string = pass;
         updatePassword(user, newPassword).then(() => {
             // Update successful.
@@ -167,18 +168,18 @@ const useFirebase = (): firebase => {
         });
     }
 
-    useEffect(():any => {
+    useEffect((): any => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
                 setIsLogged(true);
                 setIsLoading(true);
                 const email: string | undefined | null = user?.email;
-                fetch(`http://localhost:5000/users/${email}`)
+                fetch(`https://sleepy-beyond-70687.herokuapp.com/users/${email}`)
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);
-                        console.log(data.admin,"ok na?");
+                        console.log(data.admin, "ok na?");
                     }).finally(() => {
                         setIsLoading(false);
                     })
@@ -191,7 +192,7 @@ const useFirebase = (): firebase => {
 
         });
         return () => unsubscribed;
-    }, [isLogged,auth])
+    }, [isLogged, auth])
 
     useEffect(() => {
         // setIsLoading(true);
