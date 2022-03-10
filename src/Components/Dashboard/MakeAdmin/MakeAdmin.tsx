@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const handelSubmit = (e: React.FormEvent) => {
         console.log("ki li ik");
         const user = { admin };
-        fetch("https://sleepy-beyond-70687.herokuapp.com/make/admin", {
+        fetch("https://blooming-chamber-05072.herokuapp.com/make/admin", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

@@ -1,0 +1,120 @@
+.single-product-details {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.product-image {
+  border-radius: 15px;
+  border: 1px solid #ececec;
+  padding: 20px;
+}
+
+.sale-off-button {
+  background-color: #fde0e9;
+  color: #f74b81;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.available-button {
+  background-color: #3bb77e;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.product-info h3 {
+  font-size: 40px;
+  color: #253d4e;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.regular-price {
+  font-size: 58px;
+  line-height: 58px;
+  color: #3bb77e;
+}
+
+.discount-price {
+  color: #b6b6b6;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.discount-percentage {
+  color: #fdc040;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.product-count input {
+  width: 70px;
+  border: 2px solid #3bb77e;
+  font-size: 16px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.product-count input:active {
+  border: 2px solid #3bb77e;
+}
+
+.product-count input:focus {
+  border: 2px solid #3bb77e;
+}
+
+.product-add-to-cart-button button {
+  border: 2px solid #3bb77e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  background-color: #3bb77e;
+}
+
+.product-add-to-cart-button button svg {
+  font-size: 23px;
+  margin-right: 5px;
+}
+
+.product-favorite button {
+  font-size: 25px;
+  border: 1px solid rgba(51, 51, 51, 0.795);
+  margin-right: 10px;
+  color: rgba(51, 51, 51, 0.712);
+  font-weight: 300;
+  opacity: 0.6;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.product-favorite button:hover {
+  border: 1px solid #3bb77e;
+  background-color: #3bb77e;
+}
+
+.product-short-info {
+}
+.product-short-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-short-info ul li {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+  color: #7e7e7e;
+}
