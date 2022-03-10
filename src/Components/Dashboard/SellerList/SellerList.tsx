@@ -4,7 +4,7 @@ import './Seller.css';
 export interface userD {
     _id: string;
     email: string;
-    displyName: string;
+    displayName: string;
     AccountType: string;
     contact: string;
     img: string;
@@ -22,20 +22,22 @@ const SellerList = () => {
         fetch("http://localhost:5000/vendors")
             .then((res) => res.json())
             .then((data) => {
-                if (data) {
-                    let userFil = data.filter((user: userD) =>
-                        user.AccountType.includes("vendor")
-                    );
-                    setUser(userFil);
-                    setAllUser(userFil);
-                }
+                // if (data) {
+                //     let userFil = data.filter((user: userD) =>
+                //         user.AccountType.includes("vendor")
+                //     );
+                //     setUser(userFil);
+                //     setAllUser(userFil);
+                // }
+                setUser(data);
+                setAllUser(data);
             });
     }, []);
 
     let handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
         let search_value = e.currentTarget.value;
         let result = user.filter((user) =>
-            user.displyName.includes(search_value)
+            user.displayName.includes(search_value)
         );
         if (search_value) {
             setUser(result);
@@ -98,7 +100,7 @@ const SellerList = () => {
                                     </th>
                                     <td>{user.email}</td>
                                     <td className="table-warning">{user.contact}</td>
-                                    <td className="table-warning">{user.displyName}</td>
+                                    <td className="table-warning fw-bold">{user.displayName}</td>
                                     {/* <NavLink
                   as={Link}
                   to={`/user/${user._id}`}
@@ -121,14 +123,14 @@ const SellerList = () => {
                                 <div>
                                     <img src={user.img ? user.img : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled.png"} alt="" className="img-fluid" />
                                 </div>
-                                <div className="card-header"> {user.displyName}</div>
+                                <div className="card-header fw-bold bg-secondary text-white"> {user.displayName}</div>
                                 <div className="card-body text-success">
                                     <h6 className="card-title">{user.email}</h6>
                                     <p className="card-text">
                                         {user.contact}
                                     </p>
                                     <p className="card-text" >
-                                        Address: {user.address ? user.address.slice(0, 50) : 'Address not found'}
+                                       <span className='fw-bold text-dark'>Address:</span>  {user.address ? user.address.slice(0, 50) : 'Address not found'}
                                     </p>
                                 </div>
                             </div>
