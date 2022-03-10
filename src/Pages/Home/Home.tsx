@@ -7,6 +7,7 @@ import ProductList from "../../Components/ProductList/ProductList";
 import Newsletter from "../Newsletter/Newsletter";
 import CategoryBanner from "./../Category/Category";
 import DailyBest from "../../Components/DailyBest/DailyBest";
+import Sponsor from "../../Components/Sponsor/Sponsor";
 
 export const Home = () => {
   return (
@@ -19,6 +20,7 @@ export const Home = () => {
       <ProductList />
       <Newsletter />
       <CategoryBanner />
+      <Sponsor/>
     </>
   );
 };
