@@ -19,7 +19,7 @@ const SellerList = () => {
     let [user, setUser] = useState<userD[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("http://localhost:5000/vendors")
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
@@ -48,12 +48,10 @@ const SellerList = () => {
 
         <>
 
-            
-
 
             <div className="text-center">
                 <div className="mx-auto">
-                <h1 className='text-secondary'>Vendor's</h1>
+                    <h1 className='text-secondary'>Vendor's</h1>
                 </div>
                 <div
                     className=" mx-auto"
