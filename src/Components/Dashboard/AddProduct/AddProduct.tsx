@@ -14,7 +14,7 @@ const AddProduct: React.FC = () => {
     const [category, setCategory] = useState<ICategory[]>([]);
 
     useEffect(() => {
-        fetch("https://sleepy-beyond-70687.herokuapp.com/categories")
+        fetch("https://blooming-chamber-05072.herokuapp.com/categories")
             .then(res => res.json())
             .then(data => setCategory(data))
     }, []);
@@ -93,7 +93,7 @@ const AddProduct: React.FC = () => {
     }
 
     const handleProductSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        fetch('http://localhost:5000/products/add', {
+        fetch('https://blooming-chamber-05072.herokuapp.com/products/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

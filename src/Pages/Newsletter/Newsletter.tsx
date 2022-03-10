@@ -9,7 +9,7 @@ const Newsletter: React.FC = () => {
     setSubscribeEmail(e.currentTarget.value);
   }
   const handleProductSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-    fetch('http://localhost:5000/newsletter', {
+    fetch('https://blooming-chamber-05072.herokuapp.com/newsletter', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

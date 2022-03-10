@@ -10,7 +10,7 @@ const EditProduct: React.FC = () => {
     const [category, setCategory] = useState<ICategory[]>([]);
 
     useEffect(() => {
-        fetch("https://sleepy-beyond-70687.herokuapp.com/categories")
+        fetch("https://blooming-chamber-05072.herokuapp.com/categories")
             .then(res => res.json())
             .then(data => setCategory(data))
     }, []);
@@ -34,7 +34,7 @@ const EditProduct: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
     const { productID } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productID}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/products/${productID}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -93,7 +93,7 @@ const EditProduct: React.FC = () => {
     }
 
     const handleProductSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        fetch(`http://localhost:5000/products/update/${productID}`, {
+        fetch(`https://blooming-chamber-05072.herokuapp.com/products/update/${productID}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
