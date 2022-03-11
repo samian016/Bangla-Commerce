@@ -23,6 +23,7 @@
     "sweetalert": "^2.1.2",
     "swiper": "^8.0.0",
     "typescript": "^4.5.5",
+    "typescript-react-facebook-messenger": "0.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
