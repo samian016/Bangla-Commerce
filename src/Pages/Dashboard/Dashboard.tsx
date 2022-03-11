@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  } from 'react-router-dom'
+import { } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
 import { Outlet } from 'react-router-dom'
 const Dashboard = () => {

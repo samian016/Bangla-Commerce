@@ -1,10 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
 const Shop: React.FC = () => {
+    let { categoryName: string } = useParams();
+
+    // Category
+    interface categoryList {
+        _id: string,
+        categoryName: string,
+    }
+    const [categories, setCategories] = useState<categoryList[]>([]);
+    useEffect(() => {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, []);
+
+    const [categoryNameText, setCategoryNameText] = useState<string>("");
+    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const button: HTMLButtonElement = event.currentTarget;
+        setCategoryNameText(button.innerText);
+    };
+
+    // Products
+
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -23,12 +46,11 @@ const Shop: React.FC = () => {
         sellerID: string
     }
     const [products, setProducts] = useState<IProducts[]>([]);
-
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch(`http://localhost:5000/singlecategory/${categoryNameText}`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, []);
+    }, [categoryNameText]);
     return (
         <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
@@ -45,31 +67,11 @@ const Shop: React.FC = () => {
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Cabbage</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Broccoli</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Artichoke</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Celery</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Spanich</a>
-
-
-                                    </li>
+                                    {
+                                        categories.slice(0, 5).map(singleCategory => <li >
+                                            <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
+                                        </li>)
+                                    }
                                 </ul>
                             </div>
                         </div>
