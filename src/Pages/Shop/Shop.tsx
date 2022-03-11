@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
 const Shop: React.FC = () => {
@@ -28,6 +28,7 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
+<<<<<<< HEAD
 
     //Category List
 
@@ -51,18 +52,47 @@ const Shop: React.FC = () => {
 
     //Product List
 
+=======
+    type category = {
+        _id: string,
+        categoryName: string,
+    }
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
     const [products, setProducts] = useState<IProducts[]>([]);
-
+    const [categories, setCategories] = useState<category[]>([]);
+    const [name, setName] = useState<string>('shop')
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+        
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
+<<<<<<< HEAD
 
     const filterData = products.filter(singleProduct => singleProduct.Category === `"${categoryName.replace(/\s+/g, ' ').trim()}"`)
+=======
+    // console.log(categories);
+
+
+
+    const clickCategory = (categoryName:string) => {
+        console.log(categoryName);
+        fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${categoryName}`)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+                setName(categoryName)
+            })
+    }
+
+
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
 
     return (
-        <div>
+        <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
                 <div
                     style={{}}
@@ -73,14 +103,21 @@ const Shop: React.FC = () => {
                     >
                         <div className='row alignItemsCenter' >
                             <div className='col-xl-3'>
-                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>Snack</h1>
+                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>{name}</h1>
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
                                     {
+<<<<<<< HEAD
                                         categories.slice(0, 5).map(singleCategory => <li >
                                             <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
                                         </li>)
+=======
+                                        categories.slice(0, 6).map((cate) => <li ><button onClick={() => clickCategory(cate.categoryName.toLocaleLowerCase())} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {cate.categoryName}</button>
+
+                                            </li>
+                                        )
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                     }
                                 </ul>
                             </div>
@@ -90,7 +127,7 @@ const Shop: React.FC = () => {
 
                 </div>
                 <div className='size'>
-                    <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >29</span>  items for you!</p>
+                    <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >{`${products.length}`}</span>  items for you!</p>
                     <div className="row">
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
@@ -166,7 +203,7 @@ const Shop: React.FC = () => {
 
                             {/* Extra Swiper here  */}
 
-                            <Swiper
+                            {/* <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
                                 pagination={{
@@ -258,7 +295,7 @@ const Shop: React.FC = () => {
                                     <h6>Organic Kiwi</h6>
                                     <p>44 items</p>
                                 </SwiperSlide>
-                            </Swiper>
+                            </Swiper> */}
 
 
 

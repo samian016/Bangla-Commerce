@@ -19,7 +19,7 @@ const Category = () => {
 
     useEffect(() => {
         console.log(categories);
-        fetch("https://sleepy-beyond-70687.herokuapp.com/categories")
+        fetch("https://blooming-chamber-05072.herokuapp.com/categories")
             .then((result: Response): Promise<category[]> => result.json())
             .then((data: category[]): void => {
                 setCategories(data);
@@ -32,7 +32,7 @@ const Category = () => {
     const submit = () => {
         const category: React.SetStateAction<string> = categoryInput;
 
-        fetch(`https://sleepy-beyond-70687.herokuapp.com/category/${category}`, {
+        fetch(`https://blooming-chamber-05072.herokuapp.com/category/${category}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

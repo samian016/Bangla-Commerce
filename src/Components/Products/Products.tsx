@@ -23,12 +23,12 @@ const Products: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
     return (
-        <div>
+        <div className='px-5'>
             <div className="container-fluid p-5">
                 <div>
                     <h2 className='best-sales'>Popular Products</h2>
