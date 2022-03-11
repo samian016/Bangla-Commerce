@@ -22,13 +22,7 @@ const SellerList = () => {
         fetch("http://localhost:5000/vendors")
             .then((res) => res.json())
             .then((data) => {
-                // if (data) {
-                //     let userFil = data.filter((user: userD) =>
-                //         user.AccountType.includes("vendor")
-                //     );
-                //     setUser(userFil);
-                //     setAllUser(userFil);
-                // }
+               
                 setUser(data);
                 setAllUser(data);
             });
