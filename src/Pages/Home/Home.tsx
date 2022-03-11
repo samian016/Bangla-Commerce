@@ -8,6 +8,7 @@ import Newsletter from "../Newsletter/Newsletter";
 import CategoryBanner from "./../Category/Category";
 import DailyBest from "../../Components/DailyBest/DailyBest";
 import Sponsor from "../../Components/Sponsor/Sponsor";
+import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
 
 export const Home = () => {
   return (
@@ -16,10 +17,11 @@ export const Home = () => {
       <Category />
       <Products />
       <SupplyerBanner />
-      <DailyBest/>
+      <DailyBest />
       <ProductList />
       <Newsletter />
       <CategoryBanner />
+      <MessengerCustomerChat pageId="324931041658048" appId="538498697606294" />
     </>
   );
 };
