@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom';
 import './Shop.css'
 
 const Shop: React.FC = () => {
-    //Interface list
-    interface categoryList {
-        _id: string,
-        categoryName: string,
-    }
+    
 
     interface IProducts {
         _id: string;
@@ -95,7 +91,7 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                                 {
-                                    filterData.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                    products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
                                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                             <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                                 <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
