@@ -4,6 +4,7 @@ import logo2 from './images/app-store.jpg';
 import logo3 from './images/google-play.jpg';
 import logo4 from './images/payment-method.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -35,6 +36,9 @@ const Footer = () => {
                                         <span className='fw-bold'>Email: </span>
                                         sale@Nest.com</h6>
                                 </div>
+                                <Link to="/sponsors"><div className='cursorPointer px-4 py-3 primaryBgColor text-white d-inline-block rounded-pill'>
+                                    Our Sponsors
+                                </div></Link>
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-3">

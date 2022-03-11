@@ -31,6 +31,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import SingleProduct from "./Components/SingleProduct/SingleProduct";
+import Sponsor from "./Components/Sponsor/Sponsor";
 function App() {
   return (
     <>
@@ -38,6 +39,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sponsors" element={<Sponsor/>} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="category" element={<Category />} />
