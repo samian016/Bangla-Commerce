@@ -116,7 +116,7 @@ const SellerList = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="container my-5 ">
+                {/* <div className="container my-5 ">
                     <div className="row">
                         {user.map(user => <div key={user._id} className="col-12 col-lg-3 col-md-6 " >
                             <div className="card border-success mb-3" style={{ maxWidth: '18rem' }}>
@@ -136,7 +136,7 @@ const SellerList = () => {
                             </div>
                         </div>)}
                     </div>
-                </div>
+                </div> */}
             </div>
 
 
