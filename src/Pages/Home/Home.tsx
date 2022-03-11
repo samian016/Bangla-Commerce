@@ -20,7 +20,6 @@ export const Home = () => {
       <ProductList />
       <Newsletter />
       <CategoryBanner />
-      <Sponsor/>
     </>
   );
 };

@@ -48,7 +48,7 @@ const Category: React.FC = () => {
                                                 spaceBetween: 50,
                                         },
                                 }}
-                                className="mySwiper myCustomSwiperContaienr"
+                                className="mySwiper myCustomSwiperContaienr px-5"
                         >
                                 {category.map(singleCategory => <SwiperSlide className='myCustomSwiper' key={singleCategory._id}>
                                         <img src={singleCategory.img} alt="" />
@@ -122,7 +122,7 @@ const Category: React.FC = () => {
                                         <p>44 items</p>
                                 </SwiperSlide> */}
                         </Swiper>
-                        <div className="featuredCategories mt-4">
+                        <div className="featuredCategories mt-4 px-5">
                                 <div className="row align-items-md-stretch">
                                         <div className="col-md-4 mt-md-0 mt-4">
                                                 <div className="h-100 p-5 bg-light border rounded-3" style={{ backgroundImage: 'url("https://i.ibb.co/XFFndSq/banner-1.png")', backgroundPosition: 'bottom right', backgroundSize: '100% 295px', backgroundRepeat: 'no-repeat', backgroundAttachment: 'scroll', minHeight: '295px' }}>
