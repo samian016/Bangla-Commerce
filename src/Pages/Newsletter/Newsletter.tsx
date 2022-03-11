@@ -28,7 +28,7 @@ const Newsletter: React.FC = () => {
     e.preventDefault();
   }
   return (
-    <div className="newsletter">
+    <div className="newsletter px-5">
       <div className="">
         <div className="row">
           <div className="col-lg-12">

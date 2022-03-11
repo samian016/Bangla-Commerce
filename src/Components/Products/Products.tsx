@@ -28,7 +28,7 @@ const Products: React.FC = () => {
             .then(data => setProducts(data))
     }, []);
     return (
-        <div>
+        <div className='px-5'>
             <div className="container-fluid p-5">
                 <div>
                     <h2 className='best-sales'>Popular Products</h2>
