@@ -19,7 +19,7 @@ const SellerList = () => {
     let [user, setUser] = useState<userD[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/vendors")
+        fetch("https://blooming-chamber-05072.herokuapp.com/vendors")
             .then((res) => res.json())
             .then((data) => {
                 // if (data) {
@@ -37,7 +37,7 @@ const SellerList = () => {
     let handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
         let search_value = e.currentTarget.value;
         let result = user.filter((user) =>
-            user.displayName.includes(search_value)
+            user.displayName.toLowerCase().includes(search_value)
         );
         if (search_value) {
             setUser(result);
@@ -130,7 +130,7 @@ const SellerList = () => {
                                         {user.contact}
                                     </p>
                                     <p className="card-text" >
-                                       <span className='fw-bold text-dark'>Address:</span>  {user.address ? user.address.slice(0, 50) : 'Address not found'}
+                                        <span className='fw-bold text-dark'>Address:</span>  {user.address ? user.address.slice(0, 50) : 'Address not found'}
                                     </p>
                                 </div>
                             </div>

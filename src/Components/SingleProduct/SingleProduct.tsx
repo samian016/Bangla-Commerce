@@ -25,7 +25,7 @@ const SingleProduct: React.FC = () => {
     }
     const [products, setProducts] = useState<IProducts[]>([]);
     useEffect(() => {
-        fetch(`https://sleepy-beyond-70687.herokuapp.com/products/${productID}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/products/${productID}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

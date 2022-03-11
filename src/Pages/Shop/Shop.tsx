@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
 const Shop: React.FC = () => {
@@ -22,13 +22,35 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
+    type category = {
+        _id: string,
+        categoryName: string,
+    }
     const [products, setProducts] = useState<IProducts[]>([]);
+    const [categories, setCategories] = useState<category[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+        
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
+    // console.log(categories);
+
+
+
+    const clickCategory = (categoryName:string) => {
+        console.log(categoryName);
+        fetch(`http://localhost:5000/singlecategory/${categoryName}`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }
+
+
+
     return (
         <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
@@ -45,31 +67,12 @@ const Shop: React.FC = () => {
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Cabbage</a>
+                                    {
+                                        categories.slice(0, 6).map((cate) => <li ><button onClick={() => clickCategory(cate.categoryName.toLocaleLowerCase())} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {cate.categoryName}</button>
 
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Broccoli</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Artichoke</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Celery</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Spanich</a>
-
-
-                                    </li>
+                                            </li>
+                                        )
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -78,7 +81,7 @@ const Shop: React.FC = () => {
 
                 </div>
                 <div className='size'>
-                    <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >29</span>  items for you!</p>
+                    <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >{`${products.length}`}</span>  items for you!</p>
                     <div className="row">
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">

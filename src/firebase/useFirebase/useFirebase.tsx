@@ -38,7 +38,7 @@ const useFirebase = (): firebase => {
     const saveUser = (email: string | null, displayName: string | null, method: string, AccountType: string): void => {
         const user = { email, displayName, AccountType };
 
-        fetch("https://sleepy-beyond-70687.herokuapp.com/users", {
+        fetch("https://blooming-chamber-05072.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json",
@@ -175,7 +175,7 @@ const useFirebase = (): firebase => {
                 setIsLogged(true);
                 setIsLoading(true);
                 const email: string | undefined | null = user?.email;
-                fetch(`https://sleepy-beyond-70687.herokuapp.com/users/${email}`)
+                fetch(`https://blooming-chamber-05072.herokuapp.com/users/${email}`)
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);

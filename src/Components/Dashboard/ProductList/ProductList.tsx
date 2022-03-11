@@ -23,7 +23,7 @@ const ProductList: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -31,7 +31,7 @@ const ProductList: React.FC = () => {
     const handleDeleteProduct = (id: string) => {
         const forward = window.confirm("Are you sure? It will be deleted permanently !!!");
         if (forward) {
-            fetch(`http://localhost:5000/products/delete/${id}`, {
+            fetch(`https://blooming-chamber-05072.herokuapp.com/products/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

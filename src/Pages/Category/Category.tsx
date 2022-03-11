@@ -52,7 +52,7 @@ const Category = () => {
               </div>
               <div className="Catbanner-text">
                 <h3 className="icon-box-title">Wide assortment</h3>
-                <p>Mega Discounts</p>
+                <p>Mega Discounts For Premium</p>
               </div>
             </div>
           </div>
