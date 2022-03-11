@@ -37,7 +37,7 @@ const SellerList = () => {
     let handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
         let search_value = e.currentTarget.value;
         let result = user.filter((user) =>
-            user.displayName.includes(search_value)
+            user.displayName.toLowerCase().includes(search_value)
         );
         if (search_value) {
             setUser(result);
