@@ -22,6 +22,32 @@ const ProductList = () => {
     }, [])
     // console.log(fullDate);
     return (
+<<<<<<< HEAD
+        <div className="container-fluid product-list-container">
+            <div className="row">
+                <div className="col-md-3">
+                    <div className="product-list-title my-5">
+                        <h2>Top Selling</h2>
+                    </div>
+                    {
+                        topSelling.slice(0, 3).map(product => <div className="product-list row d-flex mb-4">
+                            <div className="product-list-image col-4 col-sm-4">
+                                <img className="img-fluid" src={product.image} alt="" />
+                            </div>
+                            <div className="product-list-text col-8">
+                                <h3 className="fs-5">{product.ProductTitle}</h3>
+                                <h6 style={{ fontSize: "8px" }}>
+                                    <Rating
+                                        readonly
+                                        initialRating={product.rating}
+                                        fullSymbol="fa fa-star fa-2x filled"
+                                        emptySymbol="fa fa-star-o fa-2x notFilled">
+                                    </Rating>
+                                </h6>
+                                <div className='d-flex align-items-center'>
+                                    <p className='primaryColor fw-bold me-3'>$ {product.discountPrice}</p>
+                                    <p className='primaryColor fw-bold'>$ <span className='text-decoration-line-through'>{product.regularPrice}</span></p>
+=======
         <div className='px-5'>
             <div className="container-fluid product-list-container">
                 <div className="row">
@@ -33,6 +59,7 @@ const ProductList = () => {
                             topSelling.slice(0, 3).map(product => <div className="product-list row d-flex mb-4">
                                 <div className="product-list-image col-4">
                                     <img className="img-fluid" src={product.image} alt="" />
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                 </div>
                                 <div className="product-list-text col-8">
                                     <h3 className="fs-5">{product.ProductTitle}</h3>
@@ -106,6 +133,26 @@ const ProductList = () => {
                             </div>)
                         }
                     </div>
+<<<<<<< HEAD
+                    {
+                        topRated.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
+                            <div className="product-list-image col-4 col-sm-4">
+                                <img className="img-fluid" src={product.image} alt="" />
+                            </div>
+                            <div className="product-list-text col-8">
+                                <h3 className="fs-5">{product.ProductTitle}</h3>
+                                <h6 style={{ fontSize: "8px" }}>
+                                    <Rating
+                                        readonly
+                                        initialRating={product.rating}
+                                        fullSymbol="fa fa-star fa-2x filled"
+                                        emptySymbol="fa fa-star-o fa-2x notFilled">
+                                    </Rating>
+                                </h6>
+                                <div className='d-flex align-items-center'>
+                                    <p className='primaryColor fw-bold me-3'>$ {product.discountPrice}</p>
+                                    <p className='primaryColor fw-bold'>$ <span className='text-decoration-line-through'>{product.regularPrice}</span></p>
+=======
                     <div className="col-md-3">
                         <div className="product-list-title my-5">
                             <h2>Top Rated</h2>
@@ -114,6 +161,7 @@ const ProductList = () => {
                             topRated.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
                                 <div className="product-list-image col-4">
                                     <img className="img-fluid" src={product.image} alt="" />
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                 </div>
                                 <div className="product-list-text col-8">
                                     <h3 className="fs-5">{product.ProductTitle}</h3>
