@@ -13,7 +13,7 @@ const LogIn = () => {
         const mailE: string  = mail.current.value;
         const passE: string  = pass.current.value;
         signUsingEmail(mailE, passE);
-        console.log(mailE,passE);
+        // console.log(mailE,passE);
         const field1:any= document.getElementById("field1");
         const field2:any = document.getElementById("field2");
         field1.value = "";

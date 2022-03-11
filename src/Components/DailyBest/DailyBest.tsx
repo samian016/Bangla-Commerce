@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { FreeMode,  Navigation } from "swiper";
+import { FreeMode, Navigation } from "swiper";
 import Rating from 'react-rating';
 const DailyBest = () => {
     return (
@@ -56,371 +56,13 @@ const DailyBest = () => {
 
                             modules={[FreeMode, Navigation]}
                             className="mySwiper"
-                        > 
-                            
-                            
+                        >
+
+
                             <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
+                                <DailyProduct />
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
 
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div style={{height:"520px", borderRadius:"20px"}}>
-
-
-                                    <div style={{ width: "300px", position: "relative", height:"520px" ,borderRadius:"20px" }} className="card">
-                                        <img style={{width:"50%"}} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-9-1.jpg" className="card-img-top mx-auto" alt="..." />
-                                        <div className="card-body">
-                                            <h5 style={{ color: "#253D4E" }} className="card-title">Seeds of Change Organic Quinoa, Brown</h5>
-                                            <h6 style={{ fontSize: "8px" }}>
-                                                <Rating
-
-                                                    readonly
-                                                    initialRating={3}
-                                                    fullSymbol="fa fa-star fa-2x filled"
-                                                    emptySymbol="fa fa-star-o fa-2x notFilled"
-                                                >
-
-                                                </Rating>
-                                            </h6>
-                                            <h6 style={{ color: "#3BB77E" }}>$238.0  </h6>
-
-                                            {
-                                                /* <div style={{ height: "5px", background: "black" }} >
-                                                    <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                </div> */
-                                            }
-
-                                            <p className="card-text"> 90/120 </p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, praesentium!</p>
-                                           
-                                        </div>
-                                        <div className="card-footer">
-                                            <button style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>  Add To Cart</button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </div>
-                            </SwiperSlide>
-                             
-                            
                         </Swiper>
 
 
@@ -432,3 +74,67 @@ const DailyBest = () => {
 };
 
 export default DailyBest;
+
+
+const DailyProduct = () => {
+    interface IProducts {
+        _id: string;
+        ProductTitle: string,
+        Category: string,
+        Stock: number,
+        image: string,
+        rating: number,
+        shortDescription: string,
+        additionalInfo: string,
+        regularPrice: number,
+        discountPrice: number,
+        discountPercentage: number,
+        sku: string,
+        isApproved: boolean,
+        adminChecked: boolean,
+        sellerID: string
+    }
+    const [products, setProducts] = useState<IProducts[]>([]);
+
+    useEffect(() => {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, []);
+
+    return (
+        <div style={{ height: "520px", borderRadius: "20px" }}>
+            {
+                products.map(singleProduct => <div style={{ width: "300px", position: "relative", height: "520px", borderRadius: "20px" }} className="card">
+                    <img style={{ width: "70%" }} src={singleProduct.image} className="card-img-top mx-auto" alt="..." />
+                    <div className="card-body">
+                        <h5 style={{ color: "#253D4E" }} className="card-title">{singleProduct.ProductTitle}</h5>
+                        <h6 style={{ fontSize: "8px" }}>
+                            <Rating
+                                readonly
+                                initialRating={3}
+                                fullSymbol="fa fa-star fa-2x filled"
+                                emptySymbol="fa fa-star-o fa-2x notFilled">
+                            </Rating>
+                        </h6>
+                        <h6 style={{ color: "#3BB77E" }}>${singleProduct.discountPrice}  </h6>
+
+                        {
+                            /* <div style={{ height: "5px", background: "black" }} >
+                                <div style={{background:"white", maxWidth:"50%"}}> </div>
+                            </div> */
+                        }
+
+                        {/* <p className="card-text"> 90/120 </p> */}
+                        <p>{singleProduct.shortDescription.slice(0, 100)}</p>
+
+                    </div>
+                    <div className="mx-auto d-flex">
+                        <button className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>View Product</button>
+                        <button className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
+                    </div>
+                </div>)
+            }
+        </div>
+    )
+}

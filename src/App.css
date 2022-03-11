@@ -1,5 +1,5 @@
 .primaryFontColor {
-  color: #254654;
+  color: #254654 !important;
 }
 .secondaryFontColor {
   color: #7e7e7e;
@@ -8,6 +8,9 @@
   color: #3bb77e;
 }
 .primaryBgColor {
+  background-color: #3bb77e;
+}
+.primaryBgColorBtn {
   background-color: #3bb77e;
 }
 .primaryFont {
@@ -28,4 +31,9 @@ a:hover {
 }
 .cursorPointer{
   cursor: pointer;
+}
+.primaryBgColorBtn:hover{
+  background-color: #3bb77d00;
+  border: solid 1px #3bb77d00;
+  color: #3bb77e!important;
 }

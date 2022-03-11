@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 
-const Shop = () => {
+const Shop: React.FC = () => {
+    //Interface list
+    interface categoryList {
+        _id: string,
+        categoryName: string,
+    }
+
+    interface IProducts {
+        _id: string;
+        ProductTitle: string,
+        Category: string,
+        Stock: number,
+        image: string,
+        rating: number,
+        shortDescription: string,
+        additionalInfo: string,
+        regularPrice: number,
+        discountPrice: number,
+        discountPercentage: number,
+        sku: string,
+        isApproved: boolean,
+        adminChecked: boolean,
+        sellerID: string
+    }
+
+    //Category List
+
+    const [categories, setCategories] = useState<categoryList[]>([]);
+
+    useEffect(() => {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, []);
+
+    //Category wise Products
+    const [categoryName, setCategoryName] = useState<string>("");
+
+    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const button: HTMLButtonElement = event.currentTarget;
+        setCategoryName(button.innerText);
+    };
+    console.log(`"${categoryName.replace(/\s+/g, ' ').trim()}"`);
+
+    //Product List
+
+    const [products, setProducts] = useState<IProducts[]>([]);
+
+    useEffect(() => {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, []);
+
+    const filterData = products.filter(singleProduct => singleProduct.Category === `"${categoryName.replace(/\s+/g, ' ').trim()}"`)
+
     return (
         <div>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
@@ -20,31 +77,11 @@ const Shop = () => {
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Cabbage</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Broccoli</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Artichoke</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Celery</a>
-
-
-                                    </li>
-                                    <li >
-                                        <a href="/" className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times' style={{ marginRight: "10px" }}></i> Spanich</a>
-
-
-                                    </li>
+                                    {
+                                        categories.slice(0, 5).map(singleCategory => <li >
+                                            <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
+                                        </li>)
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -56,415 +93,48 @@ const Shop = () => {
                     <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >29</span>  items for you!</p>
                     <div className="row">
                         <div style={{}} className="col-sm-12 col-lg-10">
-
-
-
-
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
-
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-7-2.jpg" alt="" />
+                                {
+                                    filterData.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                        <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
+                                            <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
+                                                <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
+                                                    <img style={{ width: "100%" }} src={singleProduct.image} alt="" />
+                                                    <Link to={`/singleProduct/${singleProduct._id}`} className='view-details-button'>View Details</Link>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
+                                            <div style={{ padding: "0px 20px 20px 20px" }}>
+                                                <div style={{ marginBottom: "5px" }}>
+                                                    <p style={{ fontWeight: "bold", color: "#adadad" }} className="">{singleProduct.Category}</p>
+                                                </div>
+                                                <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>{singleProduct.ProductTitle}</h6>
+                                                <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
+                                                    <h6 style={{ fontSize: "6px" }}>
+                                                        <Rating
 
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
+                                                            readonly
+                                                            initialRating={singleProduct.rating}
+                                                            fullSymbol="fa fa-star fa-2x filled"
+                                                            emptySymbol="fa fa-star-o fa-2x"
+                                                        >
+                                                        </Rating>
+                                                    </h6>
                                                 </div>
                                                 <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
+                                                    <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
+                                                </div>
+                                                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
+                                                    <div style={{ paddingTop: "5px" }}>
+                                                        <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >${singleProduct.regularPrice}</span> </h6>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="	http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-7-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-8-2.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-10-2.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-6-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 col-12">
-                                    <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                        <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                            <div style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                <img style={{ width: "100%" }} src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div style={{ padding: "0px 20px 20px 20px" }}>
-                                            <div style={{ marginBottom: "5px" }}>
-                                                <p style={{ fontWeight: "bold", color: "#adadad" }} className="">Meats</p>
-                                            </div>
-                                            <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400gm</h6>
-                                            <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
-                                                <h6 style={{ fontSize: "6px" }}>
-                                                    <Rating
-
-                                                        readonly
-                                                        initialRating={3}
-                                                        fullSymbol="fa fa-star fa-2x filled"
-                                                        emptySymbol="fa fa-star-o fa-2x"
-                                                    >
-
-                                                    </Rating>
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <p> <span style={{ fontWeight: "bold", color: "#adadad" }} >By</span> <span style={{ fontWeight: "bold", color: "#3BB77E" }}>NestlyFood</span> </p>
-                                            </div>
-                                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "15px" }}>
-                                                <div style={{ paddingTop: "5px" }}>
-                                                    <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>$32.0 <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >$35.0</span> </h6>
-                                                </div>
-                                                <div>
-                                                    <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
+                                    </div>)
+                                }
                             </div>
 
 
@@ -652,17 +322,19 @@ const Shop = () => {
                                     New Product
                                 </h5>
                                 <ul style={{ listStyle: "none", paddingLeft: "0px" }}>
-                                    <li style={{ padding: "10px 0px" }}>
-                                        <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
-                                            <img className='img2' src="	http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-3.jpg" alt="" />
-                                            <div style={{ display: "block" }}>
-                                                <h5 style={{ color: "#3BB77E" }}>Mango Juice</h5>
-                                                <p style={{ color: "#3BB77E" }}>$15.00</p>
-                                            </div>
-                                        </a>
+                                    {
+                                        products.slice(0, 3).map(singleProduct => <li key={singleProduct._id} style={{ padding: "10px 0px" }}>
+                                            <Link to={`/singleProduct/${singleProduct._id}`} className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }}>
+                                                <img className='img2' src={singleProduct.image} alt="" />
+                                                <div style={{ display: "block" }}>
+                                                    <h5 style={{ color: "#3BB77E" }}>{singleProduct.ProductTitle}</h5>
+                                                    <p style={{ color: "#3BB77E" }}>${singleProduct.discountPrice}</p>
+                                                </div>
+                                            </Link>
 
-                                    </li>
-                                    <li style={{ padding: "10px 0px" }}>
+                                        </li>)
+                                    }
+                                    {/* <li style={{ padding: "10px 0px" }}>
                                         <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
                                             <img className='img2' src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-4.jpg" alt="" />
                                             <div style={{ display: "block" }}>
@@ -681,7 +353,7 @@ const Shop = () => {
                                             </div>
                                         </a>
 
-                                    </li>
+                                    </li> */}
 
                                 </ul>
                             </div>
