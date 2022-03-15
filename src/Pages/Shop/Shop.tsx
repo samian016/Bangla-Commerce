@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import './Shop.css'
 
 const Shop: React.FC = () => {
+    //Interface list
+    interface categoryList {
+        _id: string,
+        categoryName: string,
+    }
+
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -22,13 +28,39 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
+<<<<<<< HEAD
+
+    //Category List
+
+    const [categories, setCategories] = useState<categoryList[]>([]);
+
+    useEffect(() => {
+        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, []);
+
+    //Category wise Products
+    const [categoryName, setCategoryName] = useState<string>("");
+
+    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const button: HTMLButtonElement = event.currentTarget;
+        setCategoryName(button.innerText);
+    };
+    console.log(`"${categoryName.replace(/\s+/g, ' ').trim()}"`);
+
+    //Product List
+
+=======
     type category = {
         _id: string,
         categoryName: string,
     }
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
     const [products, setProducts] = useState<IProducts[]>([]);
     const [categories, setCategories] = useState<category[]>([]);
-
+    const [name, setName] = useState<string>('shop')
     useEffect(() => {
         fetch('https://blooming-chamber-05072.herokuapp.com/categories')
             .then(res => res.json())
@@ -38,18 +70,26 @@ const Shop: React.FC = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
+<<<<<<< HEAD
+
+    const filterData = products.filter(singleProduct => singleProduct.Category === `"${categoryName.replace(/\s+/g, ' ').trim()}"`)
+=======
     // console.log(categories);
 
 
 
     const clickCategory = (categoryName:string) => {
         console.log(categoryName);
-        fetch(`http://localhost:5000/singlecategory/${categoryName}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${categoryName}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+                setName(categoryName)
+            })
     }
 
 
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
 
     return (
         <div id='divTag'>
@@ -63,15 +103,21 @@ const Shop: React.FC = () => {
                     >
                         <div className='row alignItemsCenter' >
                             <div className='col-xl-3'>
-                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>Snack</h1>
+                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>{name}</h1>
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
                                     {
+<<<<<<< HEAD
+                                        categories.slice(0, 5).map(singleCategory => <li >
+                                            <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
+                                        </li>)
+=======
                                         categories.slice(0, 6).map((cate) => <li ><button onClick={() => clickCategory(cate.categoryName.toLocaleLowerCase())} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {cate.categoryName}</button>
 
                                             </li>
                                         )
+>>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                     }
                                 </ul>
                             </div>
@@ -86,7 +132,7 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                                 {
-                                    products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                    filterData.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
                                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                             <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                                 <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
