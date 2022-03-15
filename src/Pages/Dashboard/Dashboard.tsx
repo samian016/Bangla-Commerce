@@ -53,10 +53,6 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               My Address</div>
           </Link>
-          <Link to='/dashboard/account-details'>
-            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-              Account Details</div>
-          </Link>
           <Link to='/dashboard/makeAdmin'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Make Admin</div>
