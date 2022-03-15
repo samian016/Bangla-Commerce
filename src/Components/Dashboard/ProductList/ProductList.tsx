@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const ProductList: React.FC = () => {

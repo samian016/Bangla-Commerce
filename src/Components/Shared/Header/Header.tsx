@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from "./../../../Image/logo.png"
 import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
@@ -11,6 +11,20 @@ const Header = () => {
         logOut,
         isLogged
     } = useFirebase();
+    type category = {
+        _id: string,
+        categoryName: string,
+    }
+    const [categories, setCategories] = useState<category[]>([]);
+    useEffect(() => {
+        console.log(categories);
+        fetch("https://blooming-chamber-05072.herokuapp.com/categories")
+            .then((result: Response): Promise<category[]> => result.json())
+            .then((data: category[]): void => {
+                setCategories(data);
+            })
+    }, [])
+
     return (
         <>
             <div className='desktop-menu'>
@@ -119,9 +133,31 @@ const Header = () => {
 
                 <nav className='primaryFont mid-header d-flex justify-content-between align-items-center py-2 border-top border-bottom'>
                     <div className='w-25 mx-4 d-flex justify-content-between align-items-center '>
-                        <div className="d-inline-block primaryBgColor px-3 py-2 text-white fw-bolder rounded">
-                            <BsGrid /> <span>Browse All Categories <BsChevronDown /> </span>
+                        <div className="btn-group">
+                            <button type="button" style={{ backgroundColor: "#3BB77E" }} className="d-inline-block primaryBgColor px-3 py-2 text-white fw-bolder rounded btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <BsGrid /> <span>Browse All Categories </span>
+                            </button>
+                            <ul className="dropdown-menu">
+                                {
+                                    categories.map((Category: category): React.ReactFragment => <div key={Category._id} className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
+                                        {/* <div>
+                            <img width="35px" src={} alt="Cat" />
+                        </div> */}
+                                        <Link to={`/category/${Category._id}`}>
+                                            <span>
+                                                {Category.categoryName}
+                                            </span>
+                                        </Link>
+                                        {/* <div>
+                            <span className='rounded-pill p-1 categoryCount'>
+                                0
+                            </span>
+                        </div> */}
+                                    </div>)
+                                }
+                            </ul>
                         </div>
+                       
                         <div className='fw-bold d-flex'>
                             <span className='primaryColor fw-bolder px-1'>
                                 <BsLightning />
