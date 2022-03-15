@@ -34,6 +34,7 @@ import SingleProduct from "./Components/SingleProduct/SingleProduct";
 import Sponsor from "./Components/Sponsor/Sponsor";
 import Messenger from "./Components/Messenger/Messenger";
 import Promotions from "./Components/Promotions/Promotions";
+import SupportCenter from "./Components/SupportCenter/SupportCenter";
 function App() {
   return (
     <>
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsor/>} />
           <Route path="/promotions" element={<Promotions/>} />
+          <Route path="/supportCenter" element={<SupportCenter/>} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="category" element={<Category />} />

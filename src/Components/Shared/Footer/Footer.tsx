@@ -45,15 +45,22 @@ const Footer = () => {
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h6'>Company</h1>
+                                <Link to="/about">
                                 <h6 className='font-h6'>About Us</h6>
+                                </Link>
+                                
                                 <h6 className='font-h6'>Delivery Information</h6>
+                                <Link to="/terms">
                                 <h6 className='font-h6'>Privacy Policy</h6>
+                                </Link>
+                                
                                 <Link to="/contact">
                                 <h6 className='font-h6'>Contact Us</h6>
                                 </Link>
-                                
-                                
+                                <Link to="/supportCenter">
                                 <h6 className='font-h6'> Support Center</h6>
+                                </Link>
+                                
                                 <h6 className='font-h6'>Careers</h6>
                             </div>
                         </div>
@@ -95,7 +102,7 @@ const Footer = () => {
                                 <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
                                 <a href="#"><h6 className='font-h6'>Farm Business</h6></a>
                                 <a href="#"><h6 className='font-h6'>Farm Careers</h6></a>
-                                <Link to="/seller-list">
+                                <Link to="/seller">
                                 <h6 className='font-h6'>Our Suppliers</h6>
                                 </Link>
                                 <a href="#"><h6 className='font-h6'>Accessibility</h6></a>
@@ -124,17 +131,22 @@ const Footer = () => {
                                 <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
                                 <div className='my-4'>
-                                    <a href="">
+                                    <Link to="">
                                         <img src={logo2} alt="" className="w-50 p-1" />
-                                    </a>
-                                    <a href="">
-                                        <img src={logo3} alt="" className="w-50 p-1" />
-                                    </a>
+                                        </Link>
+
+                                    <Link to= "">
+                                    <img src={logo3} alt="" className="w-50 p-1" />
+                                    </Link>
+                                        
+                                    
                                 </div>
                                 <div>
-                                    <a href="">
-                                        <img src={logo4} alt="" className="img-fluid my-3" />
-                                    </a>
+                                <Link to= "">
+                                <img src={logo4} alt="" className="img-fluid my-3" />
+                                </Link>
+                                        
+                                    
                                 </div>
                             </div>
                         </div>
