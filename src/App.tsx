@@ -32,6 +32,7 @@ import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import SingleProduct from "./Components/SingleProduct/SingleProduct";
 import Sponsor from "./Components/Sponsor/Sponsor";
+import Messenger from "./Components/Messenger/Messenger";
 function App() {
   return (
     <>
@@ -69,6 +70,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Messenger/>
         <Footer />
       </AuthProvider>
     </>
