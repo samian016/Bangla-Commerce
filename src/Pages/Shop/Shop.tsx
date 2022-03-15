@@ -28,36 +28,10 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
-<<<<<<< HEAD
-
-    //Category List
-
-    const [categories, setCategories] = useState<categoryList[]>([]);
-
-    useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-    }, []);
-
-    //Category wise Products
-    const [categoryName, setCategoryName] = useState<string>("");
-
-    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-        const button: HTMLButtonElement = event.currentTarget;
-        setCategoryName(button.innerText);
-    };
-    console.log(`"${categoryName.replace(/\s+/g, ' ').trim()}"`);
-
-    //Product List
-
-=======
     type category = {
         _id: string,
         categoryName: string,
     }
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
     const [products, setProducts] = useState<IProducts[]>([]);
     const [categories, setCategories] = useState<category[]>([]);
     const [name, setName] = useState<string>('shop')
@@ -70,10 +44,6 @@ const Shop: React.FC = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-<<<<<<< HEAD
-
-    const filterData = products.filter(singleProduct => singleProduct.Category === `"${categoryName.replace(/\s+/g, ' ').trim()}"`)
-=======
     // console.log(categories);
 
 
@@ -89,7 +59,6 @@ const Shop: React.FC = () => {
     }
 
 
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
 
     return (
         <div id='divTag'>
@@ -108,16 +77,10 @@ const Shop: React.FC = () => {
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
                                     {
-<<<<<<< HEAD
-                                        categories.slice(0, 5).map(singleCategory => <li >
-                                            <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
-                                        </li>)
-=======
                                         categories.slice(0, 6).map((cate) => <li ><button onClick={() => clickCategory(cate.categoryName.toLocaleLowerCase())} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {cate.categoryName}</button>
 
                                             </li>
                                         )
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                     }
                                 </ul>
                             </div>

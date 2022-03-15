@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../firebase/useFirebase/useFirebase';
+import {  useCart } from "react-use-cart";
+
 import './Product.css'
 const Products: React.FC = () => {
+        const { addItem } = useCart();
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -18,7 +22,8 @@ const Products: React.FC = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        addItem: (item: Item, quantity?: number | undefined) => void
     }
     const [products, setProducts] = useState<IProducts[]>([]);
 
@@ -27,6 +32,8 @@ const Products: React.FC = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
+
+
     return (
         <div className='px-5'>
             <div className="container-fluid p-5">
@@ -69,7 +76,7 @@ const Products: React.FC = () => {
                                             <h5 style={{ fontWeight: "bold", color: "#3BB77E", fontSize: "20px" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through", fontSize: "18px" }} >${singleProduct.regularPrice}</span> </h5>
                                         </div>
                                         <div>
-                                            <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
+                                            <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
                                         </div>
                                     </div>
                                 </div>

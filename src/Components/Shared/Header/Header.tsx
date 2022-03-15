@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from "./../../../Image/logo.png"
 import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
@@ -7,10 +7,8 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
 
 const Header = () => {
-    const {
-        logOut,
-        isLogged
-    } = useFirebase();
+    const { logOut, isLogged } = useFirebase();
+
     return (
         <>
             <div className='desktop-menu'>
@@ -58,17 +56,17 @@ const Header = () => {
                                 </div>
                             </Link>
 
-                            <Link to='/cart'>
-                                <div className='mx-3'>
+                            <Link to='/checkout'>
+                                <div className='mx-3 position-relative'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />
                                     </div>
-                                    <span> Cart</span>
+                                    <span>Cart <span className='position-absolute top-0 start-100 translate-middle badge primaryBgColor rounded-pill'> 00 </span> </span>
                                 </div>
                             </Link>
                             <div className='mx-3 dropDownMenu'>
                                 {
-                                    isLogged ? <Link to='#'>
+                                    isLogged ? <Link to='/'>
                                         <div className="iconSize align-items-center justify-content-center d-flex">
                                             <BsPerson />
                                         </div>
