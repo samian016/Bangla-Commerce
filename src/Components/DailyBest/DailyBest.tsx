@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 import { FreeMode, Navigation } from "swiper";
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 const DailyBest = () => {
     interface IProducts {
@@ -69,7 +70,7 @@ const DailyBest = () => {
                 <div className='d-flex best-padding'>
                     <div className='best-banner' style={{ paddingBottom: "100px", paddingLeft: "50px", paddingRight: "100px", marginRight: "10px", width: "30%" }}>
                         <h2 className="banner-text">Bring nature into your home</h2>
-                        <a href="shop-grid-right.html" className="btn btn-xs">Shop Now <i className="fi-rs-arrow-small-right"></i></a>
+                        <Link to={"/shop"} className="btn btn-xs">Shop Now !</Link>
                     </div>
                     <div style={{ width: "69%" }}>
 
@@ -110,7 +111,7 @@ const DailyBest = () => {
 
                                             </div>
                                             <div className="mx-auto d-flex">
-                                                <button className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}>View Product</button>
+                                                <Link className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
                                                 <button className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
                                             </div>
                                         </div>

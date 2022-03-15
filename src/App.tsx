@@ -32,6 +32,7 @@ import EditProduct from "./Components/Dashboard/AddProduct/EditProduct";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import SingleProduct from "./Components/SingleProduct/SingleProduct";
 import Sponsor from "./Components/Sponsor/Sponsor";
+import Messenger from "./Components/Messenger/Messenger";
 import Checkout from "./Pages/Checkout/Checkout";
 function App() {
   interface IProducts {
@@ -90,6 +91,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="checkout" element={<Checkout />} />
         </Routes>
+        <Messenger/>
         <Footer />
       </AuthProvider>
     </>
