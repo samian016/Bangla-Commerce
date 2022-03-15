@@ -103,7 +103,7 @@ const Header = () => {
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsTextParagraph />
                                         </div>
-                                        <span> <Link to='/dashboard' className='dropDownText'>Setting</Link> </span>
+                                        <span> <Link to='dashboard/account-details' className='dropDownText'>Setting</Link> </span>
                                     </div>
                                     <div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
