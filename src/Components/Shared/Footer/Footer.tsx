@@ -6,6 +6,7 @@ import logo4 from './images/payment-method.png';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
+{/* <Link to=""></Link> */}
 
 const Footer = () => {
     return (
@@ -47,7 +48,11 @@ const Footer = () => {
                                 <h6 className='font-h6'>About Us</h6>
                                 <h6 className='font-h6'>Delivery Information</h6>
                                 <h6 className='font-h6'>Privacy Policy</h6>
+                                <Link to="/contact">
                                 <h6 className='font-h6'>Contact Us</h6>
+                                </Link>
+                                
+                                
                                 <h6 className='font-h6'> Support Center</h6>
                                 <h6 className='font-h6'>Careers</h6>
                             </div>
@@ -55,7 +60,9 @@ const Footer = () => {
                         <div className="col-lg-2">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
+                                <Link to="/login">
                                 <h6 className='font-h6'>Sign In</h6>
+                                </Link>                                
                                 <h6 className='font-h6'>View Cart</h6>
                                 <h6 className='font-h6'>My Wishlist</h6>
                                 <h6 className='font-h6'>Track My Order</h6>
@@ -81,13 +88,20 @@ const Footer = () => {
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Corporate</h1>
-                                <a href="#"><h6 className='font-h6 mt-4'>Become a Vendor</h6></a>
+                                <Link to="/singUp">
+                                <h6 className='font-h6 mt-4'>Become a Vendor</h6>
+                                </Link>
+                                
                                 <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
                                 <a href="#"><h6 className='font-h6'>Farm Business</h6></a>
                                 <a href="#"><h6 className='font-h6'>Farm Careers</h6></a>
-                                <a href="#"><h6 className='font-h6'>Our Suppliers</h6></a>
+                                <Link to="/seller-list">
+                                <h6 className='font-h6'>Our Suppliers</h6>
+                                </Link>
                                 <a href="#"><h6 className='font-h6'>Accessibility</h6></a>
-                                <a href="#"><h6 className='font-h6'>Promotions</h6></a>
+                                <Link to="/promotions">
+                                    <h6 className='font-h6'>Promotions</h6>
+                                    </Link>
 
 
                             </div>
