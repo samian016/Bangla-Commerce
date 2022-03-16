@@ -6,7 +6,7 @@ type category = {
 }
 const Category = () => {
 
-
+  
 
     const [categories, setCategories] = useState<category[]>([]);
     const [categoryInput, setCategoryInput] = useState<React.SetStateAction<string>>('');
