@@ -3,8 +3,8 @@ import Rating from 'react-rating';
 import { Link, useParams } from 'react-router-dom';
 
 const CategorizedShop = () => {
-    const {id} = useParams();
-   
+    const { id } = useParams();
+
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -22,16 +22,26 @@ const CategorizedShop = () => {
         adminChecked: boolean,
         sellerID: string
     }
+
     const [products, setProducts] = useState<IProducts[]>([]);
+    // console.log("data.categoryName");
+    // console.log();
     useEffect(() => {
         fetch(`https://blooming-chamber-05072.herokuapp.com/single/${id}`)
             .then((result: Response) => result.json())
             .then((data) => {
-                
-                fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${data.categoryName.toLocaleLowerCase()}`)
+                // console.log(data.categoryName);
+                fetch("https://blooming-chamber-05072.herokuapp.com/categoryWise", {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ name: data.categoryName })
+                })
                     .then(res => res.json())
                     .then(data => {
                         setProducts(data)
+                        // console.log(data);
                     })
             })
     }, [id])
@@ -49,7 +59,7 @@ const CategorizedShop = () => {
                             <div className='col-xl-3'>
                                 <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>See what we find for you</h1>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -106,7 +116,7 @@ const CategorizedShop = () => {
 
 
                             {/* here is the pagination  */}
-                            
+
 
 
 
@@ -142,7 +152,7 @@ const CategorizedShop = () => {
 
                                         </li>)
                                     }
-                                    
+
 
                                 </ul>
                             </div>
