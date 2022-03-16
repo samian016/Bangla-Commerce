@@ -35,7 +35,7 @@ const Footer = () => {
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Email: </span>
-                                        sale@Nest.com</h6>
+                                        sale@BanglaCommarce.com</h6>
                                 </div>
                                 <Link to="/sponsors"><div className='cursorPointer px-4 py-3 primaryBgColor text-white d-inline-block rounded-pill'>
                                     Our Sponsors
@@ -49,7 +49,7 @@ const Footer = () => {
                                 <h6 className='font-h6'>About Us</h6>
                                 </Link>
                                 
-                                <h6 className='font-h6'>Delivery Information</h6>
+                                {/* <h6 className='font-h6'>Delivery Information</h6> */}
                                 <Link to="/terms">
                                 <h6 className='font-h6'>Privacy Policy</h6>
                                 </Link>
@@ -61,7 +61,7 @@ const Footer = () => {
                                 <h6 className='font-h6'> Support Center</h6>
                                 </Link>
                                 
-                                <h6 className='font-h6'>Careers</h6>
+                                {/* <h6 className='font-h6'>Careers</h6> */}
                             </div>
                         </div>
                         <div className="col-lg-2">
@@ -71,11 +71,13 @@ const Footer = () => {
                                 <h6 className='font-h6'>Sign In</h6>
                                 </Link>                                
                                 <h6 className='font-h6'>View Cart</h6>
-                                <h6 className='font-h6'>My Wishlist</h6>
-                                <h6 className='font-h6'>Track My Order</h6>
+                                {/* <h6 className='font-h6'>My Wishlist</h6> */}
+                                {/* <h6 className='font-h6'>Track My Order</h6> */}
+                                <Link to="">
                                 <h6 className='font-h6'>Help Ticket</h6>
-                                <h6 className='font-h6'>Shipping Details</h6>
-                                <h6 className='font-h6'>Compare products</h6>
+                                </Link>
+                                {/* <h6 className='font-h6'>Shipping Details</h6>
+                                <h6 className='font-h6'>Compare products</h6> */}
 
                             </div>
                         </div>
@@ -99,13 +101,13 @@ const Footer = () => {
                                 <h6 className='font-h6 mt-4'>Become a Vendor</h6>
                                 </Link>
                                 
-                                <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
+                                {/* <a href="#"><h6 className='font-h6'>Affiliate Program</h6></a>
                                 <a href="#"><h6 className='font-h6'>Farm Business</h6></a>
-                                <a href="#"><h6 className='font-h6'>Farm Careers</h6></a>
+                                <a href="#"><h6 className='font-h6'>Farm Careers</h6></a> */}
                                 <Link to="/seller">
                                 <h6 className='font-h6'>Our Suppliers</h6>
                                 </Link>
-                                <a href="#"><h6 className='font-h6'>Accessibility</h6></a>
+                                {/* <a href="#"><h6 className='font-h6'>Accessibility</h6></a> */}
                                 <Link to="/promotions">
                                     <h6 className='font-h6'>Promotions</h6>
                                     </Link>
@@ -116,13 +118,15 @@ const Footer = () => {
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Popular</h1>
-                                <h6 className='font-h6'>Milk & Flavoured Milk</h6>
-                                <h6 className='font-h6'>Butter and Margarine</h6>
+                               <Link to="">
+                               <h6 className='font-h6'>Milk & Flavoured Milk</h6>
+                               </Link>
+                                {/* <h6 className='font-h6'>Butter and Margarine</h6>
                                 <h6 className='font-h6'>Eggs Substitutes</h6>
                                 <h6 className='font-h6'>Marmalades</h6>
                                 <h6 className='font-h6'>Sour Cream and Dips</h6>
                                 <h6 className='font-h6'>Tea & Kombucha</h6>
-                                <h6 className='font-h6'>Cheese</h6>
+                                <h6 className='font-h6'>Cheese</h6> */}
 
                             </div>
                         </div>
