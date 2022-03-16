@@ -38,7 +38,7 @@ const Header = () => {
     }
     const [categories, setCategories] = useState<category[]>([]);
     useEffect(() => {
-        console.log(categories);
+        // console.log(categories);
         fetch("https://blooming-chamber-05072.herokuapp.com/categories")
             .then((result: Response): Promise<category[]> => result.json())
             .then((data: category[]): void => {
@@ -183,7 +183,7 @@ const Header = () => {
                                         {/* <div>
                             <img width="35px" src={} alt="Cat" />
                         </div> */}
-                                        <Link to={`/category/${Category._id}`}>
+                                        <Link to={`/categoryWise/${Category._id}`}>
                                             <span>
                                                 {Category.categoryName}
                                             </span>

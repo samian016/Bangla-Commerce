@@ -77,7 +77,7 @@ function App() {
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
-          <Route path="category/:id" element={<CategorizedShop />} />
+          <Route path="categoryWise/:id" element={<CategorizedShop />} />
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="account-details" element={<AccountDetails />} />
             <Route path="add-product" element={<AddProduct />} />
