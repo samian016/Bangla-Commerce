@@ -6,18 +6,6 @@ import './Shop.css'
 
 const Shop: React.FC = () => {
 
-    // Category
-    interface categoryList {
-        _id: string,
-        categoryName: string,
-    }
-    useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-    }, []);
-
-    // Products
 
     interface IProducts {
         _id: string;
@@ -42,7 +30,7 @@ const Shop: React.FC = () => {
     }
     const [products, setProducts] = useState<IProducts[]>([]);
     const [categories, setCategories] = useState<category[]>([]);
-
+    const [name, setName] = useState<string>('shop')
     useEffect(() => {
         fetch('https://blooming-chamber-05072.herokuapp.com/categories')
             .then(res => res.json())
@@ -58,9 +46,12 @@ const Shop: React.FC = () => {
 
     const clickCategory = (categoryName: string) => {
         console.log(categoryName);
-        fetch(`http://localhost:5000/singlecategory/${categoryName}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${categoryName}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+                setName(categoryName)
+            })
     }
 
 
@@ -77,7 +68,7 @@ const Shop: React.FC = () => {
                     >
                         <div className='row alignItemsCenter' >
                             <div className='col-xl-3'>
-                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>Snack</h1>
+                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>{name}</h1>
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>

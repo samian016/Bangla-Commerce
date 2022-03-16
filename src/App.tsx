@@ -34,6 +34,8 @@ import SingleProduct from "./Components/SingleProduct/SingleProduct";
 import Sponsor from "./Components/Sponsor/Sponsor";
 import FeaturedProducts from "./Components/Dashboard/FeaturedProducts/FeaturedProducts";
 import Deals from "./Pages/Deals/Deals";
+import Messenger from "./Components/Messenger/Messenger";
+import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
 function App() {
   return (
     <>
@@ -55,6 +57,7 @@ function App() {
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="account-details" element={<AccountDetails />} />
             <Route path="add-product" element={<AddProduct />} />
@@ -74,6 +77,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Messenger />
         <Footer />
       </AuthProvider>
     </>
