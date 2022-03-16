@@ -188,7 +188,6 @@ const useFirebase = (): firebase => {
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);
-                        console.log(data.admin, "ok na?");
                     }).finally(() => {
                         setIsLoading(false);
                     })
