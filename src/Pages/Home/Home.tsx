@@ -16,11 +16,10 @@ export const Home = () => {
       <Category />
       <Products />
       <SupplyerBanner />
-      <DailyBest/>
+      <DailyBest />
       <ProductList />
       <Newsletter />
       <CategoryBanner />
-      <Sponsor/>
     </>
   );
 };

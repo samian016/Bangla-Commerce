@@ -1,24 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-import './Shop.css'
+import Rating from 'react-rating';
+import "./Deals.css";
 
-const Shop: React.FC = () => {
-
-    // Category
-    interface categoryList {
-        _id: string,
-        categoryName: string,
-    }
-    useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-    }, []);
-
-    // Products
-
+const Deals = () => {
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -36,39 +21,52 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
-    type category = {
-        _id: string,
-        categoryName: string,
-    }
     const [products, setProducts] = useState<IProducts[]>([]);
-    const [categories, setCategories] = useState<category[]>([]);
-
     useEffect(() => {
-        fetch('https://blooming-chamber-05072.herokuapp.com/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-
-        fetch('https://blooming-chamber-05072.herokuapp.com/products')
+        fetch('http://localhost:5000/featuredproducts')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-    // console.log(categories);
 
+    // Count Down Timer
+    const [timerSeconds, setTimerSeconds] = useState(0);
+    const [timerMinutes, setTimerMinutes] = useState(0);
+    const [timerHours, setTimerHours] = useState(0);
+    const [timerDays, setTimerDays] = useState(0);
 
+    let interval;
+    const startTimer = () => {
+        const countDownDate = new Date("March 16,2022").getTime();
+        interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days: number = Math.floor(distance / (24 * 60 * 60 * 1000));
+            const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+            const seconds = Math.floor((distance % (60 * 1000)) / 1000);
 
-    const clickCategory = (categoryName: string) => {
-        console.log(categoryName);
-        fetch(`http://localhost:5000/singlecategory/${categoryName}`)
-            .then(res => res.json())
-            .then(data => setProducts(data))
+            if (distance < 0) {
+                // Stop Timer
+                clearInterval();
+            } else {
+                // Update Timer
+                setTimerDays(days);
+                setTimerHours(hours);
+                setTimerMinutes(minutes);
+                setTimerSeconds(seconds);
+            }
+
+        })
     }
 
-
+    useEffect(() => {
+        startTimer();
+    }, [])
 
     return (
         <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
-                <div
+                {/* <div
                     style={{}}
                     className="size"
                 >
@@ -93,7 +91,7 @@ const Shop: React.FC = () => {
 
                     </div>
 
-                </div>
+                </div> */}
                 <div className='size'>
                     <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >{`${products.length}`}</span>  items for you!</p>
                     <div className="row">
@@ -384,4 +382,4 @@ const Shop: React.FC = () => {
     );
 };
 
-export default Shop;
+export default Deals;

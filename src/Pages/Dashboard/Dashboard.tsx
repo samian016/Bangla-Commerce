@@ -33,6 +33,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Category</div>
           </Link>
+          <Link to='/dashboard/featured-products'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Featured Products</div>
+          </Link>
           <Link to='/dashboard/category-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Category List</div>

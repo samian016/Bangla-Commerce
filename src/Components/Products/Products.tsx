@@ -23,19 +23,19 @@ const Products: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/products')
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
     return (
-        <div>
+        <div className='px-5'>
             <div className="container-fluid p-5">
                 <div>
                     <h2 className='best-sales'>Popular Products</h2>
                 </div>
                 <div className="row border-1 row-cols-lg-5 row-cols-sm-2 row-cols-md-4">
                     {
-                        products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
+                        products.slice(0, 10).map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
                             <div className='product' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                 <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                     <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
