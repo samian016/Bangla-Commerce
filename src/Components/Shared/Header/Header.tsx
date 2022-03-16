@@ -137,9 +137,9 @@ const Header = () => {
                             <button type="button" style={{ backgroundColor: "#3BB77E" }} className="d-inline-block primaryBgColor px-3 py-2 text-white fw-bolder rounded btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <BsGrid /> <span>Browse All Categories </span>
                             </button>
-                            <ul className="dropdown-menu">
+                            <ul className="dropdown-menu w-100">
                                 {
-                                    categories.map((Category: category): React.ReactFragment => <div key={Category._id} className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
+                                    categories.map((Category: category): React.ReactFragment => <div key={Category._id} className=' homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
                                         {/* <div>
                             <img width="35px" src={} alt="Cat" />
                         </div> */}
