@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import { useCart } from "react-use-cart";
 // import required modules
 import { FreeMode, Navigation } from "swiper";
 import Rating from 'react-rating';
@@ -29,10 +29,15 @@ const DailyBest = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        id: string,
+        price: number,
+        quantity?: number,
+        itemTotal?: number,
+        [key: string]: any
     }
     const [products, setProducts] = useState<IProducts[]>([]);
-
+    const { addItem } = useCart();
     useEffect(() => {
         fetch('https://blooming-chamber-05072.herokuapp.com/products')
             .then(res => res.json())
@@ -112,7 +117,7 @@ const DailyBest = () => {
                                             </div>
                                             <div className="mx-auto d-flex">
                                                 <Link className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
-                                                <button className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
+                                                <button  onClick={() => addItem(product)} className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
                                             </div>
                                         </div>
                                     </div>

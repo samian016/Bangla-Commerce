@@ -6,8 +6,10 @@ import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
 import Search from '../../Search/Search';
+import { useCart } from "react-use-cart";
 
 const Header = () => {
+    const { totalItems } = useCart();
     // Search Products
     const [products, setProducts] = useState<Array<any>>([]);
     const [searchText, setSearchText] = useState('');
@@ -58,8 +60,8 @@ const Header = () => {
                     </div>
                     <div className='d-flex justify-content-center'>
                         <div className='px-2'>Need help? <span className='primaryColor'>Call Us:+ 1800 900</span></div>
-                        <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
-                        <div className='px-2'>USD <BsChevronDown /></div>
+                        {/* <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
+                        <div className='px-2'>USD <BsChevronDown /></div> */}
                     </div>
                 </nav>
                 {/* {`/singleProduct/${singleDataId}`} */}
@@ -108,17 +110,17 @@ const Header = () => {
                                 </div>
                             </Link>
 
-                            <Link to='/cart'>
-                                <div className='mx-3'>
+                            <Link to='/checkout'>
+                                <div className='mx-3 position-relative'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />
                                     </div>
-                                    <span> Cart</span>
+                                    <span>Cart <span className='position-absolute top-0 start-100 translate-middle badge primaryBgColor rounded-pill'> {totalItems} </span> </span>
                                 </div>
                             </Link>
                             <div className='mx-3 dropDownMenu'>
                                 {
-                                    isLogged ? <Link to='#'>
+                                    isLogged ? <Link to='/'>
                                         <div className="iconSize align-items-center justify-content-center d-flex">
                                             <BsPerson />
                                         </div>
@@ -155,12 +157,14 @@ const Header = () => {
                                         </div>
                                         <span> <Link to='dashboard/account-details' className='dropDownText'>Setting</Link> </span>
                                     </div>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
-                                        <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsFillPersonXFill />
+                                    <Link to='/' onClick={logOut} className='dropDownText'>
+                                        <div className="dropDownList rounded px-3 py-2 d-flex">
+                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                                <BsFillPersonXFill />
+                                            </div>
+                                            <span> Sign out </span>
                                         </div>
-                                        <span> <Link to='#' onClick={logOut} className='dropDownText'>Sign out</Link> </span>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -206,8 +210,8 @@ const Header = () => {
                             <div className='px-4'><Link to="/" className='active'>Home</Link></div>
                             <div className='px-4'><Link to="/about">About</Link></div>
                             <div className='px-4'><Link to="/shop">Shop</Link></div>
-                            <div className='px-4'><Link to="/seller">Brands</Link></div>
-                            <div className='px-4'><Link to="/blog">Blog</Link></div>
+                            <div className='px-4'><Link to="/seller">Seller</Link></div>
+                            {/* <div className='px-4'><Link to="/blog">Blog</Link></div> */}
                             <div className='px-4'><Link to="/contact">Contact</Link></div>
                             <div className='px-4'><Link to="/faq">FAQ</Link></div>
                         </div>

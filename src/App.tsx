@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
@@ -35,8 +35,28 @@ import Sponsor from "./Components/Sponsor/Sponsor";
 import FeaturedProducts from "./Components/Dashboard/FeaturedProducts/FeaturedProducts";
 import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
+import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
 function App() {
+  interface IProducts {
+    _id: string;
+    ProductTitle: string,
+    Category: string,
+    Stock: number,
+    image: string,
+    rating: number,
+    shortDescription: string,
+    additionalInfo: string,
+    regularPrice: number,
+    discountPrice: number,
+    discountPercentage: number,
+    sku: string,
+    isApproved: boolean,
+    adminChecked: boolean,
+    sellerID: string,
+    quantity: number
+}
+
   return (
     <>
       <AuthProvider>
@@ -53,7 +73,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
-          <Route path="singleProduct/:productID" element={<SingleProduct />} />
+          <Route path="singleProduct/:productID" element={<SingleProduct/>} />
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
@@ -76,6 +96,7 @@ function App() {
           </Route>
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="checkout" element={<Checkout />} />
         </Routes>
         <Messenger />
         <Footer />
