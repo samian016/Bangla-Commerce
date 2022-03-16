@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import { useCart } from "react-use-cart";
+
 
 import './Product.css'
 const Products: React.FC = () => {
+
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -20,8 +23,16 @@ const Products: React.FC = () => {
         isApproved: boolean,
         adminChecked: boolean,
         sellerID: string,
+        onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
+        id: string,
+        price: number,
+        quantity: number,
+        itemTotal: number,
+        [key: string]: any
     }
+
     const [products, setProducts] = useState<IProducts[]>([]);
+    const { addItem } = useCart();
 
     useEffect(() => {
         fetch('https://blooming-chamber-05072.herokuapp.com/products')
@@ -38,7 +49,7 @@ const Products: React.FC = () => {
                 </div>
                 <div className="row border-1 row-cols-lg-5 row-cols-sm-2 row-cols-md-4">
                     {
-                        products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
+                        products.map((singleProduct) => <div key={singleProduct._id} className="mt-4 col">
                             <div className='product' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                 <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                     <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
@@ -72,7 +83,7 @@ const Products: React.FC = () => {
                                             <h5 style={{ fontWeight: "bold", color: "#3BB77E", fontSize: "20px" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through", fontSize: "18px" }} >${singleProduct.regularPrice}</span> </h5>
                                         </div>
                                         <div>
-                                            <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
+                                            <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
                                         </div>
                                     </div>
                                 </div>

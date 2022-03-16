@@ -5,10 +5,14 @@ import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFi
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
+import { useCart } from "react-use-cart";
 
 const Header = () => {
     const { logOut, isLogged } = useFirebase();
+    const {
 
+        totalItems
+      } = useCart();
     return (
         <>
             <div className='desktop-menu'>
@@ -61,7 +65,7 @@ const Header = () => {
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />
                                     </div>
-                                    <span>Cart <span className='position-absolute top-0 start-100 translate-middle badge primaryBgColor rounded-pill'> 00 </span> </span>
+                                    <span>Cart <span className='position-absolute top-0 start-100 translate-middle badge primaryBgColor rounded-pill'> {totalItems} </span> </span>
                                 </div>
                             </Link>
                             <div className='mx-3 dropDownMenu'>
