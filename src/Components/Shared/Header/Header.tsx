@@ -5,8 +5,27 @@ import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFi
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
+import Search from '../../Search/Search';
 
 const Header = () => {
+    // Search Products
+    const [products, setProducts] = useState<Array<any>>([]);
+    const [searchText, setSearchText] = useState('');
+    const [singleDataId, setSingleDataId] = useState('');
+
+    useEffect(() => {
+        fetch('https://blooming-chamber-05072.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
+    const filteredData = products.filter(singleData => singleData.ProductTitle.toLowerCase().includes(searchText.toLowerCase().trim()));
+
+    const clickDataHandler = (productId: string) => {
+        setSingleDataId(productId);
+        setSearchText("");
+    }
+
     const {
         logOut,
         isLogged
@@ -43,16 +62,33 @@ const Header = () => {
                         <div className='px-2'>USD <BsChevronDown /></div>
                     </div>
                 </nav>
-
+                {/* {`/singleProduct/${singleDataId}`} */}
                 <nav className="secondaryFontColor mid-header d-flex justify-content-between align-items-center py-4 secondaryFont">
                     <div className='main-logo w-25 ms-4'>
                         <Link to='/'><img src={Logo} alt="LOGO" /></Link>
                     </div>
                     <div className='d-flex justify-content-between w-75 borderRadius rounded align-items-center'>
-                        <div className='border borderPrimary py-3 px-3'>
+                        <div className='border borderPrimary py-3 px-3' style={{ position: "relative" }}>
                             <span className='px-3 border-end'>All Category</span>
-                            <input className='px-3 searchProduct' type="search" name="search" placeholder='Search for items..' />
+                            <input className='px-3 searchProduct' type="search" name="search" placeholder='Search for items..' id='search-data' onChange={(e) => setSearchText(e.target.value)} />
                             <span> <BsSearch /></span>
+
+                            {searchText.length < 1 ? "" : <div style={{ position: "absolute", left: 0, top: "65px", zIndex: 1000, width: "100%", minHeight: "200px", height: "500px", overflow: "scroll", backgroundColor: "#dfe6e9" }}>
+                                {
+                                    filteredData.map(singleFilteredData => <Link to={`/singleProduct/${singleFilteredData._id}`} onClick={() => clickDataHandler(singleFilteredData._id)} key={singleFilteredData._id} className="m-0 p-0" style={{ color: "#fff", }}>
+                                        <div className='d-flex justify-content-between align-items-center border rounded py-1 px-3' style={{ margin: "6px 12px", backgroundColor: "#3bb77e" }}>
+                                            <div className='image-and-title d-flex align-items-center'>
+                                                <img style={{ width: "50px", height: "auto", marginRight: "10px" }} src={singleFilteredData.image} alt="" />
+                                                <p className='p-0 m-0'>{singleFilteredData.ProductTitle}</p>
+                                            </div>
+                                            <p className='p-0 m-0'>${singleFilteredData.discountPrice}</p>
+                                        </div>
+                                    </Link>)
+                                }
+                            </div>}
+                            {/* {
+                                singleDataId.length > 0 ? setSearchText("") : console.log("Something Wring")
+                            } */}
                         </div>
                         <div className='d-flex text-center'>
                             <Link to='/compare'>

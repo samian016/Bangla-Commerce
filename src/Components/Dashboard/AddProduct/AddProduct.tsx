@@ -2,6 +2,7 @@ import { parse } from 'path/posix';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import useAuth from '../../../Hooks/useAuth';
 
 const AddProduct: React.FC = () => {
@@ -77,7 +78,7 @@ const AddProduct: React.FC = () => {
 
     const productList: IProducts = {
         ProductTitle: ProductTitle,
-        Category: productCategory,
+        Category: productCategory.toLowerCase(),
         Stock: Stock,
         additionalInfo: additionalInfo,
         image: image,
@@ -103,10 +104,10 @@ const AddProduct: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Product added successfully');
+                    swal("New Product", "Product Added Successfully", "success");
                 }
                 else {
-                    alert('Something is wrong');
+                    swal("Oppss !!!", "Something Went Wrong", "error");
                 }
             })
         e.preventDefault();

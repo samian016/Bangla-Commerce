@@ -35,7 +35,7 @@ const Products: React.FC = () => {
                 </div>
                 <div className="row border-1 row-cols-lg-5 row-cols-sm-2 row-cols-md-4">
                     {
-                        products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
+                        products.slice(0, 10).map(singleProduct => <div key={singleProduct._id} className="mt-4 col">
                             <div className='product' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                 <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                     <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
