@@ -2,13 +2,13 @@
     {
         "id":1,
         "name" : "no",
-        "images": "",
+        "images": "https://pbs.twimg.com/profile_images/1223229363358851073/0VFonLzY_400x400.jpg",
         "details" :"nsdfs"
     },
     {
         "id":2,
-        "name" : "",
-        "images" :"",
-        "details" :""
+        "name" : "ngjd",
+        "images" :"https://pbs.twimg.com/profile_images/1223229363358851073/0VFonLzY_400x400.jpg",
+        "details" :"nsijfhijsf"
     }
 ]
