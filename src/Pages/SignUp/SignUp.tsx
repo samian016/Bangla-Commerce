@@ -9,6 +9,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [passwordT, setPasswordT] = useState('');
     const [name, setName] = useState('');
+    const [img, setImg] = useState('');
     // const [signUpInfo, setSignUpInfo] = useState({});
 
     const handleOnBlurEmail = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -27,6 +28,9 @@ const SignUp = () => {
 
     const handleOnChangeAccountType = (e: React.FocusEvent<HTMLInputElement>) => {
         setAccountType(e.currentTarget.value);
+    }
+    const handleOnBlurUrl = (e: React.FocusEvent<HTMLInputElement>) => {
+        setImg(e.currentTarget.value);
     }
 
     // interface IregistrationInfo {
@@ -47,7 +51,7 @@ const SignUp = () => {
         if (password === passwordT) {
             setMessage("");
             // console.log(email, password, name, accountType);
-            createUsingEmail(email, password, name, accountType);
+            createUsingEmail(email, password, name, accountType, img);
         }
         else {
             setMessage("Password not matched");
@@ -57,7 +61,7 @@ const SignUp = () => {
     }
 
     const {
-        signUsingGoogle, createUsingEmail, message, setMessage
+        signUsingGoogle, message, setMessage, createUsingEmail
 
     } = useAuth();
     return (
@@ -77,6 +81,9 @@ const SignUp = () => {
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Control required className='login-input' type="email" onBlur={handleOnBlurEmail} placeholder="Email" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBasicimg">
+                                    <Form.Control required className='login-input' type="url" onBlur={handleOnBlurUrl} placeholder="Photo url" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Control required className='login-input' type="password" onBlur={handleOnBlurPassword} placeholder="Password" />
