@@ -11,7 +11,7 @@ const Checkout: React.FC = () => {
   return (
     <div className='container my-5 d-flex justify-content-between'>
       <div className='w-75 px-3'>
-        <div className='h3'>Total Cart: {totalItems} </div>
+        <div className='h3 fw-bold bg-light text-center  rounded'> <span className='text-success'>Total Cart:</span>  {totalItems} </div>
         <table className="table">
           <tbody className='align-items-center'>
             {
@@ -44,8 +44,8 @@ const Checkout: React.FC = () => {
         </table>
       </div>
       <div className='w-25 px-3'>
-        <div className='p-2 h3'>Checkout</div>
-        <p>{cartTotal}</p>
+        <div className='p-2 h3 fw-bold bg-success rounded text-white text-center'>Checkout</div>
+        <p className='fw-bold text-center text-warning bg-dark rounded p-1'> <span className='text-white'>Total:</span> ${cartTotal}</p>
       </div>
     </div>
   )
