@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 
 const ProductApproval = () => {
     interface IProducts {
@@ -77,6 +77,7 @@ const ProductApproval = () => {
                             <th scope="col">#ID</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Product Price</th>
+                            <th scope="col">Product Check</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

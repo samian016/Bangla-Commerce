@@ -3,6 +3,25 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEm
 import initializationAuth from '../firebase.initialize';
 import { useNavigate } from 'react-router-dom';
 
+interface IProducts {
+    _id: string;
+    ProductTitle: string,
+    Category: string,
+    Stock: number,
+    image: string,
+    rating: number,
+    shortDescription: string,
+    additionalInfo: string,
+    regularPrice: number,
+    discountPrice: number,
+    discountPercentage: number,
+    sku: string,
+    isApproved: boolean,
+    adminChecked: boolean,
+    sellerID: string,
+    quantity: number
+}
+
 type firebase = {
     user: User | null;
     message: React.SetStateAction<string>;
@@ -32,9 +51,6 @@ const useFirebase = (): firebase => {
 
 
 
-
-
-
     const saveUser = (email: string | null, displayName: string | null, method: string, AccountType: string): void => {
         const user = { email, displayName, AccountType };
 
@@ -47,13 +63,6 @@ const useFirebase = (): firebase => {
         }).then();
 
     };
-
-
-
-
-
-
-
 
     const auth: any = getAuth();
     const setNewUserName = (name: string) => {
@@ -179,7 +188,6 @@ const useFirebase = (): firebase => {
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);
-                        console.log(data.admin, "ok na?");
                     }).finally(() => {
                         setIsLoading(false);
                     })
@@ -207,9 +215,6 @@ const useFirebase = (): firebase => {
     }, [user]);
 
 
-
-
-
     return {
         user,
         message,
@@ -224,6 +229,7 @@ const useFirebase = (): firebase => {
         isLogged,
         updateUserName,
         updatingPass
+        
     }
 };
 
