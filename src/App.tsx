@@ -35,6 +35,8 @@ import Sponsor from "./Components/Sponsor/Sponsor";
 import FeaturedProducts from "./Components/Dashboard/FeaturedProducts/FeaturedProducts";
 import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
+import Promotions from "./Components/Promotions/Promotions";
+import SupportCenter from "./Components/SupportCenter/SupportCenter";
 import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
 function App() {
@@ -63,6 +65,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sponsors" element={<Sponsor/>} />
+          <Route path="/promotions" element={<Promotions/>} />
+          <Route path="/supportCenter" element={<SupportCenter/>} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />

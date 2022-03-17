@@ -44,7 +44,7 @@ const SellerList = () => {
         <>
 
 
-            <div className="text-center">
+            <div className="text-center table-responsivexc">
                 <div className="mx-auto">
                     <h1 className='text-secondary'>Vendor's</h1>
                 </div>
@@ -74,7 +74,7 @@ const SellerList = () => {
                             </form>
                         </div>
                     </nav>
-                    <table className="table table-hover table-bordered ">
+                    <table className=" table table-hover table-bordered ">
                         <thead>
                             <tr className="text-color table-info ">
                                 <th scope="col">ID</th>
@@ -94,6 +94,8 @@ const SellerList = () => {
                                     <td>{user.email}</td>
                                     <td className="table-warning">{user.contact}</td>
                                     <td className="table-warning fw-bold">{user.displayName}</td>
+
+
                                     {/* <NavLink
                   as={Link}
                   to={`/user/${user._id}`}
