@@ -46,11 +46,17 @@ const Shop: React.FC = () => {
 
     const clickCategory = (categoryName: string) => {
         console.log(categoryName);
-        fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${categoryName}`)
+        fetch("https://blooming-chamber-05072.herokuapp.com/categoryWise", {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ name: categoryName })
+        })
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
-                setName(categoryName)
+                // console.log(data);
             })
     }
 
