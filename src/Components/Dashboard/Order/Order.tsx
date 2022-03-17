@@ -23,7 +23,6 @@ const Order = () => {
                         <td>
                             <div className="btn-group">
                                 <button type="button" className="btn btn-danger">Delete</button>
-                                <button type="button" className="btn btn-warning">Update</button>
                                 {/* <button type="button" className="btn btn-success">Track</button> */}
                             </div>
                         </td>

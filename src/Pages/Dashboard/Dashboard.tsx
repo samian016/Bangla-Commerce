@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  } from 'react-router-dom'
+import { } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
 import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
@@ -33,6 +33,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Category</div>
           </Link>
+          <Link to='/dashboard/featured-products'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Featured Products</div>
+          </Link>
           <Link to='/dashboard/category-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Category List</div>
@@ -52,10 +56,6 @@ const Dashboard = () => {
           <Link to='/dashboard/address'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               My Address</div>
-          </Link>
-          <Link to='/dashboard/account-details'>
-            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-              Account Details</div>
           </Link>
           <Link to='/dashboard/makeAdmin'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>

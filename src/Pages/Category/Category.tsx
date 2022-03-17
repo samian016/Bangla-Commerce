@@ -17,7 +17,7 @@ const Category = () => {
               <div className="banner-icon">
                 <img src={icon1} alt="" />
               </div>
-              <div className="banner-text">
+              <div className="Catbanner-text">
                 <h3 className="icon-box-title">Best prices & offers</h3>
                 <p>Orders $50 or more</p>
               </div>
@@ -28,9 +28,9 @@ const Category = () => {
               <div className="banner-icon">
                 <img src={icon2} alt="" />
               </div>
-              <div className="banner-text">
+              <div className="Catbanner-text">
                 <h3 className="icon-box-title">Free delivery</h3>
-                <p>24/7 amazing services</p>
+                <p>24/7 services</p>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Category = () => {
               <div className="banner-icon">
                 <img src={icon3} alt="" />
               </div>
-              <div className="banner-text">
+              <div className="Catbanner-text">
                 <h3 className="icon-box-title">Great daily deal</h3>
                 <p>When you sign up</p>
               </div>
@@ -50,7 +50,7 @@ const Category = () => {
               <div className="banner-icon">
                 <img src={icon4} alt="" />
               </div>
-              <div className="banner-text">
+              <div className="Catbanner-text">
                 <h3 className="icon-box-title">Wide assortment</h3>
                 <p>Mega Discounts For Premium</p>
               </div>

@@ -47,16 +47,17 @@
   max-width: 100%;
 }
 
-.banner-left-icon .banner-text h3 {
+.banner-left-icon .Catbanner-text h3 {
   color: #242424;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.banner-left-icon .banner-text p {
+.banner-left-icon .Catbanner-text p {
   margin-bottom: 0;
   color: #adadad;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 480px) {

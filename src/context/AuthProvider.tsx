@@ -2,6 +2,25 @@ import { User } from 'firebase/auth';
 import React, { createContext, FC } from 'react';
 import useFirebase from '../firebase/useFirebase/useFirebase';
 
+interface IProducts {
+    _id: string;
+    ProductTitle: string,
+    Category: string,
+    Stock: number,
+    image: string,
+    rating: number,
+    shortDescription: string,
+    additionalInfo: string,
+    regularPrice: number,
+    discountPrice: number,
+    discountPercentage: number,
+    sku: string,
+    isApproved: boolean,
+    adminChecked: boolean,
+    sellerID: string,
+    quantity: number
+}
+
 
 type firebase = {
     user: User | null;
@@ -11,7 +30,7 @@ type firebase = {
     isLoading: boolean;
     admin: boolean;
     signUsingGoogle: () => void;
-    createUsingEmail: (email: string, password: string, name: string, AccountType: string) => void;
+    createUsingEmail: (email: string, password: string, name: string, AccountType: string,img:string) => void;
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;

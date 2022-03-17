@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-import './Shop.css'
+import Rating from 'react-rating';
+import "./Deals.css";
 
-const Shop: React.FC = () => {
-
-
+const Deals = () => {
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -24,61 +21,52 @@ const Shop: React.FC = () => {
         adminChecked: boolean,
         sellerID: string
     }
-    type category = {
-        _id: string,
-        categoryName: string,
-    }
-    const [products, setProducts] = useState<any[]>([]);
-    const [categories, setCategories] = useState<category[]>([]);
-    const [name, setName] = useState<string>('shop')
-    const [perPage, setPerPage] = useState<any[]>([])
-
+    const [products, setProducts] = useState<IProducts[]>([]);
     useEffect(() => {
-        fetch('https://blooming-chamber-05072.herokuapp.com/categories')
+        fetch('http://localhost:5000/featuredproducts')
             .then(res => res.json())
-            .then(data => setCategories(data))
-
-        fetch('https://blooming-chamber-05072.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-                setPerPage(data.slice(0, 10))
-            })
-
+            .then(data => setProducts(data))
     }, []);
 
-    const pageHandler = (pageNumber: number) => {
-        setPerPage(products.slice((pageNumber * 10) - 10, pageNumber * 10));
-    }
+    // Count Down Timer
+    const [timerSeconds, setTimerSeconds] = useState(0);
+    const [timerMinutes, setTimerMinutes] = useState(0);
+    const [timerHours, setTimerHours] = useState(0);
+    const [timerDays, setTimerDays] = useState(0);
 
-    let pageNumbers = []
-    for (let i = 1; i <= Math.ceil(products.length / 10); i++) {
-        pageNumbers.push(i);
-    }
-    // console.log(categories);
+    let interval;
+    const startTimer = () => {
+        const countDownDate = new Date("March 16,2022").getTime();
+        interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days: number = Math.floor(distance / (24 * 60 * 60 * 1000));
+            const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+            const seconds = Math.floor((distance % (60 * 1000)) / 1000);
 
+            if (distance < 0) {
+                // Stop Timer
+                clearInterval();
+            } else {
+                // Update Timer
+                setTimerDays(days);
+                setTimerHours(hours);
+                setTimerMinutes(minutes);
+                setTimerSeconds(seconds);
+            }
 
-    const clickCategory = (categoryName: string) => {
-        console.log(categoryName);
-        fetch("https://blooming-chamber-05072.herokuapp.com/categoryWise", {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ name: categoryName })
         })
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-                setPerPage(data)
-                // console.log(data);
-            })
     }
+
+    useEffect(() => {
+        startTimer();
+    }, [])
 
     return (
         <div id='divTag'>
             <div style={{ marginTop: "30px", marginBottom: "50px" }}>
-                <div
+                {/* <div
                     style={{}}
                     className="size"
                 >
@@ -87,7 +75,7 @@ const Shop: React.FC = () => {
                     >
                         <div className='row alignItemsCenter' >
                             <div className='col-xl-3'>
-                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>{name}</h1>
+                                <h1 style={{ marginBottom: "15px", fontSize: "48px", fontFamily: "Quicksand", fontWeight: "700", color: "#253D4E" }}>Snack</h1>
                             </div>
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
@@ -103,14 +91,14 @@ const Shop: React.FC = () => {
 
                     </div>
 
-                </div>
+                </div> */}
                 <div className='size'>
                     <p style={{ marginTop: " 4%", marginBottom: "2%", fontWeight: "400", fontSize: "1.2rem" }}>we Found <span style={{ color: "#3BB77e" }} >{`${products.length}`}</span>  items for you!</p>
                     <div className="row">
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                                 {
-                                    perPage.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                    products.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
                                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                             <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                                 <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
@@ -155,19 +143,134 @@ const Shop: React.FC = () => {
 
 
                             {/* here is the pagination  */}
-
-
                             <nav className='my-5'>
                                 <ul className="justify-content-center pagination">
-                                    {
-                                        pageNumbers.map(page => <Link to="" onClick={() => pageHandler(page)} className="page-item disabled p-1">
-                                            <span style={{ backgroundColor: "#3bb77e", fontWeight: "bold", margin: "0px 5px" }} className="page-link text-white rounded-3">{page}</span>
-                                        </Link>)
-                                    }
+                                    <li className="page-item disabled">
+                                        <span style={{ backgroundColor: "#ffd900", fontWeight: "bold", margin: "0px 5px" }} className="page-link">Previous</span>
+                                    </li>
+                                    <li className="page-item"><a style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link" href="/">1</a></li>
+                                    <li className="page-item active" aria-current="page">
+                                        <span style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link">2</span>
+                                    </li>
+                                    <li className="page-item"><a style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link" href="/">3</a></li>
+                                    <li className="page-item">
+                                        <a className="page-link" style={{ backgroundColor: "#ffd900", fontWeight: "bold", margin: "0px 5px", color: "#3BB77E" }} href="/">Next</a>
+                                    </li>
                                 </ul>
                             </nav>
 
+
+
+
+
+
+
+
+
+                            {/* Extra Swiper here  */}
+
+                            {/* <Swiper
+                                slidesPerView={1}
+                                spaceBetween={10}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    768: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 40,
+                                    },
+                                    1024: {
+                                        slidesPerView: 8,
+                                        spaceBetween: 50,
+                                    },
+                                }}
+                                className="mySwiper myCustomSwiperContaienr"
+                            >
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
+                                    <h6>Headphone</h6>
+                                    <p>68 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
+                                    <h6>Cake &amp; Milk</h6>
+                                    <p>54 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
+                                    <h6>Cake &amp; Milk</h6>
+                                    <p>54 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
+                                    <h6>Headphone</h6>
+                                    <p>68 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
+                                    <h6>Cake &amp; Milk</h6>
+                                    <p>54 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
+                                    <h6>Cake &amp; Milk</h6>
+                                    <p>54 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                                <SwiperSlide className='myCustomSwiper'>
+                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
+                                    <h6>Organic Kiwi</h6>
+                                    <p>44 items</p>
+                                </SwiperSlide>
+                            </Swiper> */}
+
+
+
+
+
                             {/* Side bar is here  */}
+
+
+
 
                         </div>
                         <div style={{}} className="col-lg-2 col-sm-12" >
@@ -234,6 +337,26 @@ const Shop: React.FC = () => {
 
                                         </li>)
                                     }
+                                    {/* <li style={{ padding: "10px 0px" }}>
+                                        <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
+                                            <img className='img2' src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-4.jpg" alt="" />
+                                            <div style={{ display: "block" }}>
+                                                <h5 style={{ color: "#3BB77E" }}>Banana sake</h5>
+                                                <p style={{ color: "#3BB77E" }}>$14.00</p>
+                                            </div>
+                                        </a>
+
+                                    </li>
+                                    <li style={{ padding: "10px 0px" }}>
+                                        <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
+                                            <img className='img2' src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-5.jpg" alt="" />
+                                            <div style={{ display: "block" }}>
+                                                <h5 style={{ color: "#3BB77E" }}>Color Jack</h5>
+                                                <p style={{ color: "#3BB77E" }}>$30.00</p>
+                                            </div>
+                                        </a>
+
+                                    </li> */}
 
                                 </ul>
                             </div>
@@ -259,4 +382,4 @@ const Shop: React.FC = () => {
     );
 };
 
-export default Shop;
+export default Deals;
