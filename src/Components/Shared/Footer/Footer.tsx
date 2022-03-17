@@ -69,8 +69,10 @@ const Footer = () => {
                                 <h1 className='font-h1'>Account</h1>
                                 <Link to="/login">
                                 <h6 className='font-h6'>Sign In</h6>
-                                </Link>                                
-                                <h6 className='font-h6'>View Cart</h6>
+                                </Link> 
+                                <Link to="/checkout">
+                                <h6 className='font-h6'>View Cart</h6></Link>                               
+                                
                                 {/* <h6 className='font-h6'>My Wishlist</h6> */}
                                 {/* <h6 className='font-h6'>Track My Order</h6> */}
                                 <Link to="">
