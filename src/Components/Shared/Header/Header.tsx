@@ -53,7 +53,6 @@ const Header = () => {
                     <div className='d-flex justify-content-center'>
                         <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
                         <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
-                        <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
                     </div>
                     <div>
                         <span>Supper Value Deals - Save more with coupons</span>
@@ -64,7 +63,6 @@ const Header = () => {
                         <div className='px-2'>USD <BsChevronDown /></div> */}
                     </div>
                 </nav>
-                {/* {`/singleProduct/${singleDataId}`} */}
                 <nav className="secondaryFontColor mid-header d-flex justify-content-between align-items-center py-4 secondaryFont">
                     <div className='main-logo w-25 ms-4'>
                         <Link to='/'><img src={Logo} alt="LOGO" /></Link>
@@ -110,7 +108,7 @@ const Header = () => {
                                 </div>
                             </Link>
 
-                            <Link to='/checkout'>
+                            <Link to='/cart'>
                                 <div className='mx-3 position-relative'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />
@@ -133,43 +131,42 @@ const Header = () => {
                                     </Link>
                                 }
                                 <div className="dropDown px-3 py-3 rounded">
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <Link to='/dashboard' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsFillPersonLinesFill />
                                         </div>
-                                        <span> <Link to='/dashboard' className='dropDownText'>My Account</Link> </span>
-                                    </div>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
+                                        <span> My Account</span>
+                                    </div></Link>
+                                    <Link to='/dashboard' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsSuitHeart />
                                         </div>
-                                        <span> <Link to='/dashboard' className='dropDownText'>My Wishlist</Link> </span>
+                                        <span> My Wishlist </span>
                                     </div>
-                                    {/* <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    </Link>
+                                    <Link to='dashboard/account-details' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                     <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                        <BsPinMap />
+                                        <BsTextParagraph />
                                     </div>
-                                    <span> <Link to='/dashboard' className='dropDownText'>Order Tracking</Link> </span>
-                                </div> */}
+                                    <span> Setting</span>
+                                </div></Link>
+                                <Link to='/' onClick={logOut} className='dropDownText'>
                                     <div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsTextParagraph />
+                                            <BsFillPersonXFill />
                                         </div>
-                                        <span> <Link to='dashboard/account-details' className='dropDownText'>Setting</Link> </span>
+                                        <span> Sign out </span>
                                     </div>
-                                    <Link to='/' onClick={logOut} className='dropDownText'>
-                                        <div className="dropDownList rounded px-3 py-2 d-flex">
-                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                                <BsFillPersonXFill />
-                                            </div>
-                                            <span> Sign out </span>
-                                        </div>
-                                    </Link>
+                                </Link>
                                 </div>
+
+                                
                             </div>
+
+
                         </div>
                     </div>
-                </nav >
+                </nav>
 
                 <nav className='primaryFont mid-header d-flex justify-content-between align-items-center py-2 border-top border-bottom'>
                     <div className='w-25 mx-4 d-flex justify-content-between align-items-center '>
@@ -197,7 +194,7 @@ const Header = () => {
                                 }
                             </ul>
                         </div>
-                       
+
                         <div className='fw-bold d-flex'>
                             <span className='primaryColor fw-bolder px-1'>
                                 <BsLightning />
@@ -233,7 +230,7 @@ const Header = () => {
 
             </div>
             {/* Navigation For Mobile  */}
-            <div className="mobile-menu">
+            <div className="mobile-menu" >
                 <div className='primaryBgColor text-white py-2 text-center'>
                     <span>Grand opening, up to 15%  off all items.</span>
                 </div>
@@ -257,7 +254,6 @@ const Header = () => {
                     </div>
                 </nav>
             </div>
-
         </>
     );
 };
