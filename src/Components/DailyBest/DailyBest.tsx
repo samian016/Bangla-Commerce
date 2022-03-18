@@ -82,8 +82,8 @@ const DailyBest = () => {
 
 
                             <Swiper
-                                slidesPerView={3}
-                                spaceBetween={0}
+                                slidesPerView={4}
+                                spaceBetween={10}
 
                                 modules={[FreeMode, Navigation]}
                                 className="mySwiper"
@@ -91,14 +91,14 @@ const DailyBest = () => {
                                 {
                                     products.map(product => <SwiperSlide key={product._id} >
                                         <div style={{ height: "520px", borderRadius: "20px" }}>
-                                            <div style={{ width: "300px", position: "relative", height: "520px", borderRadius: "20px" }} className="card">
+                                            <div style={{ width: "100%", position: "relative", height: "520px", borderRadius: "20px" }} className="card ">
                                                 <img style={{ width: "70%" }} src={product.image} className="card-img-top mx-auto" alt="..." />
                                                 <div className="card-body">
                                                     <h5 style={{ color: "#253D4E" }} className="card-title">{product.ProductTitle}</h5>
                                                     <h6 style={{ fontSize: "8px" }}>
                                                         <Rating
                                                             readonly
-                                                            initialRating={3}
+                                                            initialRating={product.rating}
                                                             fullSymbol="fa fa-star fa-2x filled"
                                                             emptySymbol="fa fa-star-o fa-2x notFilled">
                                                         </Rating>
