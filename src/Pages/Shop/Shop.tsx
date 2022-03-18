@@ -3,8 +3,10 @@ import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
+import { useCart } from "react-use-cart";
 
 const Shop: React.FC = () => {
+    const { addItem } = useCart();
 
 
     interface IProducts {
@@ -22,7 +24,12 @@ const Shop: React.FC = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        id: string,
+        price: number,
+        quantity?: number,
+        itemTotal?: number,
+        [key: string]: any
     }
     type category = {
         _id: string,
@@ -53,7 +60,6 @@ const Shop: React.FC = () => {
                 setName(categoryName)
             })
     }
-
 
 
     return (
@@ -103,7 +109,7 @@ const Shop: React.FC = () => {
                                                 <div style={{ marginBottom: "5px" }}>
                                                     <p style={{ fontWeight: "bold", color: "#adadad" }} className="">{singleProduct.Category}</p>
                                                 </div>
-                                                <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>{singleProduct.ProductTitle}</h6>
+                                                <Link to={`/singleProduct/${singleProduct._id}`}> <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>{singleProduct.ProductTitle}</h6></Link>
                                                 <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
                                                     <h6 style={{ fontSize: "6px" }}>
                                                         <Rating
@@ -124,7 +130,7 @@ const Shop: React.FC = () => {
                                                         <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >${singleProduct.regularPrice}</span> </h6>
                                                     </div>
                                                     <div>
-                                                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
+                                                        <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
                                                     </div>
                                                 </div>
                                             </div>

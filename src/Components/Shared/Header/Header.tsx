@@ -53,7 +53,7 @@ const Header = () => {
                     <div className='d-flex justify-content-center'>
                         <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
                         <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
-                        <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
+                        {/* <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link> */}
                     </div>
                     <div>
                         <span>Supper Value Deals - Save more with coupons</span>
@@ -93,7 +93,7 @@ const Header = () => {
                             } */}
                         </div>
                         <div className='d-flex text-center'>
-                            <Link to='/compare'>
+                            {/* <Link to='/compare'>
                                 <div className='mx-3 '>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsPieChart />
@@ -108,9 +108,9 @@ const Header = () => {
                                     </div>
                                     <span>Wishlist</span>
                                 </div>
-                            </Link>
+                            </Link> */}
 
-                            <Link to='/checkout'>
+                            <Link to='/cart'>
                                 <div className='mx-3 position-relative'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />

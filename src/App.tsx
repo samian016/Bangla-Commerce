@@ -37,8 +37,9 @@ import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
 import Promotions from "./Components/Promotions/Promotions";
 import SupportCenter from "./Components/SupportCenter/SupportCenter";
-import Checkout from "./Pages/Checkout/Checkout";
+import ViewCart from "./Pages/ViewCart/ViewCart";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
+import Checkout from "./Pages/Checkout/Checkout";
 function App() {
   interface IProducts {
     _id: string;
@@ -56,7 +57,7 @@ function App() {
     isApproved: boolean,
     adminChecked: boolean,
     sellerID: string,
-    quantity: number
+    quantity: number,
 }
 
   return (
@@ -101,6 +102,7 @@ function App() {
           </Route>
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="cart" element={<ViewCart />} />
           <Route path="checkout" element={<Checkout />} />
         </Routes>
         <Messenger />
