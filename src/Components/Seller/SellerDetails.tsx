@@ -33,10 +33,10 @@ const SellerDetails = () => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title"> Name: {seller[0].name}</h5>
-                        <h5 className="card-title"> Shop Name: {seller[0].sellerShop}</h5>
-                        <p className="card-text">Address: {seller[0].address} </p>
-                        <p className="card-text"><small className="text-muted">Contact Number : {seller[0].number}</small></p>
+                        <h5 className="card-title"> Name: {seller[0].name} </h5>
+                        <h5 className="card-title"> Shop Name: {seller[0].sellerShop} </h5>
+                        <p className="card-text"> Address: {seller[0].address} </p>
+                        <p className="card-text"><small className="text-muted"> Contact Number : {seller[0].number}</small></p>
                     </div>
                 </div>
             </div>

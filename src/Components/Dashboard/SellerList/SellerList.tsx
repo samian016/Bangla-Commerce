@@ -22,13 +22,6 @@ const SellerList = () => {
         fetch("https://blooming-chamber-05072.herokuapp.com/vendors")
             .then((res) => res.json())
             .then((data) => {
-                // if (data) {
-                //     let userFil = data.filter((user: userD) =>
-                //         user.AccountType.includes("vendor")
-                //     );
-                //     setUser(userFil);
-                //     setAllUser(userFil);
-                // }
                 setUser(data);
                 setAllUser(data);
             });

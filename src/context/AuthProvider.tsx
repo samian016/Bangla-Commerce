@@ -30,7 +30,7 @@ type firebase = {
     isLoading: boolean;
     admin: boolean;
     signUsingGoogle: () => void;
-    createUsingEmail: (email: string, password: string, name: string, AccountType: string) => void;
+    createUsingEmail: (email: string, password: string, name: string, AccountType: string,img:string) => void;
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
