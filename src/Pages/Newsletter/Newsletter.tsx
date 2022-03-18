@@ -3,6 +3,7 @@ import img from "../../asset/Icon/banner-9.png";
 import swal from 'sweetalert';
 import "./Newsletter.css";
 
+
 const Newsletter: React.FC = () => {
   const [subscribeEmail, setSubscribeEmail] = useState('');
   const handleOnBlurEmail = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -45,9 +46,10 @@ const Newsletter: React.FC = () => {
                 </p>
                 <form className="form-subscriber d-flex">
                   <input id="emailInput" type="email" placeholder="Your email address" onBlur={handleOnBlurEmail} />
-                  <button onClick={handleProductSubmit} className="button" type="submit">
+                  <button  onClick={handleProductSubmit} className="button" type="submit">
                     Subscribe
                   </button>
+                  
                 </form>
                 <img src={img} alt="" />
               </div>

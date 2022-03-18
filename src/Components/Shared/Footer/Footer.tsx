@@ -74,7 +74,7 @@ const Footer = () => {
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Account</h1>
                                 {
-                                    user ? <div>nnnn</div> : <Link to="/login">
+                                    user ? [] : <Link to="/login">
                                         <h6 className='font-h6'>Sign In</h6>
                                     </Link>
                                 }
@@ -109,7 +109,7 @@ const Footer = () => {
                                 <h1 className='font-h1'>Corporate</h1>
 
                                 {
-                                    user ? <div>nnnn</div> : <Link to="/singUp">
+                                    user ? [] : <Link to="/singUp">
                                         <h6 className='font-h6 mt-4'>Become a Vendor</h6>
                                     </Link>
                                 }
