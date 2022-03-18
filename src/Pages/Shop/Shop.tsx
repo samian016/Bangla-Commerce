@@ -59,7 +59,7 @@ const Shop: React.FC = () => {
 
 
     const clickCategory = (categoryName: string) => {
-        console.log(categoryName);
+        setName(categoryName);
         fetch("https://blooming-chamber-05072.herokuapp.com/categoryWise", {
             method: 'PUT',
             headers: {
