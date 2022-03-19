@@ -42,7 +42,7 @@ const Seller = () => {
             <div className='mx-auto' >
                 <h1> ALL SELLER </h1>
             </div>
-            <div className=' mx-auto' style={{
+            <div className='mx-auto' style={{
                 width: '80%'
             }} >
                 <nav className="navbar navbar-light bg-light">

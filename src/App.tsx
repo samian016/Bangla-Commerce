@@ -41,6 +41,8 @@ import PrivateOutlet from "./Components/PrivateOutlet/PrivateOutlet";
 import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
 
+import ViewCart from "./Pages/ViewCart/ViewCart";
+
 function App() {
   interface IProducts {
     _id: string;
@@ -58,8 +60,8 @@ function App() {
     isApproved: boolean,
     adminChecked: boolean,
     sellerID: string,
-    quantity: number
-  }
+    quantity: number,
+}
 
   return (
     <>
@@ -112,6 +114,7 @@ function App() {
 
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="cart" element={<ViewCart />} />
           <Route path="checkout" element={<Checkout />} />
         </Routes>
         <Messenger />
