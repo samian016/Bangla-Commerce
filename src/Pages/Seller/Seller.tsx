@@ -40,7 +40,7 @@ const Seller = () => {
         }
     };
     return (
-        <>
+        <div className='container'>
             <div className='seller-section pt-5'>
                 <div className="container-fluid">
                     <div className="search-and-title">
@@ -101,7 +101,7 @@ const Seller = () => {
 
                 </div>
             </div >
-        </>
+        </div>
     );
 };
 
