@@ -37,8 +37,10 @@ import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
 import Promotions from "./Components/Promotions/Promotions";
 import SupportCenter from "./Components/SupportCenter/SupportCenter";
+import PrivateOutlet from "./Components/PrivateOutlet/PrivateOutlet";
 import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
+
 function App() {
   interface IProducts {
     _id: string;
@@ -57,7 +59,7 @@ function App() {
     adminChecked: boolean,
     sellerID: string,
     quantity: number
-}
+  }
 
   return (
     <>
@@ -65,9 +67,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/sponsors" element={<Sponsor/>} />
-          <Route path="/promotions" element={<Promotions/>} />
-          <Route path="/supportCenter" element={<SupportCenter/>} />
+          <Route path="/sponsors" element={<Sponsor />} />
+          <Route path="/promotions" element={<Promotions />} />
+          <Route path="/supportCenter" element={<SupportCenter />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
@@ -78,27 +80,36 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
-          <Route path="singleProduct/:productID" element={<SingleProduct/>} />
+          <Route path="singleProduct/:productID" element={<SingleProduct />} />
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
-          <Route path="dashboard" element={<Dashboard />}>
-            <Route path="account-details" element={<AccountDetails />} />
-            <Route path="add-product" element={<AddProduct />} />
-            <Route path="edit-product/:productID" element={<EditProduct />} />
-            <Route path="featured-products" element={<FeaturedProducts />} />
-            <Route path="address" element={<Address />} />
-            <Route path="category-list" element={<CategoryList />} />
-            <Route path="add-category" element={<AddCategroy />} />
-            <Route path="order" element={<Order />} />
-            <Route path="makeAdmin" element={<MakeAdmin />} />
-            <Route path="product-approval" element={<ProductApproval />} />
-            <Route path="product-list" element={<ProductList />} />
-            <Route path="track-order" element={<TrackOrder />} />
-            <Route path="seller-list" element={<SellerList />} />
-            <Route index element={<Welcome />} />
+
+          <Route path="/*" element={<PrivateOutlet /> }>
+
+            <Route path="dashboard" element={<Dashboard />}>
+              
+              <Route path="account-details" element={<AccountDetails />} />
+              <Route path="add-product" element={<AddProduct />} />
+              <Route path="edit-product/:productID" element={<EditProduct />} />
+              <Route path="featured-products" element={<FeaturedProducts />} />
+              <Route path="address" element={<Address />} />
+              <Route path="category-list" element={<CategoryList />} />
+              <Route path="add-category" element={<AddCategroy />} />
+              <Route path="order" element={<Order />} />
+              <Route path="makeAdmin" element={<MakeAdmin />} />
+              <Route path="product-approval" element={<ProductApproval />} />
+              <Route path="product-list" element={<ProductList />} />
+              <Route path="track-order" element={<TrackOrder />} />
+              <Route path="seller-list" element={<SellerList />} />
+              <Route index element={<Welcome />} />
+
+            </Route>
+
           </Route>
+
+
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
           <Route path="checkout" element={<Checkout />} />

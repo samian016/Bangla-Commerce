@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
-    let { user } = useAuth();
+    const { user } = useAuth();
 
     return (
         <div className='container-fluid overflow-hidden my-3'>
