@@ -4,15 +4,25 @@ type category = {
     _id: string,
     categoryName: string,
 }
+type categoryType = {
+    categoryName: string,
+    img: string,
+}
 const Category = () => {
 
-  
+
 
     const [categories, setCategories] = useState<category[]>([]);
-    const [categoryInput, setCategoryInput] = useState<React.SetStateAction<string>>('');
+    const [categoryInput, setCategoryInput] = useState('');
+    const [categoryInputUtl, setCategoryInputUrl] = useState('');
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         setCategoryInput(e.currentTarget.value);
+        // console.log(e.currentTarget.value);
+    }
+    const onChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        setCategoryInputUrl(e.currentTarget.value);
         // console.log(e.currentTarget.value);
     }
 
@@ -24,19 +34,23 @@ const Category = () => {
             .then((data: category[]): void => {
                 setCategories(data);
             })
-    }, [])
+    })
 
     // console.log(categories);
 
-
     const submit = () => {
         const category: React.SetStateAction<string> = categoryInput;
+        const categorydata: categoryType = {
+            categoryName: categoryInput.toLocaleLowerCase(),
+            img: categoryInputUtl,
+        }
 
         fetch(`https://blooming-chamber-05072.herokuapp.com/category/${category}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
             },
+            body: JSON.stringify(categorydata)
         })
     }
 
@@ -48,9 +62,20 @@ const Category = () => {
             <div className='w-75'>
                 <h1 className='primaryFont fw-bolder primaryFontColor mb-3'>Add New Category</h1>
                 <div className="form-floating mb-3">
-                    <input type="text" onChange={onChange} className="form-control" id="floatingInput" placeholder="Category Name" />
-                    <label htmlFor="floatingInput">Category Name</label>
+                  
+                        <input type="text" onChange={onChange} className="form-control" id="floatingInput" placeholder="Category Name" />
+
+                        <label htmlFor="floatingInput">Category Name</label>
+                   
+                   
+                    <div className="form-floating my-3">
+                        <input type="text" onChange={onChange2} className="form-control" id="Input1" placeholder="Category img url" />
+
+                        <label htmlFor="Input1">Category img url</label>
+                    </div>
+
                 </div>
+
                 <Link onClick={submit} to='/dashboard/category-list'>
                     <div className='text-center px-4 d-inline-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
                         Add Category</div>
@@ -75,6 +100,3 @@ const Category = () => {
 };
 
 export default Category;
-
-
-
