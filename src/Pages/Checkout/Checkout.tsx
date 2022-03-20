@@ -14,7 +14,7 @@ const Checkout: React.FC = () => {
             <div className="w-75 ms-2 me-5">
                 <div className='h1 primaryFont fw-bolder primaryFontColor'>Checkout</div>
                 <div className='h6 primaryFont mb-3'>There are {totalItems} products in your cart</div>
-                <div className='h4 primaryFont fw-bolder secondaryFontColor py-3'>Billing Details</div>
+                <div className='h4 primaryFont fw-bolder primaryFontColor py-3'>Billing Details</div>
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-floating mb-3">
