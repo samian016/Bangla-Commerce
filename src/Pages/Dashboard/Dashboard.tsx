@@ -41,6 +41,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Category List</div>
           </Link>
+          <Link to='/dashboard/write-blog'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Write Blog</div>
+          </Link>
           <Link to='/dashboard/product-approval'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Product Approval</div>

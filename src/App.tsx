@@ -36,6 +36,8 @@ import FeaturedProducts from "./Components/Dashboard/FeaturedProducts/FeaturedPr
 import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
+import WriteBlog from "./Components/Dashboard/WriteBlog/WriteBlog";
+import SingleBlog from "./Components/SingleBlog/SingleBlog";
 function App() {
   return (
     <>
@@ -54,6 +56,7 @@ function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
           <Route path="singleProduct/:productID" element={<SingleProduct />} />
+          <Route path="singleBlog/:blogID" element={<SingleBlog />} />
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
@@ -66,6 +69,7 @@ function App() {
             <Route path="address" element={<Address />} />
             <Route path="category-list" element={<CategoryList />} />
             <Route path="add-category" element={<AddCategroy />} />
+            <Route path="write-blog" element={<WriteBlog />} />
             <Route path="order" element={<Order />} />
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="product-approval" element={<ProductApproval />} />
