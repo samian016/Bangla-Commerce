@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./WriteBlog.css";
 import { Editor } from '@tinymce/tinymce-react';
 import useAuth from '../../../Hooks/useAuth';
@@ -7,12 +7,13 @@ import swal from 'sweetalert';
 
 const WriteBlog = () => {
     interface IBlog {
-        _id?: string | undefined,
+        _id?: string,
         title: string,
         description: string,
         image: string,
         authorName: string | null | undefined,
-        postTime: string
+        postTime: string,
+        isApproved: boolean
     }
     // Current Date
     var today = new Date();
@@ -40,7 +41,8 @@ const WriteBlog = () => {
         description: description,
         image: image,
         authorName: user?.displayName,
-        postTime: myTodayDate
+        postTime: myTodayDate,
+        isApproved: false
     }
 
     const handleBlogSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -66,34 +68,6 @@ const WriteBlog = () => {
         e.preventDefault();
     }
 
-    // Show Data In Table
-    const [myBlogs, setMyBlogs] = useState<IBlog[]>([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/blogs')
-            .then(res => res.json())
-            .then(data => setMyBlogs(data))
-    }, []);
-
-    // Delete Single Blog
-    const handleDeleteProduct = (id: string | undefined | null) => {
-        const forward = window.confirm("Are you sure? It will be deleted permanently !!!");
-        if (forward) {
-            fetch(`http://localhost:5000/blogs/delete/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert("Deleted Successfully");
-                        const restOfProducts = myBlogs.filter(singleBlog => singleBlog._id !== id);
-                        setMyBlogs(restOfProducts);
-                    }
-                    else {
-                        alert("Something wrong")
-                    }
-                })
-        }
-    }
 
     return (
         <>
@@ -133,40 +107,6 @@ const WriteBlog = () => {
                     <span onClick={handleBlogSubmit} className='text-center px-4 d-inline-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
                         Add Product</span>
                 </Link>
-            </div>
-
-            {/* Posted Blog List */}
-            <div>
-                <h1 className='primaryFont fw-bolder primaryFontColor mb-3'>All Blog Post</h1>
-                <div className="row">
-                    <div>
-                        <table className='table table-bordered'>
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Posted Date</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    myBlogs.map(blog => <tr key={blog._id}>
-                                        <td>{blog.title}</td>
-                                        <td>{blog.authorName}</td>
-                                        <td>{blog.postTime}</td>
-                                        <td className='d-flex justify-content-center align-items-center'>
-                                            {/* <Link to={`/dashboard/edit-product/${blog._id}`} className='btn btn-warning btn-sm me-2'>Edit</Link> */}
-                                            <button onClick={() => handleDeleteProduct(blog._id)} className='btn btn-danger btn-sm'>Delete</button>
-                                            <button>Edit</button>
-                                            <button>Delete</button>
-                                        </td>
-                                    </tr>)
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </>
     );

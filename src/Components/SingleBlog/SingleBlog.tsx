@@ -24,19 +24,19 @@ const SingleBlog: React.FC = () => {
     console.log(singleBlog);
 
     return (
-        <div className='container'>
+        <div className='container my-5'>
             <div className="row">
                 <div className="col-md-10 mx-auto">
                     <div className="product-image d-flex justify-content-center">
-                        <img className='w-75 img-fluid border' src={singleBlog[0]?.image} alt="" />
+                        <img className='w-100 img-fluid border' src={singleBlog[0]?.image} alt="" />
                     </div>
-                    <div>
+                    <div className='mt-2'>
                         <p className="card-text">By <span className='fw-bold'>{singleBlog[0]?.authorName}</span> On <span className='fw-bold'>{singleBlog[0]?.postTime}</span></p>
                     </div>
-                    <div>
+                    <div className='mt-2'>
                         <h1>{singleBlog[0]?.title}</h1>
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: singleBlog[0]?.description }}></div>
+                    <div className='mt-5' dangerouslySetInnerHTML={{ __html: singleBlog[0]?.description }}></div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
@@ -35,16 +35,46 @@ import Sponsor from "./Components/Sponsor/Sponsor";
 import FeaturedProducts from "./Components/Dashboard/FeaturedProducts/FeaturedProducts";
 import Deals from "./Pages/Deals/Deals";
 import Messenger from "./Components/Messenger/Messenger";
+import Promotions from "./Components/Promotions/Promotions";
+import SupportCenter from "./Components/SupportCenter/SupportCenter";
+import PrivateOutlet from "./Components/PrivateOutlet/PrivateOutlet";
+import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
 import WriteBlog from "./Components/Dashboard/WriteBlog/WriteBlog";
 import SingleBlog from "./Components/SingleBlog/SingleBlog";
+
+import ViewCart from "./Pages/ViewCart/ViewCart";
+import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
+
 function App() {
+  interface IProducts {
+    _id: string;
+    ProductTitle: string,
+    Category: string,
+    Stock: number,
+    image: string,
+    rating: number,
+    shortDescription: string,
+    additionalInfo: string,
+    regularPrice: number,
+    discountPrice: number,
+    discountPercentage: number,
+    sku: string,
+    isApproved: boolean,
+    adminChecked: boolean,
+    sellerID: string,
+    quantity: number,
+  }
+
   return (
     <>
       <AuthProvider>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sponsors" element={<Sponsor />} />
+          <Route path="/promotions" element={<Promotions />} />
+          <Route path="/supportCenter" element={<SupportCenter />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
@@ -61,25 +91,34 @@ function App() {
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
           <Route path="category/:id" element={<CategorizedShop />} />
-          <Route path="dashboard" element={<Dashboard />}>
-            <Route path="account-details" element={<AccountDetails />} />
-            <Route path="add-product" element={<AddProduct />} />
-            <Route path="edit-product/:productID" element={<EditProduct />} />
-            <Route path="featured-products" element={<FeaturedProducts />} />
-            <Route path="address" element={<Address />} />
-            <Route path="category-list" element={<CategoryList />} />
-            <Route path="add-category" element={<AddCategroy />} />
-            <Route path="write-blog" element={<WriteBlog />} />
-            <Route path="order" element={<Order />} />
-            <Route path="makeAdmin" element={<MakeAdmin />} />
-            <Route path="product-approval" element={<ProductApproval />} />
-            <Route path="product-list" element={<ProductList />} />
-            <Route path="track-order" element={<TrackOrder />} />
-            <Route path="seller-list" element={<SellerList />} />
-            <Route index element={<Welcome />} />
+          <Route path="categoryWise/:id" element={<CategorizedShop />} />
+          <Route path="/*" element={<PrivateOutlet />}>
+
+            <Route path="dashboard" element={<Dashboard />}>
+              <Route path="account-details" element={<AccountDetails />} />
+              <Route path="add-product" element={<AddProduct />} />
+              <Route path="edit-product/:productID" element={<EditProduct />} />
+              <Route path="featured-products" element={<FeaturedProducts />} />
+              <Route path="address" element={<Address />} />
+              <Route path="category-list" element={<CategoryList />} />
+              <Route path="add-category" element={<AddCategroy />} />
+              <Route path="write-blog" element={<WriteBlog />} />
+              <Route path="blogList" element={<BlogList />} />
+              <Route path="order" element={<Order />} />
+              <Route path="makeAdmin" element={<MakeAdmin />} />
+              <Route path="product-approval" element={<ProductApproval />} />
+              <Route path="product-list" element={<ProductList />} />
+              <Route path="track-order" element={<TrackOrder />} />
+              <Route path="seller-list" element={<SellerList />} />
+              <Route index element={<Welcome />} />
+            </Route>
           </Route>
+
+
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="cart" element={<ViewCart />} />
+          <Route path="checkout" element={<Checkout />} />
         </Routes>
         <Messenger />
         <Footer />

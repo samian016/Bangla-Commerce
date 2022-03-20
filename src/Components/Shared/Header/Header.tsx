@@ -6,8 +6,10 @@ import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
 import Search from '../../Search/Search';
+import { useCart } from "react-use-cart";
 
 const Header = () => {
+    const { totalItems } = useCart();
     // Search Products
     const [products, setProducts] = useState<Array<any>>([]);
     const [searchText, setSearchText] = useState('');
@@ -36,7 +38,7 @@ const Header = () => {
     }
     const [categories, setCategories] = useState<category[]>([]);
     useEffect(() => {
-        console.log(categories);
+        // console.log(categories);
         fetch("https://blooming-chamber-05072.herokuapp.com/categories")
             .then((result: Response): Promise<category[]> => result.json())
             .then((data: category[]): void => {
@@ -51,18 +53,16 @@ const Header = () => {
                     <div className='d-flex justify-content-center'>
                         <Link to='/about'> <div className='px-2 border-end'>About Us</div> </Link>
                         <Link to='/login'><div className='px-2 border-end'>My Account</div></Link>
-                        <Link to='/whishList'><div className='px-2 border-end'>Wishlist</div></Link>
                     </div>
                     <div>
                         <span>Supper Value Deals - Save more with coupons</span>
                     </div>
                     <div className='d-flex justify-content-center'>
                         <div className='px-2'>Need help? <span className='primaryColor'>Call Us:+ 1800 900</span></div>
-                        <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
-                        <div className='px-2'>USD <BsChevronDown /></div>
+                        {/* <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
+                        <div className='px-2'>USD <BsChevronDown /></div> */}
                     </div>
                 </nav>
-                {/* {`/singleProduct/${singleDataId}`} */}
                 <nav className="secondaryFontColor mid-header d-flex justify-content-between align-items-center py-4 secondaryFont">
                     <div className='main-logo w-25 ms-4'>
                         <Link to='/'><img src={Logo} alt="LOGO" /></Link>
@@ -109,16 +109,16 @@ const Header = () => {
                             </Link>
 
                             <Link to='/cart'>
-                                <div className='mx-3'>
+                                <div className='mx-3 position-relative'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsFillCartCheckFill />
                                     </div>
-                                    <span> Cart</span>
+                                    <span>Cart <span className='position-absolute top-0 start-100 translate-middle badge primaryBgColor rounded-pill'> {totalItems} </span> </span>
                                 </div>
                             </Link>
                             <div className='mx-3 dropDownMenu'>
                                 {
-                                    isLogged ? <Link to='#'>
+                                    isLogged ? <Link to='/'>
                                         <div className="iconSize align-items-center justify-content-center d-flex">
                                             <BsPerson />
                                         </div>
@@ -131,41 +131,42 @@ const Header = () => {
                                     </Link>
                                 }
                                 <div className="dropDown px-3 py-3 rounded">
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <Link to='/dashboard' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsFillPersonLinesFill />
                                         </div>
-                                        <span> <Link to='/dashboard' className='dropDownText'>My Account</Link> </span>
-                                    </div>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
+                                        <span> My Account</span>
+                                    </div></Link>
+                                    <Link to='/dashboard' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsSuitHeart />
                                         </div>
-                                        <span> <Link to='/dashboard' className='dropDownText'>My Wishlist</Link> </span>
+                                        <span> My Wishlist </span>
                                     </div>
-                                    {/* <div className="dropDownList rounded px-3 py-2 d-flex">
-                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                        <BsPinMap />
-                                    </div>
-                                    <span> <Link to='/dashboard' className='dropDownText'>Order Tracking</Link> </span>
-                                </div> */}
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
+                                    </Link>
+                                    <Link to='dashboard/account-details' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsTextParagraph />
                                         </div>
-                                        <span> <Link to='dashboard/account-details' className='dropDownText'>Setting</Link> </span>
-                                    </div>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
-                                        <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsFillPersonXFill />
+                                        <span> Setting</span>
+                                    </div></Link>
+                                    <Link to='/' onClick={logOut} className='dropDownText'>
+                                        <div className="dropDownList rounded px-3 py-2 d-flex">
+                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                                <BsFillPersonXFill />
+                                            </div>
+                                            <span> Sign out </span>
                                         </div>
-                                        <span> <Link to='#' onClick={logOut} className='dropDownText'>Sign out</Link> </span>
-                                    </div>
+                                    </Link>
                                 </div>
+
+
                             </div>
+
+
                         </div>
                     </div>
-                </nav >
+                </nav>
 
                 <nav className='primaryFont mid-header d-flex justify-content-between align-items-center py-2 border-top border-bottom'>
                     <div className='w-25 mx-4 d-flex justify-content-between align-items-center '>
@@ -179,7 +180,7 @@ const Header = () => {
                                         {/* <div>
                             <img width="35px" src={} alt="Cat" />
                         </div> */}
-                                        <Link to={`/category/${Category._id}`}>
+                                        <Link to={`/categoryWise/${Category._id}`}>
                                             <span>
                                                 {Category.categoryName}
                                             </span>
@@ -193,7 +194,7 @@ const Header = () => {
                                 }
                             </ul>
                         </div>
-                       
+
                         <div className='fw-bold d-flex'>
                             <span className='primaryColor fw-bolder px-1'>
                                 <BsLightning />
@@ -206,7 +207,7 @@ const Header = () => {
                             <div className='px-4'><Link to="/" className='active'>Home</Link></div>
                             <div className='px-4'><Link to="/about">About</Link></div>
                             <div className='px-4'><Link to="/shop">Shop</Link></div>
-                            <div className='px-4'><Link to="/seller">Brands</Link></div>
+                            <div className='px-4'><Link to="/seller">Seller</Link></div>
                             <div className='px-4'><Link to="/blog">Blog</Link></div>
                             <div className='px-4'><Link to="/contact">Contact</Link></div>
                             <div className='px-4'><Link to="/faq">FAQ</Link></div>
@@ -229,7 +230,7 @@ const Header = () => {
 
             </div>
             {/* Navigation For Mobile  */}
-            <div className="mobile-menu">
+            <div className="mobile-menu" >
                 <div className='primaryBgColor text-white py-2 text-center'>
                     <span>Grand opening, up to 15%  off all items.</span>
                 </div>
@@ -253,7 +254,6 @@ const Header = () => {
                     </div>
                 </nav>
             </div>
-
         </>
     );
 };

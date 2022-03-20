@@ -32,11 +32,13 @@ const AddProduct: React.FC = () => {
         additionalInfo: string,
         regularPrice: number,
         discountPrice: number,
+        price:number,
+        id:number,
         discountPercentage: number,
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string | null | undefined
+        sellerID: string | null | undefined,
     }
     const [product, setProduct] = useState<IProducts>();
     const [ProductTitle, setProductTitle] = useState('');
@@ -86,6 +88,8 @@ const AddProduct: React.FC = () => {
         isApproved: false,
         regularPrice: regularPrice,
         discountPrice: discountPrice,
+        price:discountPrice,
+        id:discountPrice*Math.random(),
         rating: 0,
         sellerID: user?.email,
         discountPercentage: Math.round((((regularPrice - discountPrice) / regularPrice) * 100)),
