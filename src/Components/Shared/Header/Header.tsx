@@ -145,22 +145,22 @@ const Header = () => {
                                     </div>
                                     </Link>
                                     <Link to='dashboard/account-details' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
-                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                        <BsTextParagraph />
-                                    </div>
-                                    <span> Setting</span>
-                                </div></Link>
-                                <Link to='/' onClick={logOut} className='dropDownText'>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsFillPersonXFill />
+                                            <BsTextParagraph />
                                         </div>
-                                        <span> Sign out </span>
-                                    </div>
-                                </Link>
+                                        <span> Setting</span>
+                                    </div></Link>
+                                    <Link to='/' onClick={logOut} className='dropDownText'>
+                                        <div className="dropDownList rounded px-3 py-2 d-flex">
+                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                                <BsFillPersonXFill />
+                                            </div>
+                                            <span> Sign out </span>
+                                        </div>
+                                    </Link>
                                 </div>
 
-                                
+
                             </div>
 
 
@@ -208,7 +208,7 @@ const Header = () => {
                             <div className='px-4'><Link to="/about">About</Link></div>
                             <div className='px-4'><Link to="/shop">Shop</Link></div>
                             <div className='px-4'><Link to="/seller">Seller</Link></div>
-                            {/* <div className='px-4'><Link to="/blog">Blog</Link></div> */}
+                            <div className='px-4'><Link to="/blog">Blog</Link></div>
                             <div className='px-4'><Link to="/contact">Contact</Link></div>
                             <div className='px-4'><Link to="/faq">FAQ</Link></div>
                         </div>

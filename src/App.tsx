@@ -40,8 +40,11 @@ import SupportCenter from "./Components/SupportCenter/SupportCenter";
 import PrivateOutlet from "./Components/PrivateOutlet/PrivateOutlet";
 import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
+import WriteBlog from "./Components/Dashboard/WriteBlog/WriteBlog";
+import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 import ViewCart from "./Pages/ViewCart/ViewCart";
+import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
 
 function App() {
   interface IProducts {
@@ -61,7 +64,7 @@ function App() {
     adminChecked: boolean,
     sellerID: string,
     quantity: number,
-}
+  }
 
   return (
     <>
@@ -83,15 +86,15 @@ function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
           <Route path="singleProduct/:productID" element={<SingleProduct />} />
+          <Route path="singleBlog/:blogID" element={<SingleBlog />} />
           <Route path="login" element={<LogIn />} />
           <Route path="singUp" element={<SignUp />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
-
-          <Route path="/*" element={<PrivateOutlet /> }>
+          <Route path="/*" element={<PrivateOutlet />}>
 
             <Route path="dashboard" element={<Dashboard />}>
-              
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<AddProduct />} />
               <Route path="edit-product/:productID" element={<EditProduct />} />
@@ -99,6 +102,8 @@ function App() {
               <Route path="address" element={<Address />} />
               <Route path="category-list" element={<CategoryList />} />
               <Route path="add-category" element={<AddCategroy />} />
+              <Route path="write-blog" element={<WriteBlog />} />
+              <Route path="blogList" element={<BlogList />} />
               <Route path="order" element={<Order />} />
               <Route path="makeAdmin" element={<MakeAdmin />} />
               <Route path="product-approval" element={<ProductApproval />} />
@@ -106,9 +111,7 @@ function App() {
               <Route path="track-order" element={<TrackOrder />} />
               <Route path="seller-list" element={<SellerList />} />
               <Route index element={<Welcome />} />
-
             </Route>
-
           </Route>
 
 

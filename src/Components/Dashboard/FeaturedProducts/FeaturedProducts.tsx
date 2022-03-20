@@ -14,7 +14,7 @@ const FeaturedProducts: React.FC = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
 
     useEffect(() => {
-        fetch("https://blooming-chamber-05072.herokuapp.com/products")
+        fetch("http://localhost:5000/products")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -76,6 +76,14 @@ const FeaturedProducts: React.FC = () => {
                 }
             })
         e.preventDefault();
+    }
+
+    // Get product details
+    const [filterSingleData, setFilterSingleData] = useState({});
+    const handleDeleteProduct = (id: string | undefined | null) => {
+        fetch("http://localhost:5000/products")
+            .then(res => res.json())
+            .then(data => setFilterSingleData(data))
     }
 
     return (
