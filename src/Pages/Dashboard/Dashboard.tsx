@@ -6,10 +6,10 @@ import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
   const [vendor, setVendor] = useState(false);
   const {
-    logOut, admin,user
+    logOut, admin, user
   } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://blooming-chamber-05072.herokuapp.com/user/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setVendor(data.vendor);
