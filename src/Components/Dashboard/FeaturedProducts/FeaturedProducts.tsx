@@ -14,7 +14,7 @@ const FeaturedProducts: React.FC = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://blooming-chamber-05072.herokuapp.com/products")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -55,7 +55,7 @@ const FeaturedProducts: React.FC = () => {
     }
 
     const handleProductSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        fetch("http://localhost:5000/featuredProducts/add", {
+        fetch("https://blooming-chamber-05072.herokuapp.com/featuredProducts/add", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -81,7 +81,7 @@ const FeaturedProducts: React.FC = () => {
     // Get product details
     const [filterSingleData, setFilterSingleData] = useState({});
     const handleDeleteProduct = (id: string | undefined | null) => {
-        fetch("http://localhost:5000/products")
+        fetch("https://blooming-chamber-05072.herokuapp.com/products")
             .then(res => res.json())
             .then(data => setFilterSingleData(data))
     }

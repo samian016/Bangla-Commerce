@@ -45,6 +45,8 @@ import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 import ViewCart from "./Pages/ViewCart/ViewCart";
 import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
+import LoginRoute from "./Components/Routes/LoginRoute";
+import AdminRoute from "./Components/Routes/AdminRoute";
 
 function App() {
   interface IProducts {
@@ -87,8 +89,12 @@ function App() {
           <Route path="seller" element={<Seller />} />
           <Route path="singleProduct/:productID" element={<SingleProduct />} />
           <Route path="singleBlog/:blogID" element={<SingleBlog />} />
-          <Route path="login" element={<LogIn />} />
-          <Route path="singUp" element={<SignUp />} />
+          <Route path="login" element={<LoginRoute>
+            <LogIn />
+          </LoginRoute>} />
+          <Route path="singUp" element={<LoginRoute>
+            <SignUp />
+          </LoginRoute>} />
           <Route path="terms" element={<Terms />} />
           <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
@@ -96,20 +102,24 @@ function App() {
 
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="account-details" element={<AccountDetails />} />
-              <Route path="add-product" element={<AddProduct />} />
-              <Route path="edit-product/:productID" element={<EditProduct />} />
-              <Route path="featured-products" element={<FeaturedProducts />} />
+              <Route path="add-product" element={<AdminRoute>
+                <AddProduct />
+              </AdminRoute>} />
+              <Route path="edit-product/:productID" element={<AdminRoute>
+                <EditProduct />
+              </AdminRoute>} />
+              <Route path="featured-products" element={<AdminRoute><FeaturedProducts /></AdminRoute>} />
               <Route path="address" element={<Address />} />
-              <Route path="category-list" element={<CategoryList />} />
-              <Route path="add-category" element={<AddCategroy />} />
+              <Route path="category-list" element={<AdminRoute><CategoryList /></AdminRoute>} />
+              <Route path="add-category" element={<AdminRoute><AddCategroy /></AdminRoute>} />
               <Route path="write-blog" element={<WriteBlog />} />
-              <Route path="blogList" element={<BlogList />} />
+              <Route path="blogList" element={<AdminRoute><BlogList /></AdminRoute>} />
               <Route path="order" element={<Order />} />
-              <Route path="makeAdmin" element={<MakeAdmin />} />
-              <Route path="product-approval" element={<ProductApproval />} />
-              <Route path="product-list" element={<ProductList />} />
+              <Route path="makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+              <Route path="product-approval" element={<AdminRoute><ProductApproval /></AdminRoute>} />
+              <Route path="product-list" element={<AdminRoute><ProductList /></AdminRoute>} />
               <Route path="track-order" element={<TrackOrder />} />
-              <Route path="seller-list" element={<SellerList />} />
+              <Route path="seller-list" element={<AdminRoute><SellerList /></AdminRoute>} />
               <Route index element={<Welcome />} />
             </Route>
           </Route>
