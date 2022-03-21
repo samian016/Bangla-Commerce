@@ -4,8 +4,6 @@ import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../firebase/useFirebase/useFirebase';
-import Search from '../../Search/Search';
 import { useCart } from "react-use-cart";
 import useAuth from '../../../Hooks/useAuth';
 
@@ -32,7 +30,7 @@ const Header = () => {
     const {
         logOut,
         isLogged
-    } = useFirebase();
+    } = useAuth();
     type category = {
         _id: string,
         categoryName: string,

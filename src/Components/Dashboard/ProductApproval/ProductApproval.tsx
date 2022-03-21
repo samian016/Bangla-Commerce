@@ -34,7 +34,7 @@ const ProductApproval = () => {
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.deletedCount > 0) {
-                        alert("Product Deleted");
+                        alert(`${id} : Product Deleted`);
                         const remainingProduct = products.filter(
                             (product) => product._id !== id
                         );
