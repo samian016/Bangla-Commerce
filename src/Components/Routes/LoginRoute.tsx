@@ -4,19 +4,24 @@ import useAuth from "../../Hooks/useAuth";
 
 
 
-export default function PrivateOutlet(){
+export default function LoginRoute({ children }: { children: JSX.Element }) {
 
-    const { isLoading, user } = useAuth();
+    const { isLoading, isLogged } = useAuth();
+
+
     if (isLoading) {
-        // console.log(isLoading);
+        console.log(isLoading);
         return (<div className="text-center my-5">
             <Spinner animation="border" variant="dark" />
         </div>)
     }
 
     else {
-        return user ? <Outlet /> : <Navigate to="/login" />;
+        return (
+            isLogged ? <Navigate to="/" /> : children)
     }
 
-}
 
+    
+
+}
