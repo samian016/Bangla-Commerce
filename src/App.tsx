@@ -61,7 +61,7 @@ function App() {
     adminChecked: boolean,
     sellerID: string,
     quantity: number,
-}
+  }
 
   return (
     <>
@@ -88,10 +88,10 @@ function App() {
           <Route path="terms" element={<Terms />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
 
-          <Route path="/*" element={<PrivateOutlet /> }>
+          <Route path="/*" element={<PrivateOutlet />}>
 
             <Route path="dashboard" element={<Dashboard />}>
-              
+
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<AddProduct />} />
               <Route path="edit-product/:productID" element={<EditProduct />} />
