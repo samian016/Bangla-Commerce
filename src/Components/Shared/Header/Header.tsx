@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../../firebase/useFirebase/useFirebase';
 import Search from '../../Search/Search';
 import { useCart } from "react-use-cart";
+import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const { totalItems } = useCart();
@@ -150,14 +151,14 @@ const Header = () => {
                                         </div>
                                         <span> Setting</span>
                                     </div></Link>
-                                    <Link to='/' onClick={logOut} className='dropDownText'>
+                                    {isLogged && <Link to='/' onClick={logOut} className='dropDownText'>
                                         <div className="dropDownList rounded px-3 py-2 d-flex">
                                             <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                                 <BsFillPersonXFill />
                                             </div>
                                             <span> Sign out </span>
                                         </div>
-                                    </Link>
+                                    </Link>}
                                 </div>
 
 

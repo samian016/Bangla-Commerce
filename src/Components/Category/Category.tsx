@@ -51,7 +51,7 @@ const Category: React.FC = () => {
                                 className="mySwiper myCustomSwiperContaienr px-5"
                         >
                                 {category.map(singleCategory => <SwiperSlide className='myCustomSwiper' key={singleCategory._id}>
-                                        <img src={singleCategory.img} alt="" />
+                                        <img style={{ width: "100px",height: "100px" }} src={singleCategory.img} alt="" />
                                         <h6>{singleCategory.categoryName}</h6>
                                         {/* <p>68 items</p> */}
                                 </SwiperSlide>)}

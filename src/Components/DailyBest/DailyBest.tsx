@@ -82,8 +82,21 @@ const DailyBest = () => {
 
 
                             <Swiper
-                                slidesPerView={4}
-                                spaceBetween={10}
+                                
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    768: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 40,
+                                    },
+                                    1024: {
+                                        slidesPerView: 8,
+                                        spaceBetween: 50,
+                                    },
+                                }}
 
                                 modules={[FreeMode, Navigation]}
                                 className="mySwiper"
