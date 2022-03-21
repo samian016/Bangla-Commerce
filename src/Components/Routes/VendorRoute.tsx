@@ -14,7 +14,7 @@ export default function VendorRoute({ children }: { children: JSX.Element }) {
     if (isLoading) {
         // console.log(isLoading);
         if (user?.email) {
-            fetch(`http://localhost:5000/user/${user?.email}`)
+            fetch(`https://blooming-chamber-05072.herokuapp.com/user/${user?.email}`)
                 .then((res: any) => res.json())
                 .then((data) => {
                     setVendor(data.vendor)
