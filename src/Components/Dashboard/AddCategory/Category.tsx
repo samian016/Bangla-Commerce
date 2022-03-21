@@ -34,7 +34,7 @@ const Category = () => {
             .then((data: category[]): void => {
                 setCategories(data);
             })
-    })
+    },[])
 
     // console.log(categories);
 
