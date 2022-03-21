@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
 import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
+  const [vendor, setVendor] = useState(false);
   const {
-    logOut, admin
+    logOut, admin,user
   } = useAuth();
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${user?.email}`)
+      .then(res => res.json())
+      .then(data => {
+        setVendor(data.vendor);
+      })
+  }, [])
   return (
     <div className='container my-5 py-5'>
 
@@ -16,12 +24,12 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Dashboard</div>
           </Link>
-          <Link to='/dashboard/order'>
+          {(!vendor && !admin) && <Link to='/dashboard/order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Order Status</div>
-          </Link>
+          </Link>}
 
-          {admin && <Link to='/dashboard/add-product'>
+          {vendor && <Link to='/dashboard/add-product'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Products</div>
           </Link>}

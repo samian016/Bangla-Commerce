@@ -47,6 +47,7 @@ import ViewCart from "./Pages/ViewCart/ViewCart";
 import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
+import VendorRoute from "./Components/Routes/VendorRoute";
 
 function App() {
   interface IProducts {
@@ -102,9 +103,7 @@ function App() {
 
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="account-details" element={<AccountDetails />} />
-              <Route path="add-product" element={<AdminRoute>
-                <AddProduct />
-              </AdminRoute>} />
+              <Route path="add-product" element={<VendorRoute><AddProduct /></VendorRoute>} />
               <Route path="edit-product/:productID" element={<AdminRoute>
                 <EditProduct />
               </AdminRoute>} />
