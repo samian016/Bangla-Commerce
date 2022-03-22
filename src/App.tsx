@@ -40,8 +40,8 @@ import SupportCenter from "./Components/SupportCenter/SupportCenter";
 import PrivateOutlet from "./Components/PrivateOutlet/PrivateOutlet";
 import Checkout from "./Pages/Checkout/Checkout";
 import CategorizedShop from "./Pages/CategorizedShop/CategorizedShop";
-
 import ViewCart from "./Pages/ViewCart/ViewCart";
+
 
 function App() {
   interface IProducts {
@@ -66,8 +66,16 @@ function App() {
   return (
     <>
       <AuthProvider>
+
+      
+        
+
         <Header />
+        
         <Routes>
+
+       
+
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/promotions" element={<Promotions />} />
@@ -116,9 +124,17 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="checkout" element={<Checkout />} />
+
+          
+
         </Routes>
+
+        
         <Messenger />
         <Footer />
+
+
+        
       </AuthProvider>
     </>
   );
