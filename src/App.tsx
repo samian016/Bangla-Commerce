@@ -48,6 +48,7 @@ import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
+import SingleVendor from "./Components/SingleVendor/SingleVendor";
 
 function App() {
   interface IProducts {
@@ -100,8 +101,8 @@ function App() {
           <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
           <Route path="/*" element={<PrivateOutlet />}>
-
             <Route path="dashboard" element={<Dashboard />}>
+              <Route path="checkout" element={<Checkout />} />
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<VendorRoute><AddProduct /></VendorRoute>} />
               <Route path="edit-product/:productID" element={<AdminRoute>
@@ -127,7 +128,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route path="/shopKeper/:id" element={<SingleVendor/>}/>
         </Routes>
         <Messenger />
         <Footer />

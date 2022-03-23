@@ -24,6 +24,7 @@ const SellerList = () => {
             .then((data) => {
                 setUser(data);
                 setAllUser(data);
+                console.log(data);
             });
     }, []);
 

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import "./Seller.css";
 import { FaStar, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import SingleVendor from '../../Components/SingleVendor/SingleVendor';
+import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Seller = () => {
     interface userD {
@@ -39,6 +43,7 @@ const Seller = () => {
             setUser(allUser);
         }
     };
+    
     return (
         <div className='container'>
             <div className='seller-section pt-5'>
@@ -84,7 +89,7 @@ const Seller = () => {
                                                                 <p className="m-0 p-0"><FaPhone style={{ fontSize: "10px", color: "#3bb77e", marginRight: "6px" }} /><span className='fw-bold'>Call Us:</span> { oneUser.contact? oneUser.contact: "not provided yet." }</p>
                                                             </div>
                                                             <div className="col-md-4 pt-4">
-                                                                <button className="vendor-button">Visit Store</button>
+                                                                <Link to={`/shopKeper/${oneUser.email}`} className="vendor-button">Visit Store</Link>
                                                             </div>
                                                         </div>
                                                     </div>
