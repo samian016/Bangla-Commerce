@@ -82,19 +82,23 @@ const DailyBest = () => {
 
 
                             <Swiper
-                                
+                               style={{  marginLeft:"auto"}} 
                                 breakpoints={{
                                     640: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 20,
+                                        slidesPerView: 1,
+                                        spaceBetween: 10,
                                     },
                                     768: {
-                                        slidesPerView: 4,
-                                        spaceBetween: 40,
+                                        slidesPerView: 2,
+                                        spaceBetween: 10,
                                     },
                                     1024: {
-                                        slidesPerView: 8,
-                                        spaceBetween: 50,
+                                        slidesPerView: 3,
+                                        spaceBetween: 10,
+                                    },
+                                    1524: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 10,
                                     },
                                 }}
 
