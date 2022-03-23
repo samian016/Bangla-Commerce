@@ -10,9 +10,14 @@ import DailyBest from "../../Components/DailyBest/DailyBest";
 // import Sponsor from "../../Components/Sponsor/Sponsor";
 import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
 
+
 export const Home = () => {
+
+
+
   return (
     <>
+
       <SliderCat />
       <Category />
       <Products />
@@ -22,6 +27,7 @@ export const Home = () => {
       <Newsletter />
       <CategoryBanner />
       <MessengerCustomerChat pageId="324931041658048" appId="538498697606294" />
+
     </>
   );
 };

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import "./Seller.css";
 import { FaStar, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-import SingleVendor from '../../Components/SingleVendor/SingleVendor';
-import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
