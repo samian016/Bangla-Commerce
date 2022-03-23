@@ -45,10 +45,13 @@ import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 import ViewCart from "./Pages/ViewCart/ViewCart";
 import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
+import WishList from "./Pages/WishList/WishList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
 import OrderStatus from "./Components/Dashboard/Order/OrderStatus";
+import SingleVendor from "./Components/SingleVendor/SingleVendor";
+
 
 function App() {
   interface IProducts {
@@ -73,8 +76,16 @@ function App() {
   return (
     <>
       <AuthProvider>
+
+
+
+
         <Header />
+
         <Routes>
+
+
+
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/promotions" element={<Promotions />} />
@@ -86,6 +97,7 @@ function App() {
           <Route path="category/:categoryName" element={<Category />} />
           <Route path="shop" element={<Shop />} />
           <Route path="deals" element={<Shop />} />
+          <Route path="wishList" element={<WishList />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
@@ -101,8 +113,8 @@ function App() {
           <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
           <Route path="/*" element={<PrivateOutlet />}>
-            <Route path="checkout" element={<Checkout />} />
             <Route path="dashboard" element={<Dashboard />}>
+            <Route path="checkout" element={<Checkout />} />
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<VendorRoute><AddProduct /></VendorRoute>} />
               <Route path="edit-product/:productID" element={<AdminRoute>
@@ -129,9 +141,16 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
+          <Route path="/shopKeper/:id" element={<SingleVendor />} />
+
         </Routes>
+
+
         <Messenger />
         <Footer />
+
+
+
       </AuthProvider>
     </>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useCart } from "react-use-cart";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import "./ViewCart.css";
 
 const ViewCart: React.FC = () => {
 
@@ -10,8 +11,8 @@ const ViewCart: React.FC = () => {
     updateItemQuantity,
     removeItem, totalItems } = useCart();
   return (
-    <div className='container my-5 d-flex justify-content-between'>
-      <div className='w-75 px-3'>
+    <div className='viewcart container my-5 d-flex justify-content-between'>
+      <div className='viewcart-w w-75 px-3'>
         <div className='h1 primaryFont fw-bolder primaryFontColor'>Your Cart</div>
         <div className='h6 primaryFont mb-5 secondaryFontColor'>There are {totalItems} products in your cart</div>
         <table className="table">
