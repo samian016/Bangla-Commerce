@@ -15,7 +15,7 @@ const BlogList = () => {
     // Show Data In Table
     const [myBlogs, setMyBlogs] = useState<IBlog[]>([]);
     useEffect(() => {
-        fetch('http://localhost:5000/blogs/dashboard')
+        fetch('https://blooming-chamber-05072.herokuapp.com/blogs/dashboard')
             .then(res => res.json())
             .then(data => setMyBlogs(data))
     }, []);
@@ -24,7 +24,7 @@ const BlogList = () => {
     const handleDeleteProduct = (id: string | undefined | null) => {
         const forward = window.confirm("Are you sure? It will be deleted permanently !!!");
         if (forward) {
-            fetch(`http://localhost:5000/blogs/delete/${id}`, {
+            fetch(`https://blooming-chamber-05072.herokuapp.com/blogs/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -45,7 +45,7 @@ const BlogList = () => {
     const handleBlogConfirm = (id: string | undefined) => {
         const myId = { id }
 
-        fetch(`http://localhost:5000/blogs/dashboard/approve/${id}`, {
+        fetch(`https://blooming-chamber-05072.herokuapp.com/blogs/dashboard/approve/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +57,7 @@ const BlogList = () => {
                 console.log(data);
                 if (data.modifiedCount) {
                     swal("Blog Confirmed");
-                    fetch('http://localhost:5000/blogs/dashboard')
+                    fetch('https://blooming-chamber-05072.herokuapp.com/blogs/dashboard')
                         .then(res => res.json())
                         .then(data => setMyBlogs(data))
                 } else {

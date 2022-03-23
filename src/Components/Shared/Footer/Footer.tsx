@@ -78,7 +78,7 @@ const Footer = () => {
                                         <h6 className='font-h6'>Sign In</h6>
                                     </Link>
                                 }
-                                <Link to="/checkout">
+                                <Link to="/cart">
                                     <h6 className='font-h6'>View Cart</h6></Link>
 
                                 {/* <h6 className='font-h6'>My Wishlist</h6> */}

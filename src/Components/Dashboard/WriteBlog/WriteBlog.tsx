@@ -46,7 +46,7 @@ const WriteBlog = () => {
     }
 
     const handleBlogSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        fetch('http://localhost:5000/blog/add', {
+        fetch('https://blooming-chamber-05072.herokuapp.com/blog/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
