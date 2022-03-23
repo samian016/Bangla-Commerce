@@ -45,6 +45,7 @@ import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 import ViewCart from "./Pages/ViewCart/ViewCart";
 import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
+import WishList from "./Pages/WishList/WishList";
 
 function App() {
   interface IProducts {
@@ -82,6 +83,7 @@ function App() {
           <Route path="category/:categoryName" element={<Category />} />
           <Route path="shop" element={<Shop />} />
           <Route path="deals" element={<Shop />} />
+          <Route path="wishList" element={<WishList />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
