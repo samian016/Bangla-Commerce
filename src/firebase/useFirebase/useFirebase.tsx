@@ -36,7 +36,9 @@ type firebase = {
     isLogged: boolean;
     updateUserName: (name: string) => void;
     updatingPass: (pass: string) => void;
+    isLoadingA: boolean;
 }
+
 
 initializationAuth();
 const useFirebase = (): firebase => {
@@ -45,6 +47,7 @@ const useFirebase = (): firebase => {
     const [user, setUser] = useState<User | null>(null);
     const [message, setMessage] = useState<React.SetStateAction<string>>('');
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingA, setIsLoadingA] = useState(true);
     const [admin, setAdmin] = useState(false);
     const [isLogged, setIsLogged] = useState(false);
     const nevigate = useNavigate();
@@ -188,6 +191,7 @@ const useFirebase = (): firebase => {
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);
+                        console.log(admin);
                     }).finally(() => {
                         setIsLoading(false);
                     })
@@ -228,8 +232,8 @@ const useFirebase = (): firebase => {
         resetPassword,
         isLogged,
         updateUserName,
-        updatingPass
-        
+        updatingPass,
+        isLoadingA
     }
 };
 

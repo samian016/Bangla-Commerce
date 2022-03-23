@@ -23,7 +23,7 @@ const Deals = () => {
     }
     const [products, setProducts] = useState<IProducts[]>([]);
     useEffect(() => {
-        fetch('http://localhost:5000/featuredproducts')
+        fetch('https://blooming-chamber-05072.herokuapp.com/featuredproducts')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

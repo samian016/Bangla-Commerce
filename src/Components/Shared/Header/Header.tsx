@@ -4,9 +4,8 @@ import "./Header.css"
 import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../firebase/useFirebase/useFirebase';
-import Search from '../../Search/Search';
 import { useCart } from "react-use-cart";
+import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const { totalItems } = useCart();
@@ -31,7 +30,7 @@ const Header = () => {
     const {
         logOut,
         isLogged
-    } = useFirebase();
+    } = useAuth();
     type category = {
         _id: string,
         categoryName: string,
@@ -145,22 +144,22 @@ const Header = () => {
                                     </div>
                                     </Link>
                                     <Link to='dashboard/account-details' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
-                                    <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                        <BsTextParagraph />
-                                    </div>
-                                    <span> Setting</span>
-                                </div></Link>
-                                <Link to='/' onClick={logOut} className='dropDownText'>
-                                    <div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
-                                            <BsFillPersonXFill />
+                                            <BsTextParagraph />
                                         </div>
-                                        <span> Sign out </span>
-                                    </div>
-                                </Link>
+                                        <span> Setting</span>
+                                    </div></Link>
+                                    {isLogged && <Link to='/' onClick={logOut} className='dropDownText'>
+                                        <div className="dropDownList rounded px-3 py-2 d-flex">
+                                            <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
+                                                <BsFillPersonXFill />
+                                            </div>
+                                            <span> Sign out </span>
+                                        </div>
+                                    </Link>}
                                 </div>
 
-                                
+
                             </div>
 
 
@@ -208,7 +207,7 @@ const Header = () => {
                             <div className='px-4'><Link to="/about">About</Link></div>
                             <div className='px-4'><Link to="/shop">Shop</Link></div>
                             <div className='px-4'><Link to="/seller">Seller</Link></div>
-                            {/* <div className='px-4'><Link to="/blog">Blog</Link></div> */}
+                            <div className='px-4'><Link to="/blog">Blog</Link></div>
                             <div className='px-4'><Link to="/contact">Contact</Link></div>
                             <div className='px-4'><Link to="/faq">FAQ</Link></div>
                         </div>
