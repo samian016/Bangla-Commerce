@@ -45,6 +45,7 @@ import SingleBlog from "./Components/SingleBlog/SingleBlog";
 
 import ViewCart from "./Pages/ViewCart/ViewCart";
 import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
+import WishList from "./Pages/WishList/WishList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
@@ -75,14 +76,14 @@ function App() {
     <>
       <AuthProvider>
 
-      
-        
+
+
 
         <Header />
-        
+
         <Routes>
 
-       
+
 
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsor />} />
@@ -95,6 +96,7 @@ function App() {
           <Route path="category/:categoryName" element={<Category />} />
           <Route path="shop" element={<Shop />} />
           <Route path="deals" element={<Shop />} />
+          <Route path="wishList" element={<WishList />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="seller" element={<Seller />} />
@@ -137,19 +139,19 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
-          <Route path="/shopKeper/:id" element={<SingleVendor/>}/>
+          <Route path="/shopKeper/:id" element={<SingleVendor />} />
           <Route path="checkout" element={<Checkout />} />
 
-          
+
 
         </Routes>
 
-        
+
         <Messenger />
         <Footer />
 
 
-        
+
       </AuthProvider>
     </>
   );
