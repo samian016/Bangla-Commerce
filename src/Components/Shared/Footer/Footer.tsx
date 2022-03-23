@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h6'>Company</h1>
+                                <h3 className='font-h6 fw-bold'>Company</h3>
                                 <Link to="/about">
                                     <h6 className='font-h6'>About Us</h6>
                                 </Link>
@@ -72,7 +72,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Account</h1>
+                                <h3 className='font-h1 fw-bold'>Account</h3>
                                 {
                                     user ? [] : <Link to="/login">
                                         <h6 className='font-h6'>Sign In</h6>
@@ -131,7 +131,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Popular</h1>
+                                <h3 className='font-h1 fw-bold'>Popular</h3>
                                 <Link to="/shop">
                                     <h6 className='font-h6'>Milk & Flavoured Milk</h6>
                                 </Link>
