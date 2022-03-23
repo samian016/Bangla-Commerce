@@ -90,14 +90,14 @@ const Header = () => {
                             } */}
                         </div>
                         <div className='d-flex text-center'>
-                            <Link to='/compare'>
+                            {/* <Link to='/compare'>
                                 <div className='mx-3 '>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsPieChart />
                                     </div>
                                     <span>Compare</span>
                                 </div>
-                            </Link>
+                            </Link> */}
                             <Link to='/whishList'>
                                 <div className='mx-3'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">

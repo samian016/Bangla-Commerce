@@ -48,7 +48,11 @@ const ViewCart: React.FC = () => {
       <div className='w-25 px-3'>
         <div className='h1 primaryFont fw-bolder mb-5 primaryFontColor'>Your Order</div>
         <p className='fw-bold'>Subtotal: ${cartTotal}</p>
-        <Link to="/checkout"><button type="button" className="btn primaryBgColor">Proceed To Checkout <BsBoxArrowInRight /> </button></Link>
+        {cartTotal == 0 ?
+        <Link to="/shop"><button type="button" className="btn primaryBgColor">Go To Shopping <BsBoxArrowInRight /> </button></Link>
+        :
+          <Link to="/checkout"><button type="button" className="btn primaryBgColor">Proceed To Checkout <BsBoxArrowInRight /> </button></Link>
+        }
       </div>
     </div>
   )

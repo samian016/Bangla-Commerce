@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import { useCart } from "react-use-cart";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import swal from 'sweetalert';
+import useAuth from '../../Hooks/useAuth';
 
 const Checkout: React.FC = () => {
-    const { cartTotal, emptyCart ,isEmpty,
+    const { cartTotal, emptyCart, isEmpty,
         totalUniqueItems,
         items,
         updateItemQuantity,
-        removeItem, totalItems  } = useCart();
-
+        removeItem, totalItems } = useCart();
+    const { user } = useAuth();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [emailAddress, setEmailAddress] = useState('');
+    const [emailAddress, setEmailAddress] = useState(user?.email ? user?.email : '');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [addres, setAddress] = useState('');
     const [aptHouse, setAptHouse] = useState('');
@@ -127,8 +128,8 @@ const Checkout: React.FC = () => {
                 }
                 console.log(Checkout)
             })
-            
-        e.preventDefault();
+
+        // e.preventDefault();
     }
 
     return (
@@ -154,7 +155,7 @@ const Checkout: React.FC = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-floating mb-3">
-                            <input onBlur={handleEmailAddress} type="text" placeholder="Email Address" className="form-control" id="floatingInput" />
+                            <input onBlur={handleEmailAddress} type="text" placeholder="Email Address" className="form-control" id="floatingInput" value={emailAddress} disabled />
                             <label htmlFor="floatingInput">Email Address</label>
                         </div>
                     </div>
@@ -226,6 +227,11 @@ const Checkout: React.FC = () => {
                         Place an Order <BsBoxArrowInRight />
                     </button>
                 </Link>
+                {/* <Link to="/dashboard">
+                    <button onClick={handleCheckoutSubmit} type="button" className="btn primaryBgColor">
+                        Place an Order <BsBoxArrowInRight />
+                    </button>
+                </Link> */}
             </div>
         </div>
     )

@@ -48,6 +48,7 @@ import BlogList from "./Components/Dashboard/WriteBlog/BlogList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
+import OrderStatus from "./Components/Dashboard/Order/OrderStatus";
 
 function App() {
   interface IProducts {
@@ -114,6 +115,7 @@ function App() {
               <Route path="write-blog" element={<WriteBlog />} />
               <Route path="blogList" element={<AdminRoute><BlogList /></AdminRoute>} />
               <Route path="order" element={<Order />} />
+              <Route path="orderStatus" element={<OrderStatus />} />
               <Route path="makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>} />
               <Route path="product-approval" element={<AdminRoute><ProductApproval /></AdminRoute>} />
               <Route path="product-list" element={<AdminRoute><ProductList /></AdminRoute>} />
