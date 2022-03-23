@@ -49,6 +49,7 @@ import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
 
+
 function App() {
   interface IProducts {
     _id: string;
@@ -72,8 +73,16 @@ function App() {
   return (
     <>
       <AuthProvider>
+
+      
+        
+
         <Header />
+        
         <Routes>
+
+       
+
           <Route path="/" element={<Home />} />
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/promotions" element={<Promotions />} />
@@ -128,9 +137,17 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="checkout" element={<Checkout />} />
+
+          
+
         </Routes>
+
+        
         <Messenger />
         <Footer />
+
+
+        
       </AuthProvider>
     </>
   );
