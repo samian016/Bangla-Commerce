@@ -16,7 +16,7 @@ const SingleBlog: React.FC = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleBlog/${blogID}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/singleBlog/${blogID}`)
             .then(res => res.json())
             .then(data => setSingleBlog(data))
     }, [])

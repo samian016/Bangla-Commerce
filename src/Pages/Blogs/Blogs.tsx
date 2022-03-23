@@ -14,7 +14,7 @@ const Blogs: React.FC = () => {
   }
   const [blogs, setBlogs] = useState<IBlog[]>([]);
   useEffect(() => {
-    fetch('http://localhost:5000/blogs')
+    fetch('https://blooming-chamber-05072.herokuapp.com/blogs')
       .then(res => res.json())
       .then(data => setBlogs(data))
   }, []);
