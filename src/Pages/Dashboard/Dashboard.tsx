@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
+import "./Dashboard.css"
 const Dashboard = () => {
   const [vendor, setVendor] = useState(false);
   const {
@@ -17,17 +18,16 @@ const Dashboard = () => {
   }, [])
   return (
     <div className='container my-5 py-5'>
-
-      <div className="d-flex">
+      <div className="dashboard-nav d-flex">
         <div className="w-25">
           <Link to='/dashboard'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Dashboard</div>
           </Link>
-          {(!vendor && !admin) && <Link to='/dashboard/order'>
+           <Link to='/dashboard/orderStatus'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Order Status</div>
-          </Link>}
+          </Link>
 
           {vendor && <Link to='/dashboard/add-product'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
@@ -56,6 +56,10 @@ const Dashboard = () => {
           {admin && <Link to='/dashboard/blogList'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Blog List</div>
+          </Link>}
+          {admin && <Link to='/dashboard/order'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Order Process</div>
           </Link>}
           {admin && <Link to='/dashboard/product-approval'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
