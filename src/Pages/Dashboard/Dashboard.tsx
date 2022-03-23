@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import {  } from 'react-router-dom'
+import { } from 'react-router-dom'
 import useAuth from "../../Hooks/useAuth"
 import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
+  const [vendor, setVendor] = useState(false);
   const {
-    logOut
+    logOut, admin, user
   } = useAuth();
+  useEffect(() => {
+    fetch(`https://blooming-chamber-05072.herokuapp.com/user/${user?.email}`)
+      .then(res => res.json())
+      .then(data => {
+        setVendor(data.vendor);
+      })
+  }, [])
   return (
     <div className='container my-5 py-5'>
 
@@ -16,35 +24,47 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Dashboard</div>
           </Link>
-          <Link to='/dashboard/order'>
+          {(!vendor && !admin) && <Link to='/dashboard/order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Order Status</div>
-          </Link>
+          </Link>}
 
-          <Link to='/dashboard/add-product'>
+          {vendor && <Link to='/dashboard/add-product'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Products</div>
-          </Link>
-          <Link to='/dashboard/product-list'>
+          </Link>}
+          {admin && <Link to='/dashboard/product-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Product List</div>
-          </Link>
-          <Link to='/dashboard/add-category'>
+          </Link>}
+          {admin && <Link to='/dashboard/add-category'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Add Category</div>
-          </Link>
-          <Link to='/dashboard/category-list'>
+          </Link>}
+          {admin && <Link to='/dashboard/featured-products'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Featured Products</div>
+          </Link>}
+          {admin && <Link to='/dashboard/category-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Category List</div>
-          </Link>
-          <Link to='/dashboard/product-approval'>
+          </Link>}
+          {!admin && <Link to='/dashboard/write-blog'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Write Blog</div>
+          </Link>}
+          {admin && <Link to='/dashboard/blogList'>
+            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
+              Blog List</div>
+          </Link>}
+          {admin && <Link to='/dashboard/product-approval'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Product Approval</div>
-          </Link>
-          <Link to='/dashboard/seller-list'>
+          </Link>}
+          {admin && <Link to='/dashboard/seller-list'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Seller List</div>
-          </Link>
+          </Link>}
           {/* <Link to='/dashboard/track-order'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Track Your Order</div>
@@ -53,14 +73,10 @@ const Dashboard = () => {
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               My Address</div>
           </Link>
-          <Link to='/dashboard/account-details'>
-            <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
-              Account Details</div>
-          </Link>
-          <Link to='/dashboard/makeAdmin'>
+          {admin && <Link to='/dashboard/makeAdmin'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Make Admin</div>
-          </Link>
+          </Link>}
           <Link onClick={logOut} to='/'>
             <div className='dashboardNavItem text-center mx-4 d-block py-3 my-2 rounded primaryBgColor text-white fw-bold'>
               Sing Out</div>

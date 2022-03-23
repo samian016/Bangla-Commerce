@@ -3,6 +3,25 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEm
 import initializationAuth from '../firebase.initialize';
 import { useNavigate } from 'react-router-dom';
 
+interface IProducts {
+    _id: string;
+    ProductTitle: string,
+    Category: string,
+    Stock: number,
+    image: string,
+    rating: number,
+    shortDescription: string,
+    additionalInfo: string,
+    regularPrice: number,
+    discountPrice: number,
+    discountPercentage: number,
+    sku: string,
+    isApproved: boolean,
+    adminChecked: boolean,
+    sellerID: string,
+    quantity: number
+}
+
 type firebase = {
     user: User | null;
     message: React.SetStateAction<string>;
@@ -11,13 +30,15 @@ type firebase = {
     isLoading: boolean;
     admin: boolean;
     signUsingGoogle: () => void;
-    createUsingEmail: (email: string, password: string, name: string, AccountType: string) => void;
+    createUsingEmail: (email: string, password: string, name: string, AccountType: string, img:string) => void;
     signUsingEmail: (email: string, password: string) => void;
     resetPassword: (email: string) => void;
     isLogged: boolean;
     updateUserName: (name: string) => void;
     updatingPass: (pass: string) => void;
+    isLoadingA: boolean;
 }
+
 
 initializationAuth();
 const useFirebase = (): firebase => {
@@ -26,17 +47,15 @@ const useFirebase = (): firebase => {
     const [user, setUser] = useState<User | null>(null);
     const [message, setMessage] = useState<React.SetStateAction<string>>('');
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingA, setIsLoadingA] = useState(true);
     const [admin, setAdmin] = useState(false);
     const [isLogged, setIsLogged] = useState(false);
     const nevigate = useNavigate();
 
 
 
-
-
-
-    const saveUser = (email: string | null, displayName: string | null, method: string, AccountType: string): void => {
-        const user = { email, displayName, AccountType };
+    const saveUser = (email: string | null, displayName: string | null, method: string, AccountType: string, img:string|null): void => {
+        const user = { email, displayName, AccountType,img };
 
         fetch("https://blooming-chamber-05072.herokuapp.com/users", {
             method: method,
@@ -47,13 +66,6 @@ const useFirebase = (): firebase => {
         }).then();
 
     };
-
-
-
-
-
-
-
 
     const auth: any = getAuth();
     const setNewUserName = (name: string) => {
@@ -90,8 +102,8 @@ const useFirebase = (): firebase => {
                 verification();
                 setIsLogged(true);
                 setUser(result.user);
-                // console.log(history);   
-                saveUser(result.user.email, result.user.displayName, "PUT", "customer");
+                console.log(result.user);   
+                saveUser(result.user.email, result.user.displayName, "PUT", "customer", result.user.photoURL);
                 nevigate("/");
 
             }).catch((error) => {
@@ -101,13 +113,13 @@ const useFirebase = (): firebase => {
                 setIsLoading(false)
             });
     }
-    const createUsingEmail = (email: string, password: string, name: string, AccountType: string) => {
+    const createUsingEmail = (email: string, password: string, name: string, AccountType: string,img:string) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setNewUserName(name);
                 verification();
                 setUser(result.user);
-                saveUser(email, name, "POST", AccountType);
+                saveUser(email, name, "POST", AccountType, img);
                 setIsLogged(true);
                 nevigate("/");
                 console.log(result, "jjj");
@@ -179,7 +191,7 @@ const useFirebase = (): firebase => {
                     .then((res: any) => res.json())
                     .then((data) => {
                         setAdmin(data.admin);
-                        console.log(data.admin, "ok na?");
+                        console.log(admin);
                     }).finally(() => {
                         setIsLoading(false);
                     })
@@ -207,9 +219,6 @@ const useFirebase = (): firebase => {
     }, [user]);
 
 
-
-
-
     return {
         user,
         message,
@@ -223,7 +232,8 @@ const useFirebase = (): firebase => {
         resetPassword,
         isLogged,
         updateUserName,
-        updatingPass
+        updatingPass,
+        isLoadingA
     }
 };
 

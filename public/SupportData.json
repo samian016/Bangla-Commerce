@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "name" : "Emergency",
+        "images": "https://img.freepik.com/free-vector/illustration-smiling-man-operator-customer-service-male-hotline-operator-advises-client-online-global-technical-support-24-7-customer-operator_143055-139.jpg",
+        "details" :""
+    },
+    {
+        "id":2,
+        "name" : "Help",
+        "images" :"https://img.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899134.jpg?size=626&ext=jpg",
+        "details" :"We are 10am-5pm available for you Saturday-Friday."
+    }
+]

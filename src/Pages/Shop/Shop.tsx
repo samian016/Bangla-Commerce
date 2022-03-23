@@ -3,13 +3,11 @@ import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
+import { useCart } from "react-use-cart";
 
 const Shop: React.FC = () => {
-    //Interface list
-    interface categoryList {
-        _id: string,
-        categoryName: string,
-    }
+    const { addItem } = useCart();
+
 
     interface IProducts {
         _id: string;
@@ -26,70 +24,63 @@ const Shop: React.FC = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        id: string,
+        price: number,
+        quantity?: number,
+        itemTotal?: number,
+        [key: string]: any
     }
-<<<<<<< HEAD
-
-    //Category List
-
-    const [categories, setCategories] = useState<categoryList[]>([]);
-
-    useEffect(() => {
-        fetch('https://sleepy-beyond-70687.herokuapp.com/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-    }, []);
-
-    //Category wise Products
-    const [categoryName, setCategoryName] = useState<string>("");
-
-    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-        const button: HTMLButtonElement = event.currentTarget;
-        setCategoryName(button.innerText);
-    };
-    console.log(`"${categoryName.replace(/\s+/g, ' ').trim()}"`);
-
-    //Product List
-
-=======
     type category = {
         _id: string,
         categoryName: string,
     }
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
-    const [products, setProducts] = useState<IProducts[]>([]);
+    const [products, setProducts] = useState<any[]>([]);
     const [categories, setCategories] = useState<category[]>([]);
     const [name, setName] = useState<string>('shop')
+    const [perPage, setPerPage] = useState<any[]>([])
+
     useEffect(() => {
         fetch('https://blooming-chamber-05072.herokuapp.com/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
-        
+
         fetch('https://blooming-chamber-05072.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
-<<<<<<< HEAD
-
-    const filterData = products.filter(singleProduct => singleProduct.Category === `"${categoryName.replace(/\s+/g, ' ').trim()}"`)
-=======
-    // console.log(categories);
-
-
-
-    const clickCategory = (categoryName:string) => {
-        console.log(categoryName);
-        fetch(`https://blooming-chamber-05072.herokuapp.com/singlecategory/${categoryName}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
-                setName(categoryName)
+                setPerPage(data.slice(0, 10))
             })
+
+    }, []);
+
+    const pageHandler = (pageNumber: number) => {
+        setPerPage(products.slice((pageNumber * 10) - 10, pageNumber * 10));
     }
 
+    let pageNumbers = []
+    for (let i = 1; i <= Math.ceil(products.length / 10); i++) {
+        pageNumbers.push(i);
+    }
+    // console.log(categories);
 
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
+
+    const clickCategory = (categoryName: string) => {
+        setName(categoryName);
+        fetch("https://blooming-chamber-05072.herokuapp.com/categoryWise", {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ name: categoryName })
+        })
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+                setPerPage(data)
+                // console.log(data);
+            })
+    }
 
     return (
         <div id='divTag'>
@@ -108,16 +99,10 @@ const Shop: React.FC = () => {
                             <div className='col-xl-9 text-end d-none d-xl-block'>
                                 <ul style={{ listStyle: "none", display: "flex", justifyContent: "flex-end" }}>
                                     {
-<<<<<<< HEAD
-                                        categories.slice(0, 5).map(singleCategory => <li >
-                                            <button onClick={buttonHandler} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {singleCategory.categoryName}</button>
-                                        </li>)
-=======
                                         categories.slice(0, 6).map((cate) => <li ><button onClick={() => clickCategory(cate.categoryName.toLocaleLowerCase())} className='hover-up' style={{ textDecoration: "none", cursor: "pointer" }} > <i className='fas fa-times'></i> {cate.categoryName}</button>
 
-                                            </li>
+                                        </li>
                                         )
->>>>>>> b5388871e1ce201586d49f9a090deb3d92ca82e0
                                     }
                                 </ul>
                             </div>
@@ -132,7 +117,7 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                                 {
-                                    filterData.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                    perPage.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
                                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
                                             <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
                                                 <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
@@ -144,7 +129,7 @@ const Shop: React.FC = () => {
                                                 <div style={{ marginBottom: "5px" }}>
                                                     <p style={{ fontWeight: "bold", color: "#adadad" }} className="">{singleProduct.Category}</p>
                                                 </div>
-                                                <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>{singleProduct.ProductTitle}</h6>
+                                                <Link to={`/singleProduct/${singleProduct._id}`}> <h6 style={{ color: "#253D4E", fontWeight: "bold" }}>{singleProduct.ProductTitle}</h6></Link>
                                                 <div style={{ fontSize: "inherit", verticalAlign: "baseline" }}>
                                                     <h6 style={{ fontSize: "6px" }}>
                                                         <Rating
@@ -165,7 +150,7 @@ const Shop: React.FC = () => {
                                                         <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >${singleProduct.regularPrice}</span> </h6>
                                                     </div>
                                                     <div>
-                                                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
+                                                        <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -177,134 +162,19 @@ const Shop: React.FC = () => {
 
 
                             {/* here is the pagination  */}
+
+
                             <nav className='my-5'>
                                 <ul className="justify-content-center pagination">
-                                    <li className="page-item disabled">
-                                        <span style={{ backgroundColor: "#ffd900", fontWeight: "bold", margin: "0px 5px" }} className="page-link">Previous</span>
-                                    </li>
-                                    <li className="page-item"><a style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link" href="/">1</a></li>
-                                    <li className="page-item active" aria-current="page">
-                                        <span style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link">2</span>
-                                    </li>
-                                    <li className="page-item"><a style={{ backgroundColor: "#3BB77E", borderRadius: "20px", color: "white", fontWeight: "bold", margin: "0px 5px" }} className="page-link" href="/">3</a></li>
-                                    <li className="page-item">
-                                        <a className="page-link" style={{ backgroundColor: "#ffd900", fontWeight: "bold", margin: "0px 5px", color: "#3BB77E" }} href="/">Next</a>
-                                    </li>
+                                    {
+                                        pageNumbers.map(page => <Link to="" onClick={() => pageHandler(page)} className="page-item disabled p-1">
+                                            <span style={{ backgroundColor: "#3bb77e", fontWeight: "bold", margin: "0px 5px" }} className="page-link text-white rounded-3">{page}</span>
+                                        </Link>)
+                                    }
                                 </ul>
                             </nav>
 
-
-
-
-
-
-
-
-
-                            {/* Extra Swiper here  */}
-
-                            {/* <Swiper
-                                slidesPerView={1}
-                                spaceBetween={10}
-                                pagination={{
-                                    clickable: true,
-                                }}
-                                breakpoints={{
-                                    640: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 20,
-                                    },
-                                    768: {
-                                        slidesPerView: 4,
-                                        spaceBetween: 40,
-                                    },
-                                    1024: {
-                                        slidesPerView: 8,
-                                        spaceBetween: 50,
-                                    },
-                                }}
-                                className="mySwiper myCustomSwiperContaienr"
-                            >
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
-                                    <h6>Headphone</h6>
-                                    <p>68 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                    <h6>Cake &amp; Milk</h6>
-                                    <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                    <h6>Cake &amp; Milk</h6>
-                                    <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
-                                    <h6>Headphone</h6>
-                                    <p>68 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                    <h6>Cake &amp; Milk</h6>
-                                    <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                    <h6>Cake &amp; Milk</h6>
-                                    <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                    <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                    <h6>Organic Kiwi</h6>
-                                    <p>44 items</p>
-                                </SwiperSlide>
-                            </Swiper> */}
-
-
-
-
-
                             {/* Side bar is here  */}
-
-
-
 
                         </div>
                         <div style={{}} className="col-lg-2 col-sm-12" >
@@ -371,26 +241,6 @@ const Shop: React.FC = () => {
 
                                         </li>)
                                     }
-                                    {/* <li style={{ padding: "10px 0px" }}>
-                                        <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
-                                            <img className='img2' src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-4.jpg" alt="" />
-                                            <div style={{ display: "block" }}>
-                                                <h5 style={{ color: "#3BB77E" }}>Banana sake</h5>
-                                                <p style={{ color: "#3BB77E" }}>$14.00</p>
-                                            </div>
-                                        </a>
-
-                                    </li>
-                                    <li style={{ padding: "10px 0px" }}>
-                                        <a className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }} href="/">
-                                            <img className='img2' src="http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/thumbnail-5.jpg" alt="" />
-                                            <div style={{ display: "block" }}>
-                                                <h5 style={{ color: "#3BB77E" }}>Color Jack</h5>
-                                                <p style={{ color: "#3BB77E" }}>$30.00</p>
-                                            </div>
-                                        </a>
-
-                                    </li> */}
 
                                 </ul>
                             </div>

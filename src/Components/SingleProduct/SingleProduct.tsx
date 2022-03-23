@@ -3,9 +3,11 @@ import './SingleProduct.css';
 import Rating from 'react-rating';
 import { FaRegHeart, FaCartPlus } from "react-icons/fa";
 import { useParams } from 'react-router-dom';
+import { useCart } from "react-use-cart";
 
 const SingleProduct: React.FC = () => {
     const { productID } = useParams();
+
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -21,15 +23,35 @@ const SingleProduct: React.FC = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        id: string,
+        price: number,
+        quantity: number,
+        itemTotal?: number,
+        [key: string]: any,
+        // target: any,
+        value: number,
+        // target:number
+        cartQuantity:number,
+        number:number
     }
+    const { addItem } = useCart();
+
     const [products, setProducts] = useState<IProducts[]>([]);
     useEffect(() => {
         fetch(`https://blooming-chamber-05072.herokuapp.com/products/${productID}`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
-    console.log(products);
+        setProducts([]);
+    }, [productID])
+    const [cartQuantity, setCartQuantity] = useState<IProducts[]>([]);
+
+    const getCartQuantity = (val:any) =>{
+        setCartQuantity(val.target.value)
+    }
+
+
+    
     return (
         <div className='col-md-10 mx-auto single-product-details'>
             <div className="container">
@@ -65,14 +87,14 @@ const SingleProduct: React.FC = () => {
                             </div>
                             <div className="add-to-cart-info d-flex align-items-center mb-4">
                                 <div className="product-count">
-                                    <input type="number" name="" min={1} id="" defaultValue={1} />
+                                    <input type="number" onChange={getCartQuantity} name="" min={1} id="" defaultValue={1} />
                                 </div>
                                 <div className="product-add-to-cart-button mx-3">
-                                    <button><FaCartPlus /> Add To Cart</button>
+                                    <button onClick={() => addItem(products[0], cartQuantity ? +cartQuantity : 1 )} ><FaCartPlus /> Add To Cart</button>
                                 </div>
-                                <div className="product-favorite">
+                                {/* <div className="product-favorite">
                                     <button><FaRegHeart /></button>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="product-short-info">
                                 <ul>

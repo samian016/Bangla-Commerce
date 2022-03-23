@@ -51,76 +51,10 @@ const Category: React.FC = () => {
                                 className="mySwiper myCustomSwiperContaienr px-5"
                         >
                                 {category.map(singleCategory => <SwiperSlide className='myCustomSwiper' key={singleCategory._id}>
-                                        <img src={singleCategory.img} alt="" />
+                                        <img style={{ width: "100px",height: "100px" }} src={singleCategory.img} alt="" />
                                         <h6>{singleCategory.categoryName}</h6>
                                         {/* <p>68 items</p> */}
                                 </SwiperSlide>)}
-
-                                {/* <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                        <h6>Cake &amp; Milk</h6>
-                                        <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                        <h6>Cake &amp; Milk</h6>
-                                        <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/93yC6W8/cat-1.png" alt="" />
-                                        <h6>Headphone</h6>
-                                        <p>68 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                        <h6>Cake &amp; Milk</h6>
-                                        <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/Jk9NNx7/cat-2.png" alt="" />
-                                        <h6>Cake &amp; Milk</h6>
-                                        <p>54 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide>
-                                <SwiperSlide className='myCustomSwiper'>
-                                        <img src="https://i.ibb.co/RGKhKfr/cat-3.png" alt="" />
-                                        <h6>Organic Kiwi</h6>
-                                        <p>44 items</p>
-                                </SwiperSlide> */}
                         </Swiper>
                         <div className="featuredCategories mt-4 px-5">
                                 <div className="row align-items-md-stretch">
