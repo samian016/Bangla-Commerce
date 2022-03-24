@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Logo from "./../../../Image/logo.png"
 import "./Header.css"
-import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsChevronDown, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
+import { BsFillPersonLinesFill, BsGrid, BsSearch, BsSuitHeart, BsFillCartCheckFill, BsPerson, BsPieChart, BsFillPersonFill, BsLightning, BsFillPersonXFill, BsPinMap, BsTextParagraph, BsJustifyLeft } from "react-icons/bs";
 import Headphone from "./../../../Image/icon-headphone.svg"
 import { Link } from 'react-router-dom';
 import { useCart } from "react-use-cart";
@@ -90,14 +90,7 @@ const Header = () => {
                             } */}
                         </div>
                         <div className='d-flex text-center'>
-                            <Link to='/compare'>
-                                <div className='mx-3 '>
-                                    <div className="iconSize align-items-center justify-content-center d-flex">
-                                        <BsPieChart />
-                                    </div>
-                                    <span>Compare</span>
-                                </div>
-                            </Link>
+                            
                             <Link to='/wishList'>
                                 <div className='mx-3'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
@@ -233,23 +226,48 @@ const Header = () => {
                 <div className='primaryBgColor text-white py-2 text-center'>
                     <span>Grand opening, up to 15%  off all items.</span>
                 </div>
-                <nav className=' d-flex justify-content-between py-3 px-2'>
-                    <div className='d-flex '>
+                <nav className='mobile-nav d-flex justify-content-between py-3 px-2'>
+                    {/* <div className='d-flex '>
                         <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
                             <BsJustifyLeft />
                         </div>
+                    </div> */}
 
-                    </div>
+                    <nav role="navigation">
+                        <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul id="menu">
+                                <div className='px-2 py-2'><Link to="/" className='active'>Home</Link></div>
+                                <div className='px-2 py-2'><Link to="/about">About</Link></div>
+                                <div className='px-2 py-2'><Link to="/shop">Shop</Link></div>
+                                <div className='px-2 py-2'><Link to="/seller">Seller</Link></div>
+                                <div className='px-2 py-2'><Link to="/blog">Blog</Link></div>
+                                <div className='px-2 py-2'><Link to="/contact">Contact</Link></div>
+                                <div className='px-2 py-2'><Link to="/faq">FAQ</Link></div>
+                            </ul>
+                        </div>
+                    </nav>
                     <div>
-                        <img width="180px" src={Logo} alt="Mobile Logo" />
+                        <Link to="/"> <img width="180px" src={Logo} alt="Mobile Logo" /></Link>
                     </div>
-                    <div className='d-flex'>
-                        <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
-                            <BsSuitHeart />
-                        </div>
-                        <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
-                            <BsFillCartCheckFill />
-                        </div>
+                    <div className='d-flex align-items-center'>
+                        <Link to="/wishlist">
+                            <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
+                                <BsSuitHeart />
+                            </div>
+                        </Link>
+                        <Link to="/cart">
+                            <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
+                                <BsFillCartCheckFill />
+                            </div></Link>
+                        <Link to="/dashboard">
+                            <div className="pe-2 iconSize align-items-center justify-content-center d-flex primaryFontColor">
+                                <BsFillPersonFill />
+                            </div>
+                        </Link>
                     </div>
                 </nav>
             </div>

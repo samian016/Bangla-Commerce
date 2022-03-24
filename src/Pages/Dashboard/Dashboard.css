@@ -1,0 +1,13 @@
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1000px) {
+  .dashboard-nav .w-25 {
+    width: 100% !important;
+    display: block !important;
+    /* display: block !important; */
+  }
+  .dashboard-nav .w-75{
+    width: 100% !important;
+    /* display: block !important; */
+  }
+}
+

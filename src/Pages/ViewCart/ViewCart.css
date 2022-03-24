@@ -1,0 +1,14 @@
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1000px) {
+    .viewcart .w-75{
+      width: 100% !important;
+      display: block !important
+    }
+    .viewcart .viewcart-w{
+      width: 100% !important;
+      display: block !important;
+    }
+    .viewcart .w-25{
+        width: 100% !important;
+      }
+  }
