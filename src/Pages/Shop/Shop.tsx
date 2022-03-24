@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import './Shop.css'
 import { useCart } from "react-use-cart";
+import { FaRegHeart, FaCartArrowDown } from "react-icons/fa";
 
 const Shop: React.FC = () => {
     const { addItem } = useCart();
@@ -62,8 +63,6 @@ const Shop: React.FC = () => {
     for (let i = 1; i <= Math.ceil(products.length / 10); i++) {
         pageNumbers.push(i);
     }
-    // console.log(categories);
-
 
     const clickCategory = (categoryName: string) => {
         setName(categoryName);
@@ -81,6 +80,37 @@ const Shop: React.FC = () => {
                 // console.log(data);
             })
     }
+
+    const handleWishList = (product: IProducts) => {
+        
+
+        if (localStorage.getItem("wishList") == null) {
+            const pro = {
+                [product._id]: product
+            }
+            localStorage.setItem("wishList", JSON.stringify(pro));
+        }
+        else {
+            let oldData = JSON.parse(localStorage.getItem("wishList") || "");
+            let newData = { ...oldData }
+            newData[product._id] = product;
+            localStorage.setItem("wishList", JSON.stringify(newData));
+        }
+
+    }
+
+
+
+    // useEffect(() => {
+    //     if (localStorage.getItem("wishList") == null) {
+    //         localStorage.setItem("wishList", '[]');
+    //     }
+    //     let oldData = JSON.parse(localStorage.getItem("wishList") || "");
+    //     oldData.push(wishList);
+    //     localStorage.setItem("wishList", JSON.stringify(oldData))
+    // }, [wishList])
+
+    // console.log(JSON.parse(localStorage.getItem("wishList") || ""));
 
     return (
         <div id='divTag'>
@@ -150,7 +180,9 @@ const Shop: React.FC = () => {
                                                         <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >${singleProduct.regularPrice}</span> </h6>
                                                     </div>
                                                     <div>
-                                                        <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
+                                                        <button onClick={() => handleWishList(singleProduct)} type="button" style={{ border: "1px solid #bdc3c7", borderRadius: "5px", padding: "3px 10px", background: "transparent" }}><FaRegHeart className="text-dark" /></button>
+
+                                                        <button onClick={() => addItem(singleProduct)} type="button" style={{ backgroundColor: "#3BB77E", borderRadius: "5px", border: 'none', padding: "5px 15px 5px 5px", marginLeft: "10px", color: "white", fontWeight: "bold" }} className=""><FaCartArrowDown /> Add</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -180,7 +212,7 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-lg-2 col-sm-12" >
 
 
-                            <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
+                            {/* <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
                                 <h5 className='section-title'>
                                     Category
                                 </h5>
@@ -221,12 +253,12 @@ const Shop: React.FC = () => {
                                         <span>40</span>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
 
                             <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
 
                                 <h5 className='section-title'>
-                                    New Product
+                                    New Added
                                 </h5>
                                 <ul style={{ listStyle: "none", paddingLeft: "0px" }}>
                                     {
@@ -234,7 +266,7 @@ const Shop: React.FC = () => {
                                             <Link to={`/singleProduct/${singleProduct._id}`} className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }}>
                                                 <img className='img2' src={singleProduct.image} alt="" />
                                                 <div style={{ display: "block" }}>
-                                                    <h5 style={{ color: "#3BB77E" }}>{singleProduct.ProductTitle}</h5>
+                                                    <h6 style={{ color: "#3BB77E" }}>{singleProduct.ProductTitle}</h6>
                                                     <p style={{ color: "#3BB77E" }}>${singleProduct.discountPrice}</p>
                                                 </div>
                                             </Link>

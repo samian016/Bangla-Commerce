@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Blogs.css";
 
 const Blogs: React.FC = () => {
+
   interface IBlog {
     _id: string,
     title: string,
@@ -17,7 +18,6 @@ const Blogs: React.FC = () => {
       .then(res => res.json())
       .then(data => setBlogs(data))
   }, []);
-  console.log(blogs);
 
   return (
     <>

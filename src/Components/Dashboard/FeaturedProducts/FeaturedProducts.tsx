@@ -5,11 +5,11 @@ import "./FeaturedProducts.css";
 import swal from 'sweetalert';
 
 const FeaturedProducts: React.FC = () => {
-
     // Fetch Product Data
     interface IProduct {
         productID: string,
-        ProductTitle: string
+        ProductTitle: string,
+        ProductId: string
     }
     const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -24,10 +24,11 @@ const FeaturedProducts: React.FC = () => {
         ProductName: string,
         Status: string,
         StartDate: string,
-        EndDate: string
+        EndDate: string,
     }
 
     const [productName, setProductName] = useState('')
+    const [productId, setProductId] = useState('')
     const [status, setStatus] = useState('')
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
@@ -51,7 +52,7 @@ const FeaturedProducts: React.FC = () => {
         ProductName: productName,
         Status: status,
         StartDate: startDate.toLocaleString(),
-        EndDate: endDate.toLocaleString()
+        EndDate: endDate.toLocaleString(),
     }
 
     const handleProductSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {

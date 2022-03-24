@@ -39,7 +39,7 @@ const Address = () => {
                 <h1 className='primaryFont fw-bolder primaryFontColor mb-3'>Your Address</h1>
                 <p className='h4'>{presentUser.address ? presentUser.address : "Give your Address"}</p>
                 <p className='h4'>{presentUser.contact ? presentUser.contact : "Give your Contact info"}</p>
-                <p><Link to='/dashboard/account-details'>Edit Your Address</Link></p>
+                <p><Link to='/dashboard/account-details'>Edit Account Details</Link></p>
             </div>
         </div>
     );

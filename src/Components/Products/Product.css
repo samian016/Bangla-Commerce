@@ -4,6 +4,7 @@
 .product {
   border: 1px solid #adadad;
   border-radius: 15px;
+  height: 100%;
 }
 .product:hover {
   border-color: #3bb77e;

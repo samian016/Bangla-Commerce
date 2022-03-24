@@ -27,7 +27,7 @@ const ProductList = () => {
                 <div className="row">
                     <div className="col-md-3">
                         <div className="product-list-title my-5">
-                            <h2>Top Selling</h2>
+                            <h4>Top Selling</h4>
                         </div>
                         {
                             topSelling.slice(0, 3).map(product => <div className="product-list row d-flex mb-4">
@@ -35,7 +35,7 @@ const ProductList = () => {
                                     <img className="img-fluid" src={product.image} alt="" />
                                 </div>
                                 <div className="product-list-text col-8">
-                                    <h3 className="fs-5">{product.ProductTitle}</h3>
+                                    <h4 className="fs-5">{product.ProductTitle}</h4>
                                     <h6 style={{ fontSize: "8px" }}>
                                         <Rating
                                             readonly
@@ -54,7 +54,7 @@ const ProductList = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="product-list-title my-5">
-                            <h2>Trending Products</h2>
+                            <h3>Trending Products</h3>
                         </div>
                         {
                             trending.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
@@ -62,7 +62,7 @@ const ProductList = () => {
                                     <img className="img-fluid" src={product.image} alt="" />
                                 </div>
                                 <div className="product-list-text col-8">
-                                    <h3 className="fs-5">{product.ProductTitle}</h3>
+                                    <h4 className="fs-5">{product.ProductTitle}</h4>
                                     <h6 style={{ fontSize: "8px" }}>
                                         <Rating
                                             readonly
@@ -81,7 +81,7 @@ const ProductList = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="product-list-title my-5">
-                            <h2>Hot Deals</h2>
+                            <h3>Hot Deals</h3>
                         </div>
                         {
                             hotDeals.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
@@ -89,7 +89,7 @@ const ProductList = () => {
                                     <img className="img-fluid" src={product.image} alt="" />
                                 </div>
                                 <div className="product-list-text col-8">
-                                    <h3 className="fs-5">{product.ProductTitle}</h3>
+                                    <h4 className="fs-5">{product.ProductTitle}</h4>
                                     <h6 style={{ fontSize: "8px" }}>
                                         <Rating
                                             readonly
@@ -108,7 +108,7 @@ const ProductList = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="product-list-title my-5">
-                            <h2>Top Rated</h2>
+                            <h3>Top Rated</h3>
                         </div>
                         {
                             topRated.slice(0, 3).map(product => <div className="product-list row mb-4 d-flex">
@@ -116,7 +116,7 @@ const ProductList = () => {
                                     <img className="img-fluid" src={product.image} alt="" />
                                 </div>
                                 <div className="product-list-text col-8">
-                                    <h3 className="fs-5">{product.ProductTitle}</h3>
+                                    <h4 className="fs-5">{product.ProductTitle}</h4>
                                     <h6 style={{ fontSize: "8px" }}>
                                         <Rating
                                             readonly
