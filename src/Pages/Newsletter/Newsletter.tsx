@@ -43,7 +43,7 @@ const Newsletter: React.FC = () => {
                 </h2>
                 <p>
                   Start You'r Daily Shopping with{" "}
-                  <span className="text">Nest Mart</span>
+                  <span className="text">Bangla Commerce</span>
                 </p>
                 <form className="form-subscriber d-flex">
                   <input id="emailInput" type="email" placeholder="Your email address" onBlur={handleOnBlurEmail} />

@@ -24,7 +24,6 @@
 }
 .product-list:hover{
     transform: translateY(-10px);
-    cursor: pointer;
 }
 
 .product-list:hover .product-list-text h3{

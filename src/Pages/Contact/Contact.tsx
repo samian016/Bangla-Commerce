@@ -6,14 +6,14 @@ import contact2 from "../../asset/Icon/contact-2.png";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
-const Result = () => {
-  return (
-    <p>We got your mail. Will contact you soon.</p>
-  );
-}
-
 const Contact = () => {
   const [getResult, setGetResult] = useState(false);
+
+  const Result = () => {
+    return (
+      <p>We got your mail. Will contact you soon.</p>
+    );
+  }
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <div className="page-content pt-5 overflow-hidden">
-      {/* <div className="container">
+      <div className="container">
         <div className="row">
           <div className="col-xl-10 col-lg-12 m-auto">
             <div className="row align-items-end mb-5">
@@ -88,7 +88,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="container">
         <div className="row">
@@ -222,6 +222,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </form>
+
                     <div className="row">{getResult ? < Result /> : null}</div>
                   </div>
                 </div>

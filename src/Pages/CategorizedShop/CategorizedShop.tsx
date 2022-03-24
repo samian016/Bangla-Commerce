@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link, useParams } from 'react-router-dom';
+import { useCart } from "react-use-cart";
 
 const CategorizedShop = () => {
     const { id } = useParams();
-
+    const { addItem } = useCart();
     interface IProducts {
         _id: string;
         ProductTitle: string,
@@ -20,7 +21,15 @@ const CategorizedShop = () => {
         sku: string,
         isApproved: boolean,
         adminChecked: boolean,
-        sellerID: string
+        sellerID: string,
+        id: string,
+        price: number,
+        quantity: number,
+        itemTotal?: number,
+        [key: string]: any,
+        value: number,
+        cartQuantity:number,
+        number:number
     }
 
     const [products, setProducts] = useState<IProducts[]>([]);
@@ -104,7 +113,9 @@ const CategorizedShop = () => {
                                                         <h6 style={{ fontWeight: "bold", color: "#3BB77E" }}>${singleProduct.discountPrice} <span style={{ fontWeight: "bold", color: "#adadad", textDecorationLine: "line-through" }} >${singleProduct.regularPrice}</span> </h6>
                                                     </div>
                                                     <div>
-                                                        <button type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>  Add to Cart</button>
+                                                        <button onClick={() => addItem(singleProduct)}
+
+                                                        type="button" style={{ backgroundColor: "#3BB77E", color: "white", fontWeight: "bold" }} className="btn "> <i className="fa-solid fa-cart-flatbed"></i>Add</button>
                                                     </div>
                                                 </div>
                                             </div>

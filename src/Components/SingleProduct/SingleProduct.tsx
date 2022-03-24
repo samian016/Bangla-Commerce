@@ -47,11 +47,10 @@ const SingleProduct: React.FC = () => {
     const [cartQuantity, setCartQuantity] = useState<IProducts[]>([]);
 
     const getCartQuantity = (val:any) =>{
-        setCartQuantity(val.target.value)
+        let q = val.target.value
+        setCartQuantity(q ? q : 1)
     }
 
-
-    
     return (
         <div className='col-md-10 mx-auto single-product-details'>
             <div className="container">
@@ -86,11 +85,12 @@ const SingleProduct: React.FC = () => {
                                 <p className='m-0 p-0'>{products[0]?.shortDescription}</p>
                             </div>
                             <div className="add-to-cart-info d-flex align-items-center mb-4">
-                                <div className="product-count">
+                                {/* <div className="product-count">
                                     <input type="number" onChange={getCartQuantity} name="" min={1} id="" defaultValue={1} />
-                                </div>
-                                <div className="product-add-to-cart-button mx-3">
-                                    <button onClick={() => addItem(products[0], cartQuantity ? +cartQuantity : 1 )} ><FaCartPlus /> Add To Cart</button>
+                                </div> */}
+                                <div className="product-add-to-cart-button">
+                                    <button onClick={() => addItem(products[0])} ><FaCartPlus /> Add To Cart</button>
+                                    {/* <button onClick={() => addItem({...products[0],isDelivered:false})} ><FaCartPlus /> Add To Cart</button> */}
                                 </div>
                                 {/* <div className="product-favorite">
                                     <button><FaRegHeart /></button>

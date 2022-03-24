@@ -81,13 +81,8 @@ const Shop: React.FC = () => {
             })
     }
 
-    const [wishList, setWishList] = useState({});
-    const [storeData, setStoreData] = useState([]);
-
     const handleWishList = (product: IProducts) => {
-        // fetch(`https://blooming-chamber-05072.herokuapp.com/products/${id}`)
-        //     .then(res => res.json())
-        //     .then(data => setWishList(data))
+        
 
         if (localStorage.getItem("wishList") == null) {
             const pro = {
@@ -217,7 +212,7 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-lg-2 col-sm-12" >
 
 
-                            <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
+                            {/* <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
                                 <h5 className='section-title'>
                                     Category
                                 </h5>
@@ -258,12 +253,12 @@ const Shop: React.FC = () => {
                                         <span>40</span>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
 
                             <div className='sidebar-widget mb-30' style={{ marginTop: "8%" }}>
 
                                 <h5 className='section-title'>
-                                    New Product
+                                    New Added
                                 </h5>
                                 <ul style={{ listStyle: "none", paddingLeft: "0px" }}>
                                     {
@@ -271,7 +266,7 @@ const Shop: React.FC = () => {
                                             <Link to={`/singleProduct/${singleProduct._id}`} className='a' style={{ display: "flex", textDecoration: "none", alignItems: "center", justifyContent: "center", alignContent: "center" }}>
                                                 <img className='img2' src={singleProduct.image} alt="" />
                                                 <div style={{ display: "block" }}>
-                                                    <h5 style={{ color: "#3BB77E" }}>{singleProduct.ProductTitle}</h5>
+                                                    <h6 style={{ color: "#3BB77E" }}>{singleProduct.ProductTitle}</h6>
                                                     <p style={{ color: "#3BB77E" }}>${singleProduct.discountPrice}</p>
                                                 </div>
                                             </Link>

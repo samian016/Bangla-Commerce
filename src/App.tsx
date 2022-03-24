@@ -49,6 +49,7 @@ import WishList from "./Pages/WishList/WishList";
 import LoginRoute from "./Components/Routes/LoginRoute";
 import AdminRoute from "./Components/Routes/AdminRoute";
 import VendorRoute from "./Components/Routes/VendorRoute";
+import OrderStatus from "./Components/Dashboard/Order/OrderStatus";
 import SingleVendor from "./Components/SingleVendor/SingleVendor";
 
 
@@ -89,7 +90,6 @@ function App() {
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/promotions" element={<Promotions />} />
           <Route path="/supportCenter" element={<SupportCenter />} />
-          <Route path="/sponsors" element={<Sponsor />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="category" element={<Category />} />
@@ -112,8 +112,8 @@ function App() {
           <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
           <Route path="/*" element={<PrivateOutlet />}>
+            <Route path="checkout" element={<Checkout />} />
             <Route path="dashboard" element={<Dashboard />}>
-              <Route path="checkout" element={<Checkout />} />
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<VendorRoute><AddProduct /></VendorRoute>} />
               <Route path="edit-product/:productID" element={<AdminRoute>
@@ -126,6 +126,7 @@ function App() {
               <Route path="write-blog" element={<WriteBlog />} />
               <Route path="blogList" element={<AdminRoute><BlogList /></AdminRoute>} />
               <Route path="order" element={<Order />} />
+              <Route path="orderStatus" element={<OrderStatus />} />
               <Route path="makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>} />
               <Route path="product-approval" element={<AdminRoute><ProductApproval /></AdminRoute>} />
               <Route path="product-list" element={<AdminRoute><ProductList /></AdminRoute>} />
@@ -140,9 +141,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="cart" element={<ViewCart />} />
           <Route path="/shopKeper/:id" element={<SingleVendor />} />
-          <Route path="checkout" element={<Checkout />} />
-
-
 
         </Routes>
 

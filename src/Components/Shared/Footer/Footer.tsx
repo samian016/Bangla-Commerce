@@ -31,12 +31,12 @@ const Footer = () => {
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Address: </span>
-                                        5171 W Campbell Ave undefined Kent, Utah 53127 United States</h6>
+                                        Dhaka, Bangladesh</h6>
                                 </div>
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Call Us: </span>
-                                        (+91) - 540-025-124553</h6>
+                                        +880 1822773541</h6>
                                 </div>
                                 <div>
                                     <h6 className='fw-thin'>
@@ -83,7 +83,7 @@ const Footer = () => {
 
                                 {/* <h6 className='font-h6'>My Wishlist</h6> */}
                                 {/* <h6 className='font-h6'>Track My Order</h6> */}
-                                <Link to="">
+                                <Link to="/contact">
                                     <h6 className='font-h6'>Help Ticket</h6>
                                 </Link>
                                 {/* <h6 className='font-h6'>Shipping Details</h6>
@@ -149,20 +149,17 @@ const Footer = () => {
                                 <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
                                 <div className='my-4'>
-                                    <Link to="">
-                                        <img src={logo2} alt="" className="w-50 p-1" />
-                                    </Link>
 
-                                    <Link to="">
-                                        <img src={logo3} alt="" className="w-50 p-1" />
-                                    </Link>
+                                    <img src={logo2} alt="" className="w-50 p-1" />
+
+                                    <img src={logo3} alt="" className="w-50 p-1" />
+
 
 
                                 </div>
                                 <div>
-                                    <Link to="">
-                                        <img src={logo4} alt="" className="img-fluid my-3" />
-                                    </Link>
+                                    <img src={logo4} alt="" className="img-fluid my-3" />
+
 
 
                                 </div>
@@ -179,19 +176,19 @@ const Footer = () => {
                         <div className="row g-2">
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3">
-                                    <p className='text-secondary'>© 2021,<span className='text-success fw-bold'>Bangla</span>-Ecommerce</p>
+                                    <p className='text-secondary'>© 2022,<span className='text-success fw-bold'> Strangers </span>EndGame</p>
                                     <p className='text-secondary'>All rights reserved</p>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'>1900 - 6666</h3>
+                                    <h3 className='fw-bold text-success'> 01822773541</h3>
                                     <p className='text-secondary'>Working 8:00 - 22:00</p>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'>1900 - 8888</h3>
+                                    <h3 className='fw-bold text-success'> 018227735418</h3>
                                     <p className='text-secondary'>24/7 Support Center</p>
                                 </div>
                             </div>
