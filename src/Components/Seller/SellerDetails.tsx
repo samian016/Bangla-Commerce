@@ -16,7 +16,7 @@ const SellerDetails = () => {
     let [seller, setSeller] = useState<Sellers[]>([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/seller/${id}`)
+        fetch(`https://blooming-chamber-05072.herokuapp.com/seller/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSeller(data)

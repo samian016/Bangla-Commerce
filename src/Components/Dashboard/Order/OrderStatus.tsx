@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 import useAuth from '../../../Hooks/useAuth';
 
 const OrderStatus = () => {
-    const {user} = useAuth();
+    const { user } = useAuth();
     interface IPendingOrder {
         _id: any,
         ProductTitle: string,
@@ -13,12 +13,12 @@ const OrderStatus = () => {
         SingleItem: any,
         isApproved: boolean,
         firstName: string,
-        emailAddress:any,
-        isDelivered:any
+        emailAddress: any,
+        isDelivered: any
     }
     const [pendingOrder, setPendingOrder] = useState<IPendingOrder[]>([]);
     useEffect(() => {
-        fetch('http://localhost:5000/checkout')
+        fetch('https://blooming-chamber-05072.herokuapp.com/checkout')
             .then(res => res.json())
             .then(data => setPendingOrder(data))
     }, []);
@@ -37,7 +37,7 @@ const OrderStatus = () => {
                 </thead>
                 <tbody>
                     {
-                        pendingOrder.map(i => i?.emailAddress == user?.email &&  <tr>
+                        pendingOrder.map(i => i?.emailAddress == user?.email && <tr>
                             <td>{i.items.map((t: any) => <p>{t.ProductTitle.slice(0, 36)}</p>)}</td>
                             <td>{i.items.map((t: any) => <p>${t.price}</p>)}</td>
                             <td>{i.isApproved ? "Approved" : "Pending"}</td>
