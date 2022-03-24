@@ -76,13 +76,13 @@ const DailyBest = () => {
                     <div className='d-flex best-padding'>
                         <div className='best-banner' style={{ paddingBottom: "100px", paddingLeft: "50px", paddingRight: "100px", marginRight: "10px", width: "30%" }}>
                             <h2 className="banner-text">Bring nature into your home</h2>
-                            <Link to={"/shop"} className="btn btn-xs">Shop Now !</Link>
+                            <Link to={"/shop"} className="btn btn-xs bg-white text-success">Shop Now !</Link>
                         </div>
                         <div style={{ width: "70%" }}>
 
 
                             <Swiper
-                               style={{  marginLeft:"auto"}} 
+                                style={{ marginLeft: "auto" }}
                                 breakpoints={{
                                     640: {
                                         slidesPerView: 1,
@@ -129,12 +129,12 @@ const DailyBest = () => {
                                                     }
 
                                                     {/* <p className="card-text"> 90/120 </p> */}
-                                                    <p>{product.shortDescription.slice(0, 100)}</p>
+                                                    <p>{product.shortDescription.slice(0, 70)}</p>
 
                                                 </div>
-                                                <div className="mx-auto d-flex">
-                                                    <Link className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
-                                                    <button onClick={() => addItem(product)} className='m-2' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
+                                                <div className="mx-auto d-flex my-2">
+                                                    <Link className='me-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
+                                                    <button onClick={() => addItem(product)} className='ms-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,7 +147,7 @@ const DailyBest = () => {
                     </div>
                 </div>
             </div >
-       </div>
+        </div>
     );
 };
 

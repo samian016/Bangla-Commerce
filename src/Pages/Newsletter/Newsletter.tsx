@@ -20,6 +20,7 @@ const Newsletter: React.FC = () => {
       .then(res => res.json())
       .then(data => {
         if (data.insertedId) {
+          setSubscribeEmail('');
           swal("Thank You", "For Subscribing", "success");
         }
         else {
@@ -46,10 +47,10 @@ const Newsletter: React.FC = () => {
                 </p>
                 <form className="form-subscriber d-flex">
                   <input id="emailInput" type="email" placeholder="Your email address" onBlur={handleOnBlurEmail} />
-                  <button  onClick={handleProductSubmit} className="button" type="submit">
+                  <button onClick={handleProductSubmit} className="button" type="submit">
                     Subscribe
                   </button>
-                  
+
                 </form>
                 <img src={img} alt="" />
               </div>

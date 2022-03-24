@@ -75,6 +75,13 @@
   }
   input[type="checkbox"]:checked ~ #overlay {
     visibility: visible;
+    width: 70%;
+    font-size: 18px;
+    line-height: 30px;
+    left: 30%;
+    top: 15%;
+    height: 100vh;
+    padding: 10%;
   }
   input[type="checkbox"]:checked ~ #overlay-button:hover span,
   input[type="checkbox"]:checked ~ #overlay-button span {

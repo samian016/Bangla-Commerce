@@ -16,13 +16,13 @@ const Footer = () => {
     const { user } = useAuth();
 
     return (
-        <div className='container-fluid overflow-hidden my-3'>
+        <div className='container-fluid overflow-hidden mt-3'>
             <div className='mx-5'>
                 <div className="my-3">
                     <div className="row g-2">
-                        <div className="col-lg-2">
+                        <div className="col-lg-4">
                             <div className="p-3">
-                                <div className="logo my-3">
+                                <div className="logo">
                                     <img className='img-fluid' src={logo1} alt="Footer Logo" />
                                 </div>
                                 {/* <div>
@@ -43,14 +43,14 @@ const Footer = () => {
                                         <span className='fw-bold'>Email: </span>
                                         sale@BanglaCommarce.com</h6>
                                 </div>
-                                <Link to="/sponsors"><div className='cursorPointer px-4 py-3 primaryBgColor text-white d-inline-block rounded-pill'>
+                                <Link to="/sponsors"><div className='cursorPointer py-1 px-3 primaryBgColor text-white d-inline-block rounded-pill'>
                                     Our Sponsors
                                 </div></Link>
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h6'>Company</h1>
+                                <h5 className='font-h6'>Company</h5>
                                 <Link to="/about">
                                     <h6 className='font-h6'>About Us</h6>
                                 </Link>
@@ -72,7 +72,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Account</h1>
+                                <h5 className='font-h1'>Account</h5>
                                 {
                                     user ? [] : <Link to="/login">
                                         <h6 className='font-h6'>Sign In</h6>
@@ -106,7 +106,7 @@ const Footer = () => {
                         </div> */}
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Corporate</h1>
+                                <h5 className='font-h1'>Corporate</h5>
 
                                 {
                                     user ? [] : <Link to="/singUp">
@@ -131,7 +131,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
-                                <h1 className='font-h1'>Popular</h1>
+                                <h5 className='font-h1'>Popular</h5>
                                 <Link to="/shop">
                                     <h6 className='font-h6'>Milk & Flavoured Milk</h6>
                                 </Link>
@@ -144,7 +144,7 @@ const Footer = () => {
 
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-3">
+                        {/* <div className="col-lg-2 col-md-3">
                             <div className="p-3 ">
                                 <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
@@ -164,39 +164,15 @@ const Footer = () => {
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* 2nd footer */}
 
-
-                    <div className="hr"><hr /></div>
-
-                    <div className="mt-2">
-                        <div className="row g-2">
-                            <div className="col-lg-3 col-md-3">
-                                <div className="p-3">
-                                    <p className='text-secondary'>© 2022,<span className='text-success fw-bold'> Strangers </span>EndGame</p>
-                                    <p className='text-secondary'>All rights reserved</p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3">
-                                <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'> 01822773541</h3>
-                                    <p className='text-secondary'>Working 8:00 - 22:00</p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3">
-                                <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'> 018227735418</h3>
-                                    <p className='text-secondary'>24/7 Support Center</p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-3">
-                                <div className="p-3 ">
-                                    <h6>Follow Us</h6>
-                                    <p className='text-secondary'>Up to 15% discount on your first subscribe</p>
-                                </div>
+                    <div className="">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <p className='text-secondary text-center'>© 2022,<span className='text-success fw-bold'> Strangers EndGame </span> <span>All rights reserved</span></p>
                             </div>
                         </div>
                     </div>
