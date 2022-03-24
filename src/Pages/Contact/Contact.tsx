@@ -37,53 +37,6 @@ const Contact = () => {
               <div className="col-lg-4 mb-lg-0 mb-md-5 mb-sm-5">
                 <h3 className="mb-2 text-brand">How can help you?</h3>
                 <h1 className="mb-2">Let us know how we can help you</h1>
-                <p className="mb-2">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptas, distinctio sed et porro incidunt, temporibus
-                  explicabo commodi quaerat repudiandae necessitatibus odio
-                  rerum.
-                </p>
-                <p className="mb-2">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Tempore ut incidunt ipsam iste dolorum quam odit! Debitis
-                  incidunt minima voluptate doloribus voluptatibus.
-                </p>
-              </div>
-              <div className="col-lg-8 ">
-                <div className="row">
-                  <div className="col-lg-6 mb-4">
-                    <h4 className="mb-2"> 01. Visit Feedback</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Maiores, incidunt ducimus eveniet voluptatum minima neque
-                      aliquam ipsam illo debitis maxime dolorem consectetur!
-                    </p>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <h4 className="mb-2"> 02. Employer Services</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Maiores, incidunt ducimus eveniet voluptatum minima neque
-                      aliquam ipsam illo debitis maxime dolorem consectetur!
-                    </p>
-                  </div>
-                  <div className="col-lg-6 mb-4 mb-lg-0">
-                    <h4 className="mb-2 text-brand"> 03. Billing Inquiries </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Maiores, incidunt ducimus eveniet voluptatum minima neque
-                      aliquam ipsam illo debitis maxime dolorem consectetur!
-                    </p>
-                  </div>
-                  <div className="col-lg-6">
-                    <h4 className="mb-2"> 04. General Inquiries</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Maiores, incidunt ducimus eveniet voluptatum minima neque
-                      aliquam ipsam illo debitis maxime dolorem consectetur!
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -94,71 +47,6 @@ const Contact = () => {
         <div className="row">
           <div className="col-xl-10 col-lg-12 m-auto">
             <div className="mb-2">
-              <div className="row mb-3">
-                <div className="col-md-4 mb-4 mb-md-0">
-                  <h4 className="mb-4 text-brand">Office</h4>
-                  "205 North Michigan Avenue, Suite 810"
-                  <br />
-                  "Chicago, 60601, USA"
-                  <br />
-                  <abbr title="Phone">Phone: </abbr>
-                  "(123) 456-7890"
-                  <br />
-                  <abbr title="Email">Email: </abbr>
-                  "contact@BanglaCommerce.com"
-                  <br />
-                  <a
-                    href="#www.facebook.com"
-                    className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                  >
-                    <i className="fi-rs-marker mr-2"></i>
-                    "View map"
-                  </a>
-                </div>
-                <div className="col-md-4 mb-4 mb-md-0">
-                  <h4 className="mb-4 text-brand">Shop</h4>
-                  "205 North Michigan Avenue, Suite 810"
-                  <br />
-                  "Chicago, 60601, USA"
-                  <br />
-                  <abbr title="Phone">Phone: </abbr>
-                  "(123) 456-7890"
-                  <br />
-                  <abbr title="Email">Email: </abbr>
-                  "contact@BanglaCommerce.com"
-                  <br />
-                  <Link to="">
-
-                    <a
-                      href="#www.facebook.com"
-                      className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                    >
-                      <i className="fi-rs-marker mr-2"></i>
-                      "View map"
-                    </a>
-                  </Link>
-                </div>
-                <div className="col-md-4 mb-4 mb-md-0">
-                  <h4 className="mb-4 text-brand">Studio</h4>
-                  "205 North Michigan Avenue, Suite 810"
-                  <br />
-                  "Chicago, 60601, USA"
-                  <br />
-                  <abbr title="Phone">Phone: </abbr>
-                  "(123) 456-7890"
-                  <br />
-                  <abbr title="Email">Email: </abbr>
-                  "contact@BanglaCommerce.com"
-                  <br />
-                  <a
-                    href="#www.facebook.com"
-                    className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                  >
-                    <i className="fi-rs-marker mr-2"></i>
-                    "View map"
-                  </a>
-                </div>
-              </div>
 
               <div className="row">
                 <div className="col-xl-8">
