@@ -81,13 +81,8 @@ const Shop: React.FC = () => {
             })
     }
 
-    const [wishList, setWishList] = useState({});
-    const [storeData, setStoreData] = useState([]);
-
     const handleWishList = (product: IProducts) => {
-        // fetch(`https://blooming-chamber-05072.herokuapp.com/products/${id}`)
-        //     .then(res => res.json())
-        //     .then(data => setWishList(data))
+        
 
         if (localStorage.getItem("wishList") == null) {
             const pro = {

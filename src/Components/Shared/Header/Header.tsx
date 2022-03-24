@@ -98,7 +98,7 @@ const Header = () => {
                                     <span>Compare</span>
                                 </div>
                             </Link>
-                            <Link to='/whishList'>
+                            <Link to='/wishList'>
                                 <div className='mx-3'>
                                     <div className="iconSize align-items-center justify-content-center d-flex">
                                         <BsSuitHeart />
@@ -136,7 +136,7 @@ const Header = () => {
                                         </div>
                                         <span> My Account</span>
                                     </div></Link>
-                                    <Link to='/dashboard' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
+                                    <Link to='/wishList' className='dropDownText'><div className="dropDownList rounded px-3 py-2 d-flex">
                                         <div className="pe-2 dropDownIcon iconSize align-items-center justify-content-center d-flex">
                                             <BsSuitHeart />
                                         </div>
