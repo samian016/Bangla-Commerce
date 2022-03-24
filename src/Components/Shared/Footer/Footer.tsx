@@ -149,20 +149,17 @@ const Footer = () => {
                                 <h1 className='font-h1'>Apps</h1>
                                 <h5 className='font-h6'>From Apps Store or Google Play</h5>
                                 <div className='my-4'>
-                                    <Link to="">
-                                        <img src={logo2} alt="" className="w-50 p-1" />
-                                    </Link>
 
-                                    <Link to="">
-                                        <img src={logo3} alt="" className="w-50 p-1" />
-                                    </Link>
+                                    <img src={logo2} alt="" className="w-50 p-1" />
+
+                                    <img src={logo3} alt="" className="w-50 p-1" />
+
 
 
                                 </div>
                                 <div>
-                                    <Link to="">
-                                        <img src={logo4} alt="" className="img-fluid my-3" />
-                                    </Link>
+                                    <img src={logo4} alt="" className="img-fluid my-3" />
+
 
 
                                 </div>
@@ -185,13 +182,13 @@ const Footer = () => {
                             </div>
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'>1900 - 6666</h3>
+                                    <h3 className='fw-bold text-success'> 01822773541</h3>
                                     <p className='text-secondary'>Working 8:00 - 22:00</p>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3 ">
-                                    <h3 className='fw-bold text-success'>1900 - 8888</h3>
+                                    <h3 className='fw-bold text-success'> 018227735418</h3>
                                     <p className='text-secondary'>24/7 Support Center</p>
                                 </div>
                             </div>

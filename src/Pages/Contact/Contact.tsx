@@ -84,13 +84,7 @@ const Contact = () => {
                   <abbr title="Email">Email: </abbr>
                   "contact@BanglaCommerce.com"
                   <br />
-                  <a
-                    href="#www.facebook.com"
-                    className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                  >
-                    <i className="fi-rs-marker mr-2"></i>
-                    "View map"
-                  </a>
+                  
                 </div>
                 <div className="col-md-4 mb-4 mb-md-0">
                   <h4 className="mb-4 text-brand">Shop</h4>
@@ -104,16 +98,7 @@ const Contact = () => {
                   <abbr title="Email">Email: </abbr>
                   "contact@BanglaCommerce.com"
                   <br />
-                  <Link to= "">
-
-                  <a
-                    href="#www.facebook.com"
-                    className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                  >
-                    <i className="fi-rs-marker mr-2"></i>
-                    "View map"
-                  </a>
-                  </Link>
+                  
                 </div>
                 <div className="col-md-4 mb-4 mb-md-0">
                   <h4 className="mb-4 text-brand">Studio</h4>

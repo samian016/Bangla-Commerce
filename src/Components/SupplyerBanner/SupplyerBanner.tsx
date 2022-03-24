@@ -10,7 +10,6 @@ const SupplyerBanner = () => {
                             Enjoy 15% OFF for all <br />
                             vegetable and fruit
                         </h6>
-                        <p className=''>Go to supplier</p>
                     </div>
 
                 </div>
@@ -20,7 +19,6 @@ const SupplyerBanner = () => {
                             Enjoy 15% OFF for all <br />
                             vegetable and fruit
                         </h6>
-                        <p>Go to supplier</p>
                     </div>
 
                 </div>
@@ -30,7 +28,6 @@ const SupplyerBanner = () => {
                             Enjoy 15% OFF for all <br />
                             vegetable and fruit
                         </h6>
-                        <p>Go to supplier</p>
                     </div>
 
                 </div>
@@ -40,7 +37,6 @@ const SupplyerBanner = () => {
                             Enjoy 15% OFF for all <br />
                             vegetable and fruit
                         </h6>
-                        <p>Go to supplier</p>
                     </div>
 
                 </div>
