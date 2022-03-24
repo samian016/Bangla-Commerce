@@ -108,7 +108,7 @@ const Checkout: React.FC = () => {
     }
 
     const handleCheckoutSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-        fetch('http://localhost:5000/checkout/add', {
+        fetch('https://blooming-chamber-05072.herokuapp.com/checkout/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

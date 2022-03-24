@@ -14,18 +14,18 @@ const Order = () => {
         firstName: string,
         _id: any,
         emailAddress: any,
-        
+
     }
     const [pendingOrder, setPendingOrder] = useState<IPendingOrder[]>([]);
     useEffect(() => {
-        fetch('http://localhost:5000/checkout')
+        fetch('https://blooming-chamber-05072.herokuapp.com/checkout')
             .then(res => res.json())
             .then(data => setPendingOrder(data))
     }, []);
     const handleDeleteProduct = (id: string | undefined | null) => {
         const forward = window.confirm("Are you sure? It will be deleted permanently !!!");
         if (forward) {
-            fetch(`http://localhost:5000/checkout/${id}`, {
+            fetch(`https://blooming-chamber-05072.herokuapp.com/checkout/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -43,7 +43,7 @@ const Order = () => {
     }
     const handleBlogConfirm = (id: string | undefined) => {
         const myId = { id }
-        fetch(`http://localhost:5000/checkout/${id}`, {
+        fetch(`https://blooming-chamber-05072.herokuapp.com/checkout/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const Order = () => {
                 console.log(data);
                 if (data.modifiedCount) {
                     swal("Order Approved");
-                    fetch('http://localhost:5000/checkout/')
+                    fetch('https://blooming-chamber-05072.herokuapp.com/checkout/')
                         .then(res => res.json())
                         .then(data => setPendingOrder(data))
                 } else {
@@ -85,7 +85,7 @@ const Order = () => {
                             <td>{i.items.map((t: any) => <p>{t.ProductTitle.slice(0, 36)}</p>)}</td>
                             <td>{i.items.map((t: any) => <p>${t.price}</p>)}</td>
                             <td className='d-flex justify-content-center align-items-center'>
-                            <button onClick={() => handleDeleteProduct(i?._id)} className='btn btn-danger btn-sm me-2'>Delete</button>
+                                <button onClick={() => handleDeleteProduct(i?._id)} className='btn btn-danger btn-sm me-2'>Delete</button>
                                 {i.isApproved === false
                                     ?
                                     <>

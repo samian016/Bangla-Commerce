@@ -57,7 +57,7 @@ const Header = () => {
                         <span>Supper Value Deals - Save more with coupons</span>
                     </div>
                     <div className='d-flex justify-content-center'>
-                        <div className='px-2'>Need help? <span className='primaryColor'>Call Us:+880 1822773541</span></div>
+                        <div className='px-2'>Need help? <span className='primaryColor'>Call Us:+ 1800 900</span></div>
                         {/* <div className='px-2 border-end border-start'>English <BsChevronDown /> </div>
                         <div className='px-2'>USD <BsChevronDown /></div> */}
                     </div>
@@ -210,7 +210,7 @@ const Header = () => {
                                     <img src={Headphone} alt="HeadPhone Icon" />
                                 </div>
                                 <div>
-                                    <span className='h4 primaryColor fw-bold'>01822773541</span>
+                                    <span className='h4 primaryColor fw-bold'>1900 - 888</span>
                                     <br />
                                     <span className='secondaryFont secondaryFontColor'>24/7 Support Center</span>
                                 </div>
