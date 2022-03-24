@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+import emailjs from '@emailjs/browser';
 
 import contact2 from "../../asset/Icon/contact-2.png";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
+
+const Result = () => {
+  return (
+    <p>We got your mail. Will contact you soon.</p>
+  );
+}
 
 const Contact = () => {
+  const [getResult, setGetResult] = useState(false);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    emailjs.sendForm('service_gagj8mo', 'template_mavx7wy', e.target, 'FB0yMK04yRyjJmG6s')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.reset.target();
+    setGetResult(true);
+  };
+
+
   return (
     <div className="page-content pt-5 overflow-hidden">
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-xl-10 col-lg-12 m-auto">
             <div className="row align-items-end mb-5">
@@ -65,7 +88,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="container">
         <div className="row">
@@ -104,15 +127,15 @@ const Contact = () => {
                   <abbr title="Email">Email: </abbr>
                   "contact@BanglaCommerce.com"
                   <br />
-                  <Link to= "">
+                  <Link to="">
 
-                  <a
-                    href="#www.facebook.com"
-                    className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
-                  >
-                    <i className="fi-rs-marker mr-2"></i>
-                    "View map"
-                  </a>
+                    <a
+                      href="#www.facebook.com"
+                      className="btn btn-sm font-weight-bold text-dark border-radius-5 mt-3 btn-shadow-brand hover-up"
+                    >
+                      <i className="fi-rs-marker mr-2"></i>
+                      "View map"
+                    </a>
                   </Link>
                 </div>
                 <div className="col-md-4 mb-4 mb-md-0">
@@ -146,14 +169,14 @@ const Contact = () => {
                       Your email address will not published. Required fields are
                       marked *
                     </p>
-                    <form action="#" className="mt-30 contact-form-style">
+                    <form action="#" className="mt-30 contact-form-style" onSubmit={sendEmail}>
                       <div className="row">
                         <div className="col-lg-6 col-md-6">
                           <div className="input-style mb-20">
                             <input
-                              name="name"
+                              name="fullName"
                               type="text"
-                              placeholder="First Name"
+                              placeholder="Your Name"
                             />
                           </div>
                         </div>
@@ -192,7 +215,6 @@ const Contact = () => {
                             ></textarea>
                             <button
                               className="submit submit-auto-width mt-4 "
-                              type="submit"
                             >
                               Send Message
                             </button>
@@ -200,6 +222,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </form>
+                    <div className="row">{getResult ? < Result /> : null}</div>
                   </div>
                 </div>
                 <div className="col-lg-4 pl-50 d-lg-block d-none contact">
