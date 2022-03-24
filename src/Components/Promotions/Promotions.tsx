@@ -5,14 +5,11 @@ import "./Promotions.css";
 const Promotions = () => {
     return (
         <div>
-            <h1>This is promotion page</h1>
-            <h1>here is we use billboard for promotion</h1>
-
             {/* <!-- Letest Demo Video --> */}
 
             <section>
                 <div className="container text-center my-5">
-                    <h1 className=" fw-bold text-center">Letest<span> Demo </span>Video</h1>
+                    <h1 className=" fw-bold text-center">Latest Video</h1>
                     <h4><span>Watch Now</span></h4>
                     <div className="container p-4">
                         <div className="row gx-5">

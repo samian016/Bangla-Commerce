@@ -133,7 +133,7 @@ const Checkout: React.FC = () => {
     }
 
     return (
-        <div className='container my-5 d-flex justify-content-between'>
+        <div className='checkout container my-5 d-flex justify-content-between'>
             <div className="w-75 ms-2 me-5">
                 <div className='h1 primaryFont fw-bolder primaryFontColor'>Checkout</div>
                 <div className='h6 primaryFont mb-3'>There are {totalItems} products in your cart</div>
