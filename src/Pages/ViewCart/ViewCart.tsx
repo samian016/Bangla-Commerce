@@ -46,7 +46,7 @@ const ViewCart: React.FC = () => {
           </tbody>
         </table>
       </div>
-      <div className='w-25 px-3'>
+      <div className='viewcart-w w-25 px-3'>
         <div className='h1 primaryFont fw-bolder mb-5 primaryFontColor'>Your Order</div>
         <p className='fw-bold'>Subtotal: ${cartTotal}</p>
         {cartTotal == 0 ?

@@ -11,7 +11,8 @@ const SliderCat: React.FC = () => {
     interface ICategory {
         _id: string,
         categoryName: string,
-        img: string
+        img: string,
+        length:number
     }
     const [category, setCategory] = useState<ICategory[]>([]);
 
@@ -23,27 +24,27 @@ const SliderCat: React.FC = () => {
 
     return (
         <div className='SliderCat d-flex mx-2 my-4'>
-            <div className="SliderCategory w-25 rounded shadow mx-4 p-4">
+            {/* <div className="SliderCategory w-25 rounded shadow mx-4 p-4">
                 <h4 className='fw-bolder pb-2 ms-3'>Category</h4>
                 {
                     category.slice(0, 7).map(singleCategory => <div key={singleCategory._id} className='homeCategoryNav d-flex justify-content-between align-items-center my-3 mx-2 px-3 py-2 rounded fw-bold border text-center'>
-                        {/* <div>
-                            <img width="35px" src={} alt="Cat" />
-                        </div> */}
+                        <div>
+                            <img width="35px" src={singleCategory.img} alt="Cat" />
+                        </div>
                         <div>
                             <span>
                                 {singleCategory.categoryName}
                             </span>
                         </div>
-                        {/* <div>
+                        <div>
                             <span className='rounded-pill p-1 categoryCount'>
-                                0
+                                {singleCategory}
                             </span>
-                        </div> */}
+                        </div>
                     </div>)
                 }
-            </div>
-            <div className='Slider w-75 rounded'>
+            </div> */}
+            <div className='Slider w-100 px-3 rounded'>
                 <Swiper
                     spaceBetween={30}
                     pagination={{

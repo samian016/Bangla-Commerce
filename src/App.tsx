@@ -90,7 +90,6 @@ function App() {
           <Route path="/sponsors" element={<Sponsor />} />
           <Route path="/promotions" element={<Promotions />} />
           <Route path="/supportCenter" element={<SupportCenter />} />
-          <Route path="/sponsors" element={<Sponsor />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="category" element={<Category />} />
@@ -113,8 +112,8 @@ function App() {
           <Route path="category/:id" element={<CategorizedShop />} />
           <Route path="categoryWise/:id" element={<CategorizedShop />} />
           <Route path="/*" element={<PrivateOutlet />}>
-            <Route path="dashboard" element={<Dashboard />}>
             <Route path="checkout" element={<Checkout />} />
+            <Route path="dashboard" element={<Dashboard />}>
               <Route path="account-details" element={<AccountDetails />} />
               <Route path="add-product" element={<VendorRoute><AddProduct /></VendorRoute>} />
               <Route path="edit-product/:productID" element={<AdminRoute>

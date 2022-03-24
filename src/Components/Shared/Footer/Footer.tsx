@@ -31,12 +31,12 @@ const Footer = () => {
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Address: </span>
-                                        5171 W Campbell Ave undefined Kent, Utah 53127 United States</h6>
+                                        Dhaka, Bangladesh</h6>
                                 </div>
                                 <div>
                                     <h6 className='fw-thin'>
                                         <span className='fw-bold'>Call Us: </span>
-                                        (+91) - 540-025-124553</h6>
+                                        +880 1822773541</h6>
                                 </div>
                                 <div>
                                     <h6 className='fw-thin'>
@@ -83,7 +83,7 @@ const Footer = () => {
 
                                 {/* <h6 className='font-h6'>My Wishlist</h6> */}
                                 {/* <h6 className='font-h6'>Track My Order</h6> */}
-                                <Link to="">
+                                <Link to="/contact">
                                     <h6 className='font-h6'>Help Ticket</h6>
                                 </Link>
                                 {/* <h6 className='font-h6'>Shipping Details</h6>
@@ -179,7 +179,7 @@ const Footer = () => {
                         <div className="row g-2">
                             <div className="col-lg-3 col-md-3">
                                 <div className="p-3">
-                                    <p className='text-secondary'>© 2021,<span className='text-success fw-bold'>Bangla</span>-Ecommerce</p>
+                                    <p className='text-secondary'>© 2022,<span className='text-success fw-bold'> Strangers </span>EndGame</p>
                                     <p className='text-secondary'>All rights reserved</p>
                                 </div>
                             </div>
