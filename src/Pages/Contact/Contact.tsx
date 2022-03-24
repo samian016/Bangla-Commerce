@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./Contact.css";
 import emailjs from '@emailjs/browser';
 
+
 import contact2 from "../../asset/Icon/contact-2.png";
-import { Link } from "react-router-dom";
-import swal from "sweetalert";
+
 
 const Contact = () => {
   const [getResult, setGetResult] = useState(false);
