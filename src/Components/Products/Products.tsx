@@ -51,9 +51,9 @@ const Products: React.FC = () => {
                     {
                         products.slice(0, 10).map((singleProduct) => <div key={singleProduct._id} className="mt-4 col">
                             <div className='product' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                    <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                        <img style={{ width: "100%" }} src={singleProduct.image} alt="" />
+                                <div style={{textAlign:"center", position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
+                                    <div className='product-image w-100' style={{ position: "relative", overflow: "hidden", borderRadius: "15px", textAlign: "center" }}>
+                                        <img className='img-fluid' src={singleProduct.image} alt="" />
                                         <Link to={`/singleProduct/${singleProduct._id}`} className='view-details-button'>View Details</Link>
                                     </div>
                                 </div>
