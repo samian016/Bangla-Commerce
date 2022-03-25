@@ -108,35 +108,43 @@ const DailyBest = () => {
                                 {
                                     products.map(product => <SwiperSlide key={product._id} >
                                         <div style={{ height: "520px", borderRadius: "20px" }}>
-                                            <div style={{ width: "100%", position: "relative", height: "520px", borderRadius: "20px" }} className="card ">
-                                                <img style={{ width: "70%" }} src={product.image} className="card-img-top mx-auto" alt="..." />
-                                                <div className="card-body">
-                                                    <h5 style={{ color: "#253D4E" }} className="card-title">{product.ProductTitle}</h5>
-                                                    <h6 style={{ fontSize: "8px" }}>
-                                                        <Rating
-                                                            readonly
-                                                            initialRating={product.rating}
-                                                            fullSymbol="fa fa-star fa-2x filled"
-                                                            emptySymbol="fa fa-star-o fa-2x notFilled">
-                                                        </Rating>
-                                                    </h6>
-                                                    <h6 style={{ color: "#3BB77E" }}>${product.discountPrice}  </h6>
-
-                                                    {
-                                                        /* <div style={{ height: "5px", background: "black" }} >
-                                                            <div style={{background:"white", maxWidth:"50%"}}> </div>
-                                                        </div> */
-                                                    }
-
-                                                    {/* <p className="card-text"> 90/120 </p> */}
-                                                    <p>{product.shortDescription.slice(0, 70)}</p>
-
+                                            <div className='h-100 card' style={{ height: "520px", borderRadius: "20px" }}>
+                                                <div className='p-3' style={{  borderRadius: "20px", height:"40%" }}>
+                                                    <div className='h-100' style={{borderRadius: "20px" }}>
+                                                            <img  style={{  borderRadius: "20px" ,height:"40%" }} className='w-100 h-100' src={product.image} alt="" />
+                                                    </div>
                                                 </div>
-                                                <div className="mx-auto d-flex my-2">
+                                                <div className='p-3' style={{ borderRadius: "20px",height:"60%" }}>
+                                                    <div className='h-100' style={{ borderRadius: "20px" }}>
+                                                        <div>
+                                                                    <h6 style={{ color: "#253D4E", fontWeight: "bold"}}>{product.ProductTitle}</h6>
+
+                                                            <p style={{  color: "#253D4E" }}>{product.shortDescription.slice(0, 70)}</p>
+                                                            <div className='d-flex' style={{alignItems:"center"}}>
+                                                                <p className='me-5' style={{ fontWeight: "bold", color: "#adadad" }}>{product.Category}</p>
+                                                                <p style={{ fontSize: "6px" }}>
+                                                                    <Rating
+                                                                        readonly
+                                                                        initialRating={product.rating}
+                                                                        fullSymbol="fa fa-star fa-2x filled"
+                                                                        emptySymbol="fa fa-star-o fa-2x notFilled"
+                                                                    >
+                                                                    </Rating></p>
+                                                           </div>
+                                                            <div style={{ borderRadius: "20px", display: "flex" }}>
+                                                                <h6 className='me-2' style={{ color: "#3BB77E", fontWeight: "bold"  }}>${product.discountPrice}  </h6>
+                                                                <h6 style={{ color: "#253D4E", fontWeight: "bold", textDecorationLine: "line-through" }}>${product.regularPrice}  </h6>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style={{backgroundColor:"transparent"}} className="mx-auto d-flex my-2 card-footer">
                                                     <Link className='me-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
                                                     <button onClick={() => addItem(product)} className='ms-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
                                                 </div>
                                             </div>
+                                            
                                         </div>
                                     </SwiperSlide>)
                                 }
@@ -152,3 +160,29 @@ const DailyBest = () => {
 };
 
 export default DailyBest;
+/* <div style={{ height: "520px", borderRadius: "20px" }}>
+                                            <div style={{ width: "100%", position: "relative", height: "520px", borderRadius: "20px" }} className="card ">
+                                                <div className='product h-100' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
+                                                    <div className='h-50' style={{ textAlign: "center", position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
+                                                        <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px", textAlign: "center" }}>
+                                                            
+                                                            <Link to={`/singleProduct/${product._id}`} className='view-details-button'>View Details</Link>
+                                                        </div>
+                                                </div>
+                                                <div className="card-body">
+                                                        <div>
+                                                            
+                                                        </div>
+                                                        <h6 style={{ color: "#3BB77E" }}>${product.discountPrice}  </h6>
+
+
+                                                        <p>{product.shortDescription.slice(0, 70)}</p>
+
+                                                </div>
+                                                <div className="mx-auto d-flex my-2 card-footer">
+                                                    <Link className='me-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }} to={`/singleProduct/${product._id}`}>View Product</Link>
+                                                    <button onClick={() => addItem(product)} className='ms-1' style={{ color: "white", background: "#3BB77E", fontWeight: "bold", padding: "5px 10px", border: "2px solid #3BB77E", borderRadius: '5px' }}> Add To Cart</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div> */
