@@ -147,11 +147,15 @@ const Shop: React.FC = () => {
                         <div style={{}} className="col-sm-12 col-lg-10">
                             <div className="row border-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                                 {
-                                    perPage.map(singleProduct => <div key={singleProduct._id} className="mt-4 col-12">
+                                    perPage.map(singleProduct =>
+                                        
+                                        
+                                        
+                                        <div key={singleProduct._id} className="mt-4 col-12">
                                         <div className='hover' style={{ visibility: "visible", backgroundColor: "white", overflow: "hidden", }}>
-                                            <div style={{ position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px", padding: " 25px 25px 0px 25px" }}>
-                                                <div className='product-image' style={{ position: "relative", overflow: "hidden", borderRadius: "15px" }}>
-                                                    <img style={{ width: "100%" }} src={singleProduct.image} alt="" />
+                                                <div style={{ borderRadius:"15px",position: "relative", backgroundColor: "white", overflow: "hidden", maxHeight: "320px"}}>
+                                                <div className='p-3' style={{overflow: "hidden", borderRadius: "15px"}}>
+                                                        <img style={{ width: "100%", height: "100%", borderRadius: "15px" }} src={singleProduct.image} alt="" />
                                                     <Link to={`/singleProduct/${singleProduct._id}`} className='view-details-button'>View Details</Link>
                                                 </div>
                                             </div>
